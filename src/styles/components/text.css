@@ -1,0 +1,145 @@
+/*********************************
+  * Overused Grotesk Font Features
+  ********************************
+  * kern: enables kerning,
+  * liga: enables ligatures,
+  * sso4: alternative G,
+  * ss05: alternative R,
+  * ss06: alternative J,
+  * ss07: alternative y,
+  * ss08: alternative t,
+  * ss09: alternative *,
+  * ss11: serif capital I,
+  * zero: slashed zero
+**********************************/
+h1,
+h1+sup {
+    font-feature-settings:
+        "kern" on,
+        "liga" on,
+        "ss04" on,
+        "ss05" on,
+        "ss06" on,
+        "ss09" on,
+        "ss11" on !important;
+}
+
+p,
+a,
+canvas {
+    font-feature-settings:
+        "kern" on,
+        "liga" on,
+        "ss04" on,
+        "ss05" on,
+        "ss06" on,
+        "ss09" on !important;
+}
+
+/* .text-tabular {
+    font-variant-numeric: tabular-nums;
+} */
+
+.text {
+    &-slick {
+        line-height: 1 !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        /* margin-left: -0.425rem; */
+
+        &::before,
+        &::after {
+            display: table;
+            content: "";
+        }
+
+        &::before {
+            margin-bottom: -0.225em;
+        }
+
+        &::after {
+            margin-top: -0.1em;
+        }
+
+        &-extra {
+            line-height: 1.1 !important;
+            overflow: hidden !important;
+
+            &::before {
+                display: table;
+                content: "";
+                margin-bottom: -0.238em;
+            }
+
+            &::after {
+                display: table;
+                content: "";
+                margin-top: 0;
+            }
+        }
+    }
+
+    &-just {
+        text-align: justify;
+        text-justify: auto;
+        /* hyphens:auto; */
+    }
+
+    &-tabular {
+        /* font-feature-settings:"tnam"; */
+        /* font-variant-numeric: tabular-nums; */
+    }
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 150px;
+    line-height: 1.5;
+    /* overflow: hidden; */
+    margin: 0;
+    padding: 0;
+    font-variation-settings: 'wght' 400;
+
+    &.uppercase {
+        text-transform: uppercase;
+    }
+}
+
+p,
+.p {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-variation-settings: 'wght' 500;
+    /* font-weight: 500; */
+    letter-spacing: 0.05em;
+}
+
+dim {
+    color: rgba($color-text, 0.5);
+}
+
+.h1-slick-wrapper {
+    position: relative;
+    display: inline-block;
+
+    >sup {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        right: 0;
+        transform: translate(100%, -100%);
+        font-size: 75px;
+        background-color: transparent;
+
+        &.lhs {
+            right: unset !important;
+            left: 0;
+            transform: translate(-100%, -100%);
+        }
+    }
+}

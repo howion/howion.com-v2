@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        // type safety
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "strictNullChecks": true,
+        "noUncheckedIndexedAccess": true,
+        // advanced type safety
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowUnreachableCode": false,
+        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        //
+        "allowJs": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact",
+        "isolatedModules": true,
+        "allowImportingTsExtensions": true,
+        "verbatimModuleSyntax": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "#/*": ["./src/*"],
+            "##/*": ["./*"]
+        }
+    },
+    "include": [".astro/types.d.ts", "**/*", ".stylelintrc.js", "env.d.ts", ".boilerrc.ts"],
+    "exclude": ["dist", "node_modules", "public", "dist", "out", ".astro"]
+}

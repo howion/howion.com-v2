@@ -1,0 +1,17 @@
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable both-edges;
+    overscroll-behavior: contain;
+    /* scrollbar-width: thin; */
+    scrollbar-color: $color-text transparent;
+}
+
+/* ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+} */

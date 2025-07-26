@@ -1,0 +1,189 @@
+---
+
+---
+
+<fancy-cursor-container id="fancy-cursor-container" class="cursor-default">
+    <fancy-cursor-point id="fancy-cursor-point"></fancy-cursor-point>
+    <fancy-cursor-shape id="fancy-cursor-shape1" class="v1"
+    ></fancy-cursor-shape>
+</fancy-cursor-container>
+
+<script>
+    import { isMobile } from "#/utils/client";
+    import { distance, LERP } from "#/utils/math";
+
+    type CursorState = "default" | "pointer" | "hidden" | "text" | "lock";
+
+    const SIZE_POINT = 16; // px
+    const SIZE_SHAPE1 = 120; // px
+
+    const SPEED_FACTOR_SHAPE1 = 0.1; // 0: stale, 1 instant
+    const SCALE_FACTOR_SHAPE1 = 0.1; // 0: stale, 1 instant
+
+    const CURSOR_SCALE_SHAPE1 = 0.5; // scale when cursor is over a link
+
+    const container = document.getElementById("fancy-cursor-container");
+    const point = document.getElementById("fancy-cursor-point");
+    const shape1 = document.getElementById("fancy-cursor-shape1");
+
+    const _isMobile = isMobile();
+
+    if (!_isMobile && container && point && shape1) {
+        document.body.classList.add("is-cursor-none");
+
+        let clientX = -100;
+        let clientY = -100;
+
+        let clientCursor: CursorState = "hidden";
+        let lastCursor: CursorState = "hidden";
+
+        let pointLastX = -1000;
+        let pointLastY = -1000;
+
+        let shape1LastX = -1000;
+        let shape1LastY = -1000;
+        let shape1NextX = -1000;
+        let shape1NextY = -1000;
+        let shape1LastScale = 1;
+
+        document.body.addEventListener("mousemove", (e) => {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        });
+
+        document.body.addEventListener("mouseover", (e) => {
+            const path = e.composedPath && (e.composedPath() as HTMLElement[]);
+            path.reverse();
+
+            let nextCursor: CursorState = "default";
+
+            for (const node of path) {
+                // skip window and htmldocument
+                const name = node?.nodeName?.toLowerCase();
+
+                if (
+                    !name ||
+                    name === "#document" ||
+                    name === "html" ||
+                    name === "body"
+                ) {
+                    continue;
+                }
+
+                const dataCursor = node.getAttribute?.(
+                    "data-cursor",
+                ) as CursorState;
+
+                if (dataCursor) {
+                    nextCursor = dataCursor;
+                    break; // assumes no nesting
+                }
+
+                if (name === "a") {
+                    nextCursor = "pointer";
+                    break;
+                }
+
+                if (name === "p") {
+                    nextCursor = "text";
+                    continue; // consider p > a
+                }
+            }
+
+            clientCursor = nextCursor;
+        });
+
+        document.body.addEventListener("mouseleave", () => {
+            clientCursor = "hidden";
+        });
+
+        // let performanceLast = performance.now();
+
+        function update(/* perf: number */) {
+            // const performanceDelta = perf - performanceLast;
+            // performanceLast = perf;
+            // console.log(performanceDelta);
+
+            if (pointLastX !== clientX || pointLastY !== clientY) {
+                let cX = 0;
+                let cY = 0;
+
+                if (clientCursor === "text") {
+                    cX = clientX - SIZE_POINT / 8;
+                    cY = clientY - SIZE_POINT;
+                } else {
+                    // default
+                    cX = clientX - SIZE_POINT / 2;
+                    cY = clientY - SIZE_POINT / 2;
+                }
+
+                // move the point to the last known position
+                point!.style.transform = `translate3d(${cX}px, ${cY}px, 0)`;
+
+                pointLastX = clientX;
+                pointLastY = clientY;
+            }
+
+            const nextScale =
+                clientCursor === "pointer" ? CURSOR_SCALE_SHAPE1 : 1;
+
+            if (
+                shape1LastX !== clientX ||
+                shape1LastY !== clientY ||
+                shape1LastScale !== nextScale
+            ) {
+                shape1NextX = clientX - SIZE_SHAPE1 / 2;
+                shape1NextY = clientY - SIZE_SHAPE1 / 2;
+
+                // compute the distance
+                const dist = distance(
+                    shape1LastX,
+                    shape1LastY,
+                    shape1NextX,
+                    shape1NextY,
+                );
+
+                const distScale = Math.abs(shape1LastScale - nextScale);
+
+                let t_Speed = SPEED_FACTOR_SHAPE1; // lerp factor
+                let t_Scale = SCALE_FACTOR_SHAPE1; // scale factor
+
+                // if the distance is too small, skip the lerp
+                if (dist < 1) {
+                    t_Speed = 1;
+                }
+
+                if (distScale < 0.01) {
+                    t_Scale = 1;
+                }
+
+                // lerp the position
+                const lerpX = LERP(shape1LastX, shape1NextX, t_Speed);
+                const lerpY = LERP(shape1LastY, shape1NextY, t_Speed);
+
+                const lerpScale = LERP(shape1LastScale, nextScale, t_Scale);
+
+                shape1LastX = lerpX;
+                shape1LastY = lerpY;
+                shape1LastScale = lerpScale;
+
+                const transform = `translate3d(${lerpX}px, ${lerpY}px, 0) scale(${lerpScale})`;
+                shape1!.style.transform = transform;
+            }
+
+            if (lastCursor !== clientCursor) {
+                // update the cursor style
+                container!.className = `cursor-${clientCursor}`;
+                lastCursor = clientCursor;
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        requestAnimationFrame(update);
+    } else {
+        if (_isMobile && container) {
+            container.remove();
+        }
+    }
+</script>

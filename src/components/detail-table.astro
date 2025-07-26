@@ -1,0 +1,32 @@
+---
+export interface Props {
+    class?: Classname;
+
+    title: string;
+
+    /**
+     * @description Width of the title column in the table.
+     * @default "1"
+     */
+    titleW?: number;
+
+    /**
+     * @description Width of the content column in the table.
+     */
+    contentW?: number;
+}
+
+const { class: classname, title, titleW, contentW } = Astro.props;
+---
+
+<w class:list={["vertical", classname]}>
+    <w><hr /></w>
+    <w class="space-table-top just">
+        <v class={`w${titleW}`}>
+            <p>{title}</p>
+        </v>
+        <v class={`w${contentW}`}>
+            <slot />
+        </v>
+    </w>
+</w>

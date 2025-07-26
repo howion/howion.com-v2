@@ -1,0 +1,54 @@
+/* $waypoint-header-way-transition: 250ms; */
+
+.waypoint-header {
+    $waypoint-header-height: 32px;
+
+    background-color: transparent;
+    height: $waypoint-header-height;
+    z-index: 2;
+
+    &-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $waypoint-header-height;
+        background-color: rgba($color-text, 0.1);
+        backdrop-filter: blur(10px);
+        z-index: 0;
+        /* mix-blend-mode: difference; */
+
+        z-index: $z-index-waypoint-header;
+    }
+
+    &-way {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--solidbox-outer-px);
+        height: $waypoint-header-height;
+        background-color: rgba($color-text, 0.1);
+        z-index: 4;
+        mix-blend-mode: difference;
+        /* transition: width $waypoint-header-way-transition; */
+    }
+
+    &-waypoints {
+        position: relative;
+    }
+
+    &-waypoint {
+        display: block;
+        position: absolute;
+        top: calc(($waypoint-header-height - 14px) / 2 + 1px);
+        left: 0;
+        white-space: nowrap;
+        /* background-color: red; */
+    }
+}
+
+waypoint {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+}

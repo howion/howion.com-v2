@@ -1,0 +1,45 @@
+---
+import SectionTicker from "#/components/section-ticker.astro";
+import Document from "#/layouts/document.astro";
+import WaypointHeader from "#/components/waypoint-header.astro";
+import HomeHome from "#/components/home/home-home.astro";
+import HomeRnD from "#/components/home/home-rnd.astro";
+---
+
+<Document>
+    <solidbox-layout></solidbox-layout>
+
+    <header>
+        <WaypointHeader />
+    </header>
+
+    <main>
+        <waypoint name="home"></waypoint>
+        <HomeHome />
+
+        <waypoint name="about"></waypoint>
+        <SectionTicker text="ABOUT ME" class="space-section-2x" />
+
+        <HomeRnD class="space-section-6x" title="Research" sup="++" />
+        <HomeRnD
+            class="space-section-6x"
+            title="Development"
+            titleExtra={true}
+            sup="&&"
+            isRhs={true}
+        />
+
+        <SectionTicker text="CONTACT" class="space-section-6x" />
+
+        <h><v class="wmax"><h1 class="center slick">&nbsp;</h1></v></h>
+        <h><v class="wmax"><h1 class="center slick">&nbsp;</h1></v></h>
+
+        <!-- <script>
+    // import FontFaceObserver from "fontfaceobserver";
+    // import { waitForPromise } from "#/utils/promise";
+
+    // const font = new FontFaceObserver("Overused Grotesk");
+    // const fontResult = await waitForPromise(font.load());
+</script> -->
+    </main></Document
+>

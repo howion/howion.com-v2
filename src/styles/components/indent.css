@@ -1,0 +1,23 @@
+div.indent {
+    display: inline-flex;
+    align-items: center;
+    vertical-align:middle;
+
+    i.indent-dot {
+        display: block;
+        background-color: rgba($color-text, 0.1);
+    }
+}
+
+h1 div.indent {
+    column-gap: 24px;
+    margin-bottom: 1.3rem;
+    margin-right: 0.3125rem;
+    margin-left: 0.3125rem;
+
+    i.indent-dot {
+        border-radius: 8px;
+        width: 16px;
+        height: 16px;
+    }
+}

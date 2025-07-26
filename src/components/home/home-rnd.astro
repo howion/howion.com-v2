@@ -1,0 +1,66 @@
+---
+import DetailTable from "../detail-table.astro";
+
+export interface Props {
+    class?: Classname;
+    isRhs?: boolean;
+    title: string;
+    titleExtra?: boolean;
+    sup?: string;
+}
+
+const { class: classname, isRhs, title, titleExtra, sup } = Astro.props;
+---
+
+<section class:list={[classname]}>
+    <w class:list={[isRhs ? "reverse" : ""]}>
+        <div class:list={["h1-slick-wrapper"]}>
+            <h1 class={`text-slick${titleExtra ? "-extra" : ""}`}>{title}</h1>
+            {
+                sup && (
+                    <sup
+                        class:list={[
+                            "text-slick",
+                            "text-tabular",
+                            isRhs ? "lhs" : "",
+                        ]}
+                    >
+                        {sup}
+                    </sup>
+                )
+            }
+        </div>
+    </w>
+    <h class:list={["space-section-2x", isRhs ? "reverse" : ""]}>
+        <v class="w1"></v>
+        <v class="w3">
+            <p class="space-table-top text-just">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate.
+            </p>
+        </v>
+        <v class="w1"></v>
+        <v class="w7">
+            <DetailTable title="Current" titleW={2} contentW={3}>
+                <p>
+                    Computation Theory<br />Complexity Theory<br /><br
+                    />Cryptography<br />Lattice-based Cryptography
+                </p>
+            </DetailTable>
+            <DetailTable
+                class="space-section-2x"
+                title="Prior"
+                titleW={2}
+                contentW={3}
+            >
+                <p>
+                    COMPUTATION THEORY<br />COMPLEXITY THEORY<br /><br
+                    />CRYPTOGRAPHY<br />LATTICE-BASED CRYPTOGRAPHY
+                </p>
+            </DetailTable>
+        </v>
+    </h>
+</section>

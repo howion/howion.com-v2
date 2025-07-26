@@ -1,0 +1,5 @@
+$color-body: #10100E;
+$color-text: #FFFFE3;
+
+/* optional */
+$color-default-solidbox-layout-color: rgba($color-text, 0.05);

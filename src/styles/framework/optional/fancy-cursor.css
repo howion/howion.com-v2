@@ -1,0 +1,93 @@
+/*****************************************************************************/
+/* CONFIGURATION */
+/* note that you also need to update the values
+   in src/components/fancy-cursor.astro */
+$fancy-cursor-size-pointer: 16px; /* must be divisible by 4 */
+$fancy-cursor-size-shape1: 120px; /* must be divisible by 4 */
+
+$fancy-cursor-container-opacity-transition: 250ms;
+/*****************************************************************************/
+
+body.is-cursor-none {
+    cursor: none;
+
+    a {
+        cursor: none;
+    }
+}
+
+fancy-cursor {
+    display: block;
+
+    &-container {
+        position: relative;
+        display: block;
+        opacity: 1;
+        pointer-events: none;
+        transition: opacity $fancy-cursor-container-opacity-transition ease-out;
+        z-index: $z-index-fancy-cursor;
+        mix-blend-mode: difference;
+    }
+
+    &-point, &-shape {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 1;
+
+        transition-duration: $fancy-cursor-container-opacity-transition;
+        transition-property: opacity;
+
+        will-change: transform, opacity;
+        transform: translate3d(-1000px, -1000px, 0);
+    }
+
+    &-point {
+        mix-blend-mode: difference;
+        z-index: 10;
+        width: $fancy-cursor-size-pointer;
+        height: $fancy-cursor-size-pointer;
+        background-color: $color-text;
+        border-radius: $fancy-cursor-size-pointer;
+
+        /* transform: translate(934px); */
+        /* transform: translate3d(0, -0, 0) scale(var(--fancy-cursor-scale, 1)); */
+    }
+
+    &-shape {
+        &.v1 {
+            z-index: 9;
+            width: $fancy-cursor-size-shape1;
+            height: $fancy-cursor-size-shape1;
+            background-color: rgba(#ffffe3, 1);
+            border-radius: $fancy-cursor-size-shape1;
+            /* transform: translate3d(-1000px, -1000px, 0); */
+        }
+    }
+
+    &-container.cursor-hidden {
+        opacity: 0;
+    }
+
+    &-container.cursor-text > &-point {
+        width: calc($fancy-cursor-size-pointer / 4);
+        height: calc($fancy-cursor-size-pointer * 2);
+    }
+
+    /* &-container.cursor-text > &-shape.v1 {
+        opacity: 0;
+    } */
+
+    &-container.cursor-pointer > &-shape.v1 {
+        border-radius: 0;
+        background-color: transparent;
+        border: 4px solid $color-text;
+    }
+
+    &-container.cursor-pointer > &-point {
+        opacity: 0;
+        /* width: $fancy-cursor-size-pointer;
+        height: $fancy-cursor-size-pointer; */
+    }
+}

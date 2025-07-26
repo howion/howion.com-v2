@@ -1,0 +1,101 @@
+---
+import { randomId } from "#/utils/math";
+interface Props {
+    text: string;
+    speed?: number;
+    class?: Classname;
+    style?: Style;
+}
+
+const { text, speed, class: classname, style } = Astro.props;
+
+const tickerId = randomId();
+const h = 56;
+const seperator = "    •    ";
+---
+
+<canvas
+    id={tickerId}
+    class:list={["section-ticker", classname]}
+    style={style}
+    height={h}></canvas>
+
+<script define:vars={{ tickerId, text, speed: speed ?? 1, h, seperator }}>
+    const canvas = document.getElementById(tickerId);
+    const ctx = canvas.getContext("2d");
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = h;
+
+    const separator = seperator;
+
+    let bufferCanvas, bufferCtx, textWidth;
+    let offset = 0;
+
+    let scrollVelocity = 0;
+    let lastScrollY = window.scrollY;
+    let lastTimestamp = performance.now();
+
+    function renderBuffer() {
+        ctx.font = "500 18px sans-serif";
+        ctx.fillStyle = "#FFFFE3";
+        ctx.textBaseline = "middle";
+
+        const repeatedText = (text + separator).repeat(100);
+        textWidth = ctx.measureText(repeatedText).width;
+
+        bufferCanvas = document.createElement("canvas");
+        bufferCanvas.width = textWidth;
+        bufferCanvas.height = canvas.height;
+
+        bufferCtx = bufferCanvas.getContext("2d");
+        bufferCtx.font = ctx.font;
+        bufferCtx.fillStyle = ctx.fillStyle;
+        bufferCtx.textBaseline = ctx.textBaseline;
+        bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
+        bufferCtx.fillText(repeatedText, 0, bufferCanvas.height / 2);
+    }
+
+    function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        renderBuffer();
+    }
+
+    window.addEventListener("resize", () => {
+        resizeCanvas();
+    });
+
+    resizeCanvas();
+
+    // Scroll speed tracking
+    function updateScrollVelocity() {
+        const now = performance.now();
+        const deltaY = window.scrollY - lastScrollY;
+        const dt = now - lastTimestamp;
+
+        if (dt > 0) {
+            const velocity = deltaY / dt; // px/ms
+            scrollVelocity = Math.abs(velocity) * 100; // scale up
+        }
+
+        lastScrollY = window.scrollY;
+        lastTimestamp = now;
+    }
+
+    window.addEventListener("scroll", updateScrollVelocity);
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(bufferCanvas, -offset, 0);
+        offset += speed + scrollVelocity;
+        if (offset >= textWidth) {
+            offset = 0;
+        }
+        requestAnimationFrame(draw);
+
+        // Apply exponential decay to scroll effect
+        scrollVelocity *= 0.9;
+    }
+
+    draw();
+</script>

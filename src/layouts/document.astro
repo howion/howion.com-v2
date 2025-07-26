@@ -1,0 +1,48 @@
+---
+import FancyCursor from '#/components/fancy-cursor.astro'
+import { isDev } from '#/utils/client'
+import { APP, SEO_DEFAULTS } from '##/.boilerrc'
+
+interface Props {
+    title?: string
+    subtitle?: string
+    description?: string
+    keywords?: string[]
+}
+
+// const { title, subtitle, description } = Astro.props
+const title = Astro.props.title ?? SEO_DEFAULTS.title
+const subtitle = Astro.props.subtitle
+const description = Astro.props.description ?? SEO_DEFAULTS.description
+
+const document_title = (subtitle ? `${subtitle} |` : '') + title
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preload" href="/assets/fonts/overused-grotesk/variable.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <title>{document_title}</title>
+        {description && (
+            <meta name="description" content={description} />
+        )}
+    </head>
+    <body>
+        {!APP.quickDevelopmentMode && (
+            <post-effect class="noise"></post-effect>
+            <FancyCursor />
+        )}
+        <div id="app">
+            <slot />
+        </div>
+    </body>
+</html>
+
+<style is:global>
+    @import "/src/styles/global.css";
+</style>

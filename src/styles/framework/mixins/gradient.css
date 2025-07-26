@@ -1,0 +1,9 @@
+@define-mixin gradient-vertical-lines $line-color, $line-width, $gap {
+    background: repeating-linear-gradient(
+        to right,
+        $(line-color) 0,
+        $(line-color) $(line-width),
+        transparent $(line-width),
+        transparent $(gap)
+    );
+}

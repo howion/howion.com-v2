@@ -1,0 +1,25 @@
+/*
+/- These breakpoints are carefully handcrafted with opinionated interpretation
+/- of statistical data (popular browser widths used by PBS NewsHour audience)
+/- by me, howion.
+*/
+
+/* 320  xs  640  sm  768  md  1024 lg  1280  xl  1536  2xl  1920 ... 4k
+
+320  xs  480  sm  768  md  992  lg  1280  xl   */
+
+
+$breakpoint-xs: 0px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+$breakpoint-xxxl: 1600px;
+$breakpoint-xxxxl: 1800px;
+$breakpoint-xxxxxl: 2000px;
+$breakpoint-xxxxxxl: 2200px;
+$breakpoint-xxxxxxxl: 2400px;
+$breakpoint-xxxxxxxl-plus: 2600px;
+$breakpoint-xxxxxxxl-plus-plus: 2800px;
+$breakpoint-xxxxxxxl-plus-plus-plus: 3000px;

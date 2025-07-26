@@ -1,0 +1,6 @@
+.section-ticker {
+    width: 100%;
+    border: 1px solid $color-text;
+    border-width: 1px 0 1px 0;
+    box-sizing: border-box;
+}

@@ -1,0 +1,35 @@
+.space-table-top {
+    margin-top: 14px;
+}
+
+.space-section {
+    $unit: 48px;
+
+    &-x {
+        margin-top: $unit;
+    }
+
+    &-2x {
+        margin-top: calc($unit * 2);
+    }
+
+    &-5x {
+        margin-top: calc($unit * 5);
+    }
+
+    &-6x {
+        margin-top: calc($unit * 6);
+    }
+}
+
+/* .space-between-4x {
+    margin-top: 96px;
+}
+
+.space-section-b-10x {
+    margin-top: 240px;
+}
+
+.space-section-top {
+    margin-top: 240px;
+} */

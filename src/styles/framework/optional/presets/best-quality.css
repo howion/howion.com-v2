@@ -1,0 +1,42 @@
+/* <img src="image.jpg" decoding="async" /> */
+/* <object type="image/svg+xml" data="icon.svg"></object> */
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+svg {
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, img {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    user-drag: none;
+}
+
+/* subpixel alignment fix for some elements */
+/*  {
+    transform: translateZ(0);
+} */
+
+img {
+    display: block;
+    max-width: 100%;
+
+    /* Firefox, Safari */
+    image-rendering: crisp-edges;
+    /* Chrome */
+    image-rendering: pixelated;
+
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}

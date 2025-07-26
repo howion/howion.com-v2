@@ -1,0 +1,75 @@
+---
+interface Props {
+    class?: Classname;
+    style?: Style;
+}
+
+const { class: classname, style } = Astro.props;
+---
+
+<div class:list={["waypoint-header-wrapper", classname]} style={style}>
+    <div class="waypoint-header-way" id="waypoint-header-way"></div>
+    <div class="waypoint-header">
+        <w class="waypoint-header-waypoints" id="waypoint-header-waypoints">
+            <!--
+            <span class="p text-slick waypoint-header-waypoint">HOME</span>
+            <span class="p text-slick waypoint-header-waypoint">ABOUT</span>
+            <span class="p text-slick waypoint-header-waypoint">WORKS</span>
+            <span class="p text-slick waypoint-header-waypoint">CONTACT</span>
+            -->
+        </w>
+    </div>
+</div>
+
+<script>
+    const way = document.getElementById("waypoint-header-way");
+    const waypointContainer = document.getElementById(
+        "waypoint-header-waypoints",
+    );
+    const waypoints = [
+        ...document.querySelectorAll("waypoint"),
+    ] as HTMLElement[];
+    const waypointElements = [] as HTMLSpanElement[];
+
+    for (const waypoint of waypoints) {
+        const waypointElement = document.createElement("span");
+        waypointElement.className = "p text-slick waypoint-header-waypoint";
+        waypointElement.textContent = waypoint.getAttribute("name") || "#";
+        waypointContainer!.appendChild(waypointElement);
+        waypointElements.push(waypointElement);
+    }
+
+    if (way && waypointContainer) {
+        function updateWaypointHeader() {
+            const x0 = waypointContainer!.offsetLeft;
+            const viewW = window.innerWidth;
+            const viewH = window.innerHeight;
+            const scrollH = document.documentElement.scrollHeight;
+            const documentH = scrollH + viewH;
+            const scrollY = window.scrollY;
+            const ratioY = scrollY / (scrollH - viewH);
+
+            const wayW = x0 + (viewW - x0) * ratioY;
+            way!.style.width = `${Math.round(wayW)}px`;
+
+            for (const i in waypoints) {
+                const waypoint = waypoints[i]!;
+                const waypointElement = waypointElements[i]!;
+                const rect = waypoint.getBoundingClientRect();
+                const absoluteY = rect.top + scrollY;
+                const waypointRatio = absoluteY / documentH;
+                const waypointPercent = Math.round(waypointRatio * 100);
+
+                waypointElement.style.left = `${waypointPercent}%`;
+            }
+        }
+
+        updateWaypointHeader();
+        window.addEventListener("scroll", updateWaypointHeader);
+        window.addEventListener("resize", updateWaypointHeader);
+    } else {
+        console.warn(
+            "Waypoint header elements not found. Ensure the HTML structure is correct.",
+        );
+    }
+</script>

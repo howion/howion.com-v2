@@ -1,0 +1,78 @@
+/*****************************************************************************/
+/* CONFIGURATION */
+$post-effects-noise-opacity: 0.5;
+$post-effects-noise-speed: 1.5s;
+/*****************************************************************************/
+
+@keyframes keyframe-post-effects-noise {
+    0% {
+        -webkit-transform: translate3d(0, 9rem, 0);
+        transform: translate3d(0, 9rem, 0);
+    }
+
+    10% {
+        -webkit-transform: translate3d(-1rem, -4rem, 0);
+        transform: translate3d(-1rem, -4rem, 0);
+    }
+
+    20% {
+        -webkit-transform: translate3d(-8rem, 2rem, 0);
+        transform: translate3d(-8rem, 2rem, 0);
+    }
+
+    30% {
+        -webkit-transform: translate3d(9rem, -9rem, 0);
+        transform: translate3d(9rem, -9rem, 0);
+    }
+
+    40% {
+        -webkit-transform: translate3d(-2rem, 7rem, 0);
+        transform: translate3d(-2rem, 7rem, 0);
+    }
+
+    50% {
+        -webkit-transform: translate3d(-9rem, -4rem, 0);
+        transform: translate3d(-9rem, -4rem, 0);
+    }
+
+    60% {
+        -webkit-transform: translate3d(2rem, 6rem, 0);
+        transform: translate3d(2rem, 6rem, 0);
+    }
+
+    70% {
+        -webkit-transform: translate3d(7rem, -8rem, 0);
+        transform: translate3d(7rem, -8rem, 0);
+    }
+
+    80% {
+        -webkit-transform: translate3d(-9rem, 1rem, 0);
+        transform: translate3d(-9rem, 1rem, 0);
+    }
+
+    90% {
+        -webkit-transform: translate3d(6rem, -5rem, 0);
+        transform: translate3d(6rem, -5rem, 0);
+    }
+
+    to {
+        -webkit-transform: translate3d(-7rem, 0, 0);
+        transform: translate3d(-7rem, 0, 0);
+    }
+}
+
+post-effect.noise {
+    position: fixed;
+    top: -400px;
+    right: -400px;
+    bottom: -400px;
+    left: -400px;
+    width: auto;
+    height: auto;
+    z-index: $z-index-post-effect;
+    background-position: 50%;
+    background-image: url('/assets/image/noise.png');
+    opacity: $post-effects-noise-opacity;
+    pointer-events: none;
+    animation: keyframe-post-effects-noise $post-effects-noise-speed steps(2) infinite;
+}

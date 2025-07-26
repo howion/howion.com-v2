@@ -1,0 +1,213 @@
+@import "/node_modules/normalize.css";
+
+html {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    tab-size: 4;
+    min-height: 100vh;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    display: flex;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    border-collapse: inherit;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+:where(code, kbd, samp, pre) {
+    letter-spacing: 0;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+svg {
+    display: inline-block;
+    fill: currentColor;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+[aria-hidden="true"] {
+    visibility: hidden;
+}
+
+input,
+img,
+i.material-icons,
+button {
+    user-select: none;
+}
+
+/*
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+*/
+
+:where(code,
+    kbd,
+    samp,
+    pre) {
+    font-size: 1em;
+    letter-spacing: 0;
+}
+
+:where(div,
+    span,
+    main,
+    article,
+    section,
+    nav,
+    aside,
+    header,
+    footer,
+    hgroup,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    q,
+    s,
+    b,
+    u,
+    i,
+    address,
+    strong,
+    samp,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    blockquote,
+    pre,
+    wbr,
+    abbr,
+    acronym,
+    em,
+    ins,
+    kbd,
+    small,
+    strike,
+    sub,
+    sup,
+    tt,
+    var,
+    center,
+    mark,
+    bdi,
+    bdo,
+    data,
+    time,
+    output,
+    meter,
+    img,
+    picture,
+    canvas,
+    svg,
+    object,
+    embed,
+    iframe,
+    applet,
+    video,
+    audio,
+    source,
+    track,
+    map,
+    area,
+    template,
+    slot,
+    noscript,
+    form,
+    fieldset,
+    legend,
+    label,
+    input,
+    button,
+    select,
+    datalist,
+    optgroup,
+    option,
+    textarea,
+    output,
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    menu,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    col,
+    colgroup,
+    details,
+    summary,
+    dialog,
+    figure,
+    figcaption,
+    ruby,
+    rt,
+    rp) {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    font: inherit;
+    color: inherit;
+}
+
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+:where(article, aside, details, figcaption, figure, footer, header, main, menu, nav, section) {
+    display: block;
+}

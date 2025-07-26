@@ -1,0 +1,143 @@
+/*****************************************************************************/
+/* CONFIGURATION */
+/*****************************************************************************/
+:root {
+    --solidbox-unit: 150px;
+    /* 150px * 12 = 1800px */
+    --solidbox-count: 12;
+    --solidbox-outer-px-cannonical: min(2.5vw, 48px);
+
+    --solidbox-cannonical-width: calc(var(--solidbox-unit) * var(--solidbox-count));
+    --solidbox-responsive-width: calc(100lvw - 2 * var(--solidbox-outer-px-cannonical));
+
+    --solidbox-width:
+        max(min(var(--solidbox-cannonical-width),
+                calc(var(--solidbox-responsive-width) - mod(var(--solidbox-responsive-width), var(--solidbox-unit)))),
+            var(--solidbox-unit));
+    --solidbox-outer-px: calc((100lvw - var(--solidbox-width))/2);
+
+    --solidbox-layout-color: $color-default-solidbox-layout-color;
+    --solidbox-layout-width: 1px;
+}
+
+/*****************************************************************************/
+
+w,
+.w,
+h,
+.h {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+
+    &.lhs {
+        justify-content: flex-start;
+    }
+
+    &.rhs {
+        justify-content: flex-end;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.just {
+        justify-content: space-between;
+    }
+}
+
+w,
+.w {
+    width: 100%;
+    max-width: var(--solidbox-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    &.vertical {
+        flex-direction: column;
+
+        &-reverse {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+h,
+.h {
+    flex-wrap: wrap;
+    overflow: visible;
+
+    align-items: flex-start;
+
+    font-size: 0;
+
+    &.wide {
+        width: 100%;
+        padding-left: var(--solidbox-outer-px);
+        padding-right: var(--solidbox-outer-px);
+    }
+}
+
+h,
+.h {
+    max-width: var(--solidbox-cannonical-width);
+    width: var(--solidbox-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+v,
+.v {
+    display: flex;
+    flex: 0 0 auto;
+    width: var(--solidbox-unit);
+    font-size: 0;
+    flex-direction: column;
+
+    &.wmax {
+        width: var(--solidbox-width);
+        /* width: 100%; */
+    }
+
+    &.wauto {
+        width: auto;
+        flex: 1;
+    }
+
+    /* steps */
+    @for $i from 0 to 12 {
+        &.w$(i) {
+            width: calc(var(--solidbox-unit) * $(
+                    i)
+            );
+    }
+}
+}
+
+
+solidbox-layout {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--solidbox-width);
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    z-index: $z-index-solidbox-lines;
+
+    pointer-events: none;
+
+    /* mix-blend-mode: difference; */
+    /* overflow: hidden; */
+
+    @mixin gradient-vertical-lines var(--solidbox-layout-color), var(--solidbox-layout-width), var(--solidbox-unit);
+
+    /* weird fix for last gradient line not rendering */
+    border-right: var(--solidbox-layout-width) solid transparent;
+}

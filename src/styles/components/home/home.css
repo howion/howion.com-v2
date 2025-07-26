@@ -1,0 +1,35 @@
+.home {
+    &-section {
+        padding-top: calc(32px + 72px);
+    }
+
+    &-hero {
+        &-title {
+            display: flex;
+            flex-direction: column;
+            row-gap: 28px;
+
+            /* h1 {
+                display: flex;
+                align-items: center;
+            } */
+        }
+    }
+
+    &-menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 36px;
+
+        &-title {
+            /* color: rgba($color-text, 0.5); */
+            opacity: 0.5;
+        }
+
+        &-stack {
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+        }
+    }
+}

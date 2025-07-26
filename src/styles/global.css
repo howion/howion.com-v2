@@ -1,0 +1,16 @@
+/* BOILER OPINIONATED METACSS */
+@import "./framework/variables/_index.css";
+@import "./framework/mixins/_index.css";
+
+/* GLOBAL OPTIONAL CSS */
+@import "./framework/optional/dynamic-vars.css";
+@import "./framework/optional/fonts/overused-grotesk.css";
+@import "./framework/optional/solidbox.css";
+@import "./framework/optional/post-effects/noise.css";
+@import "./framework/optional/fancy-cursor.css";
+@import "./framework/optional/presets/best-quality.css";
+/* @import "./framework/optional/is.css"; */
+
+/* GLOBAL CUSTOM CSS */
+@import "./app/_index.css";
+@import "./components/_index.css";
