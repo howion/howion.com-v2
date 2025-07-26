@@ -14,16 +14,23 @@ export interface Props {
      * @description Width of the content column in the table.
      */
     contentW?: number;
+
+    slick?: boolean;
 }
 
-const { class: classname, title, titleW, contentW } = Astro.props;
+const { class: classname, title, titleW, contentW, slick } = Astro.props;
 ---
 
 <w class:list={["vertical", classname]}>
     <w><hr /></w>
-    <w class="space-table-top just">
+    <w
+        class:list={[
+            slick ? "space-table-top-slick" : "space-table-top",
+            "just",
+        ]}
+    >
         <v class={`w${titleW}`}>
-            <p>{title}</p>
+            <p class:list={[slick ? "text-slick" : undefined]}>{title}</p>
         </v>
         <v class={`w${contentW}`}>
             <slot />

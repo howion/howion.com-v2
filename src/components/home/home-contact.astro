@@ -1,0 +1,63 @@
+---
+import DetailTable from "../detail-table.astro";
+
+interface Props {
+    class?: Classname;
+}
+
+const { class: classname } = Astro.props;
+---
+
+<section class:list={[classname]}>
+    <w>
+        <div class="h2-slick-wrapper">
+            <h2 class="text-slick">Let's Connect</h2>
+        </div>
+    </w>
+    <DetailTable
+        class="space-section-5x"
+        title="Contact"
+        titleW={1}
+        contentW={3}
+        slick={true}
+    >
+        <div class="text-stack-slick">
+            <p class="text-slick">* mert.coskun (a) metu.edu.tr</p>
+            <p class="text-slick">* howionwastaken (a) gmail.com</p>
+            <p class="text-slick"></p>
+            <p class="text-slick">* +90 534 634 0134</p>
+        </div>
+    </DetailTable>
+    <DetailTable
+        class="space-section-3x"
+        title="Available For"
+        titleW={1}
+        contentW={3}
+        slick={true}
+    >
+        <div class="text-stack-slick">
+            <p class="text-slick">* Collaboration</p>
+            <p class="text-slick">* Research</p>
+            <p class="text-slick">* Counselling</p>
+            <p class="text-slick"></p>
+            <p class="text-slick">* JUST CHAT \ EN \ TR</p>
+        </div>
+    </DetailTable>
+    <DetailTable
+        class="space-section-3x"
+        title="Socials"
+        titleW={1}
+        contentW={3}
+        slick={true}
+    >
+        <div class="text-stack-slick">
+            <a class="text-slick" href="#">* GITHUB</a>
+            <a class="text-slick" href="#">* LINKEDIN</a>
+            <a class="text-slick" href="#">* BEHANCE</a>
+            <a class="text-slick" href="#">* DRIBBBLE</a>
+            <a class="text-slick" href="#">* X</a>
+            <a class="text-slick" href="#">* STACKEXCHANGE</a>
+            <a class="text-slick" href="#">* ORCID</a>
+        </div>
+    </DetailTable>
+</section>

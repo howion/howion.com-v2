@@ -17,11 +17,11 @@ import { APP } from './.boilerrc.ts'
 const willAnalyze = process.env.ANALYZE === 'true'
 
 export default defineConfig({
-    output: APP.ssr ? 'server' : 'static', // static | server
+    output: APP.ssr.enabled ? 'server' : 'static', // static | server
     server: {
         port: 3000
     },
-    adapter: vercel(),
+    adapter: APP.ssr.enabled ? (APP.ssr.adapter === 'vercel' ? vercel() : undefined) : undefined,
     security: {
         // server only
         checkOrigin: false

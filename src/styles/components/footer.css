@@ -1,0 +1,13 @@
+.footer {
+    background-color: #000;
+    padding-top: 72px;
+    padding-bottom: 48px;
+
+    &-head {
+        &-title {
+            font-size: 96px;
+            font-variation-settings: 'wght' 600 !important;
+            letter-spacing: 0 !important;
+        }
+    }
+}

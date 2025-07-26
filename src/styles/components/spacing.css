@@ -1,5 +1,9 @@
 .space-table-top {
     margin-top: 14px;
+
+    &-slick {
+        margin-top: calc(14px + 9px);
+    }
 }
 
 .space-section {
@@ -11,6 +15,10 @@
 
     &-2x {
         margin-top: calc($unit * 2);
+    }
+
+    &-3x {
+        margin-top: calc($unit * 3);
     }
 
     &-5x {

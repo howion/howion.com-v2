@@ -14,8 +14,8 @@ const { class: classname, isRhs, title, titleExtra, sup } = Astro.props;
 
 <section class:list={[classname]}>
     <w class:list={[isRhs ? "reverse" : ""]}>
-        <div class:list={["h1-slick-wrapper"]}>
-            <h1 class={`text-slick${titleExtra ? "-extra" : ""}`}>{title}</h1>
+        <div class="h2-slick-wrapper">
+            <h2 class={`text-slick${titleExtra ? "-extra" : ""}`}>{title}</h2>
             {
                 sup && (
                     <sup

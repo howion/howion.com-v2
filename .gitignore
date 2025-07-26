@@ -2,25 +2,26 @@
 ## CUSTOM
 ##########################################################################################################################
 
-# no need this file already handles astro rules!
+#
 
 ##########################################################################################################################
 ## GENERAL
 ##########################################################################################################################
 
 ## OUTPUT FOLDERS
-/out/
+/out
 /build
 /dist
 
-## GENERAL CACHE FOLDERS
-.cache
-.vscode-test
-.eslintcache
-.stylelintcache
-.parcel-cache
-.history
-.ionide
+## GENERAL CACHE FILES/FOLDERS
+/.cache
+/.vscode-test
+/.eslintcache
+/.stylelintcache
+/.parcel-cache
+/.history
+/.ionide
+/.sonda
 
 ## PACKAGE MANAGERS
 node_modules/
@@ -46,10 +47,10 @@ yarn-error.log*
 !.vscode/*.code-snippets
 
 ## NEXTJS
-/.next/
+/.next
 
 ## ASTRO
-/.astro/
+/.astro
 
 ## SvelteKit
 .svelte-kit

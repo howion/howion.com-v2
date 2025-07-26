@@ -1,10 +1,34 @@
-# howion.com-v2
+# :construction: howion.com-v2
 
-Personal website, updated.
+Personal website, updated. Still under construction, until then v1 will be served on [**howion.com**](https://howion.com/).
 
 <!-- ## Tech Stack
 
 See Ultimate Astro Boiler -->
+
+## To-Do's
+
+### Active
+
+* Fix ticker
+* Featured Work Section
+* Waypoints
+* Better fancy cursor animation for links
+* Make links work
+* Update texts
+* Design and code splash component. Maybe use the previous one?
+* Responsive (only works in 1920px atm.)
+* Add Easters
+
+### Later
+
+* Blog
+* howion/notes integration
+* Draw and code more sections
+  * NPM?
+  * GitHub Summary?
+  * Spotify?
+* Distill codebase as a seperate boilerplate (template)
 
 ## Contact
 

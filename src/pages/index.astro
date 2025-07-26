@@ -4,6 +4,8 @@ import Document from "#/layouts/document.astro";
 import WaypointHeader from "#/components/waypoint-header.astro";
 import HomeHome from "#/components/home/home-home.astro";
 import HomeRnD from "#/components/home/home-rnd.astro";
+import HomeContact from "#/components/home/home-contact.astro";
+import Footer from "#/components/footer.astro";
 ---
 
 <Document>
@@ -14,12 +16,17 @@ import HomeRnD from "#/components/home/home-rnd.astro";
     </header>
 
     <main>
-        <waypoint name="home"></waypoint>
+        <!-- HOME START -->
+        <!-- <waypoint name="home"></waypoint> -->
         <HomeHome />
+        <!-- HOME END -->
 
-        <waypoint name="about"></waypoint>
+        <!-- ABOUT START -->
+        <!-- <waypoint name="about" ></waypoint> -->
         <SectionTicker text="ABOUT ME" class="space-section-2x" />
+        <!-- ABOUT END -->
 
+        <!-- ABOUT / RnD START -->
         <HomeRnD class="space-section-6x" title="Research" sup="++" />
         <HomeRnD
             class="space-section-6x"
@@ -28,18 +35,17 @@ import HomeRnD from "#/components/home/home-rnd.astro";
             sup="&&"
             isRhs={true}
         />
+        <!-- ABOUT / RnD END -->
 
+        <!-- CONTACT START -->
+        <!-- <waypoint name="contact"></waypoint> -->
         <SectionTicker text="CONTACT" class="space-section-6x" />
+        <HomeContact class="space-section-6x" />
+        <!-- CONTACT END -->
 
-        <h><v class="wmax"><h1 class="center slick">&nbsp;</h1></v></h>
-        <h><v class="wmax"><h1 class="center slick">&nbsp;</h1></v></h>
+        <h><v class="wmax"><h2 class="center slick">&nbsp;</h2></v></h>
+        <h><v class="wmax"><h2 class="center slick">&nbsp;</h2></v></h>
+    </main>
 
-        <!-- <script>
-    // import FontFaceObserver from "fontfaceobserver";
-    // import { waitForPromise } from "#/utils/promise";
-
-    // const font = new FontFaceObserver("Overused Grotesk");
-    // const fontResult = await waitForPromise(font.load());
-</script> -->
-    </main></Document
->
+    <Footer />
+</Document>

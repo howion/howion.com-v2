@@ -13,7 +13,13 @@
   * zero: slashed zero
 **********************************/
 h1,
-h1+sup {
+h1+sup,
+h2,
+h2+sup,
+.h1,
+.h1+sup,
+.h2,
+.h2+sup {
     font-feature-settings:
         "kern" on,
         "liga" on,
@@ -21,9 +27,10 @@ h1+sup {
         "ss05" on,
         "ss06" on,
         "ss09" on,
-        "ss11" on !important;
+        "ss11" on;
 }
 
+span,
 p,
 a,
 canvas {
@@ -33,7 +40,7 @@ canvas {
         "ss04" on,
         "ss05" on,
         "ss06" on,
-        "ss09" on !important;
+        "ss09" on;
 }
 
 /* .text-tabular {
@@ -91,7 +98,10 @@ canvas {
     }
 }
 
-h1 {
+h1,
+.h1,
+h2,
+.h2 {
     position: relative;
     display: inline-block;
     font-size: 150px;
@@ -106,23 +116,34 @@ h1 {
     }
 }
 
+a,
 p,
-.p {
+.p,
+span {
+    text-decoration: none;
     display: inline-block;
     position: relative;
     font-size: 18px;
     line-height: 1.5;
     text-transform: uppercase;
     font-variation-settings: 'wght' 500;
-    /* font-weight: 500; */
     letter-spacing: 0.05em;
+
+    &.nbsp {
+        height: calc(18px * 1.5);
+
+        &.text-slick {
+            height: 18px !important;
+        }
+    }
 }
 
-dim {
-    color: rgba($color-text, 0.5);
+dim,
+.dim {
+    opacity: 0.5;
 }
 
-.h1-slick-wrapper {
+.h2-slick-wrapper {
     position: relative;
     display: inline-block;
 
@@ -141,5 +162,18 @@ dim {
             left: 0;
             transform: translate(-100%, -100%);
         }
+    }
+}
+
+.text-stack {
+
+    &,
+    &-slick {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-slick {
+        row-gap: 16px;
     }
 }

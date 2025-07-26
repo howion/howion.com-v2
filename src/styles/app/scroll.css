@@ -1,8 +1,8 @@
 html {
     scroll-behavior: smooth;
-    scrollbar-gutter: stable both-edges;
+    /* scrollbar-gutter: stable; */
     overscroll-behavior: contain;
-    /* scrollbar-width: thin; */
+    /* scrollbar-width: thin; my on chrome */
     scrollbar-color: $color-text transparent;
 }
 
