@@ -17,7 +17,6 @@ See Ultimate Astro Boiler -->
 * Waypoints
 * Better fancy cursor animation for links
 * Make links work
-* Update texts
 * Design and code splash component. Maybe use the previous one?
 * Responsive (only works in 1920px atm.)
 * Add Easters

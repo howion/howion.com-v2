@@ -1,4 +1,6 @@
 ---
+import { HomeData } from "#/constants/home-data";
+import { APP } from "##/.boilerrc";
 import DetailTable from "./detail-table.astro";
 
 interface Props {
@@ -18,16 +20,25 @@ const { class: classname } = Astro.props;
     </h>
     <h class="footer-body">
         <v class="w5">
-            <DetailTable
-                class="space-section-2x"
-                title="Website"
-                titleW={1}
-                contentW={2}
-                slick={true}
-            >
+            <DetailTable title="Website" titleW={1} contentW={2} slick={true}>
                 <div class="text-stack-slick">
-                    <p class="text-slick">* Source Code</p>
-                    <p class="text-slick">* Sitemap.xml</p>
+                    <a
+                        class="text-slick"
+                        href="https://github.com/howion/howion.com-v2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Source Code"
+                    >
+                        * Source Code
+                    </a>
+                    <a
+                        class="text-slick"
+                        href={`${APP.site}sitemap-index.xml`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        * Sitemap.xml
+                    </a>
                     <p class="text-slick"></p>
                     <p class="text-slick"><dim>* Konami Cheat Code</dim></p>
                 </div>
@@ -35,18 +46,16 @@ const { class: classname } = Astro.props;
         </v>
         <v class="w1"></v>
         <v class="w6">
-            <DetailTable
-                class="space-section-2x"
-                title="Contact"
-                titleW={1}
-                contentW={3}
-                slick={true}
-            >
+            <DetailTable title="Contact" titleW={1} contentW={3} slick={true}>
                 <div class="text-stack-slick">
-                    <p class="text-slick">* mert.coskun (a) metu.edu.tr</p>
-                    <p class="text-slick">* howionwastaken (a) gmail.com</p>
+                    <p class="text-slick">{HomeData.contactMails[0]}</p>
+                    <p class="text-slick">{HomeData.contactPhone}</p>
                     <p class="text-slick"></p>
-                    <p class="text-slick">* +90 534 634 0134</p>
+                    <p class="text-slick">
+                        {
+                            HomeData.contactAvailableForHire ? "" : "NOT "
+                        }AVAILABLE FOR HIRE
+                    </p>
                 </div>
             </DetailTable>
         </v>

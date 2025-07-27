@@ -6,6 +6,7 @@ import HomeHome from "#/components/home/home-home.astro";
 import HomeRnD from "#/components/home/home-rnd.astro";
 import HomeContact from "#/components/home/home-contact.astro";
 import Footer from "#/components/footer.astro";
+import { HomeData } from "#/constants/home-data";
 ---
 
 <Document>
@@ -27,14 +28,33 @@ import Footer from "#/components/footer.astro";
         <!-- ABOUT END -->
 
         <!-- ABOUT / RnD START -->
-        <HomeRnD class="space-section-6x" title="Research" sup="++" />
+        <HomeRnD
+            class="space-section-6x"
+            title="Research"
+            sup="++"
+            entries={{
+                Current: HomeData.researchCurrent,
+                Prior: HomeData.researchPrior,
+            }}
+        >
+            My research follows questions that resist containment. From the
+            formal to the fragile, I seek structures that reveal more than they
+            resolve: diagrams that flicker, axioms that almost hold, and
+            languages that carry more than just logic.
+        </HomeRnD>
         <HomeRnD
             class="space-section-6x"
             title="Development"
             titleExtra={true}
             sup="&&"
             isRhs={true}
-        />
+            entries={HomeData.developmentEntries}
+        >
+            I build with intent and restraint: tools, interfaces, and languages
+            shaped by clarity and structure. Development, for me, is not just
+            implementation but articulation: a way to make abstract ideas move,
+            respond, and sometimes, resonate.
+        </HomeRnD>
         <!-- ABOUT / RnD END -->
 
         <!-- CONTACT START -->

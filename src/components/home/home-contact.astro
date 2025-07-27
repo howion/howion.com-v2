@@ -1,4 +1,5 @@
 ---
+import { HomeData } from "#/constants/home-data";
 import DetailTable from "../detail-table.astro";
 
 interface Props {
@@ -22,10 +23,13 @@ const { class: classname } = Astro.props;
         slick={true}
     >
         <div class="text-stack-slick">
-            <p class="text-slick">* mert.coskun (a) metu.edu.tr</p>
-            <p class="text-slick">* howionwastaken (a) gmail.com</p>
+            {
+                HomeData.contactMails.map((mail) => (
+                    <p class="text-slick">* {mail}</p>
+                ))
+            }
             <p class="text-slick"></p>
-            <p class="text-slick">* +90 534 634 0134</p>
+            <p class="text-slick">* {HomeData.contactPhone}</p>
         </div>
     </DetailTable>
     <DetailTable
@@ -36,11 +40,11 @@ const { class: classname } = Astro.props;
         slick={true}
     >
         <div class="text-stack-slick">
-            <p class="text-slick">* Collaboration</p>
-            <p class="text-slick">* Research</p>
-            <p class="text-slick">* Counselling</p>
-            <p class="text-slick"></p>
-            <p class="text-slick">* JUST CHAT \ EN \ TR</p>
+            {
+                HomeData.contactAvailableFor.map((item) => (
+                    <p class="text-slick">{item ? `* ${item}` : ""}</p>
+                ))
+            }
         </div>
     </DetailTable>
     <DetailTable
@@ -51,13 +55,17 @@ const { class: classname } = Astro.props;
         slick={true}
     >
         <div class="text-stack-slick">
-            <a class="text-slick" href="#">* GITHUB</a>
-            <a class="text-slick" href="#">* LINKEDIN</a>
-            <a class="text-slick" href="#">* BEHANCE</a>
-            <a class="text-slick" href="#">* DRIBBBLE</a>
-            <a class="text-slick" href="#">* X</a>
-            <a class="text-slick" href="#">* STACKEXCHANGE</a>
-            <a class="text-slick" href="#">* ORCID</a>
+            {
+                Object.entries(HomeData.contactSocials).map(([site, link]) => (
+                    <a
+                        class="text-slick"
+                        href={link}
+                        target={link !== "#" ? "_blank" : undefined}
+                    >
+                        * {site}
+                    </a>
+                ))
+            }
         </div>
     </DetailTable>
 </section>

@@ -7,9 +7,18 @@ export interface Props {
     title: string;
     titleExtra?: boolean;
     sup?: string;
+
+    entries: Record<string, readonly string[]>;
 }
 
-const { class: classname, isRhs, title, titleExtra, sup } = Astro.props;
+const {
+    class: classname,
+    isRhs,
+    title,
+    titleExtra,
+    sup,
+    entries,
+} = Astro.props;
 ---
 
 <section class:list={[classname]}>
@@ -35,32 +44,28 @@ const { class: classname, isRhs, title, titleExtra, sup } = Astro.props;
         <v class="w1"></v>
         <v class="w3">
             <p class="space-table-top text-just">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate.
+                <slot />
             </p>
         </v>
         <v class="w1"></v>
         <v class="w7">
-            <DetailTable title="Current" titleW={2} contentW={3}>
-                <p>
-                    Computation Theory<br />Complexity Theory<br /><br
-                    />Cryptography<br />Lattice-based Cryptography
-                </p>
-            </DetailTable>
-            <DetailTable
-                class="space-section-2x"
-                title="Prior"
-                titleW={2}
-                contentW={3}
-            >
-                <p>
-                    COMPUTATION THEORY<br />COMPLEXITY THEORY<br /><br
-                    />CRYPTOGRAPHY<br />LATTICE-BASED CRYPTOGRAPHY
-                </p>
-            </DetailTable>
+            {
+                Object.entries(entries).map(([name, items], i) => (
+                    <DetailTable
+                        class:list={[i !== 0 ? "space-section-2x" : undefined]}
+                        title={name}
+                        titleW={2}
+                        contentW={3}
+                        slick={true}
+                    >
+                        <div class="text-stack-slick">
+                            {items.map((item) => (
+                                <p class="text-slick">{item}</p>
+                            ))}
+                        </div>
+                    </DetailTable>
+                ))
+            }
         </v>
     </h>
 </section>

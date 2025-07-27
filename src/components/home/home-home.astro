@@ -1,5 +1,6 @@
 ---
 import Emblem from "##/public/emblem.svg";
+import { HomeData } from "#/constants/home-data";
 ---
 
 <section class="home-section">
@@ -45,10 +46,14 @@ import Emblem from "##/public/emblem.svg";
             <div class="home-menu">
                 <dim class="p text-slick">CONTACT</dim>
                 <div class="text-stack-slick">
-                    <p class="text-slick">MERT.COSKUN (a) METU.EDU.TR</p>
-                    <p class="text-slick">+90 534 634 0134</p>
+                    <p class="text-slick">{HomeData.contactMails[0]}</p>
+                    <p class="text-slick">{HomeData.contactPhone}</p>
                     <p class="text-slick"></p>
-                    <p class="text-slick">NOT AVAILABLE FOR HIRE</p>
+                    <p class="text-slick">
+                        {
+                            HomeData.contactAvailableForHire ? "" : "NOT "
+                        }AVAILABLE FOR HIRE
+                    </p>
                 </div>
             </div>
         </v>

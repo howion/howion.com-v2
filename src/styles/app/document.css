@@ -16,5 +16,5 @@ body {
     /* outline: none; */
     background-color: $color-text;
     color: $color-body;
-    outline: 4px solid $color-text;
+    outline: 4px solid $color-text !important;
 }
