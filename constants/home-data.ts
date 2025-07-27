@@ -20,7 +20,7 @@ export const HomeData = {
 
     // CONTACT
     contactAvailableForHire: false,
-    contactAvailableFor: ['Collaboration', 'Research', 'Counselling', '', 'Just Chat \\EN \\TR'],
+    contactAvailableFor: ['Collaboration', 'Research', 'Counselling', '', 'Just Chat \\ EN \\ TR'],
     contactMails: ['mert.coskun (a) metu.edu.tr', 'howionwastaken (a) gmail.com'],
     contactPhone: '+90 534 634 0134',
     contactSocials: {

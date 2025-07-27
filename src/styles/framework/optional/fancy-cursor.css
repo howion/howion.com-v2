@@ -2,8 +2,10 @@
 /* CONFIGURATION */
 /* note that you also need to update the values
    in src/components/fancy-cursor.astro */
-$fancy-cursor-size-pointer: 16px; /* must be divisible by 4 */
-$fancy-cursor-size-shape1: 120px; /* must be divisible by 4 */
+$fancy-cursor-size-pointer: 16px;
+/* must be divisible by 4 */
+$fancy-cursor-size-shape1: 120px;
+/* must be divisible by 4 */
 
 $fancy-cursor-container-opacity-transition: 250ms;
 /*****************************************************************************/
@@ -29,7 +31,8 @@ fancy-cursor {
         mix-blend-mode: difference;
     }
 
-    &-point, &-shape {
+    &-point,
+    &-shape {
         display: block;
         position: fixed;
         top: 0;
@@ -66,11 +69,15 @@ fancy-cursor {
         }
     }
 
+    &-container.cursor-mini>&-shape.v1 {
+        opacity: 0 !important;
+    }
+
     &-container.cursor-hidden {
         opacity: 0;
     }
 
-    &-container.cursor-text > &-point {
+    &-container.cursor-text>&-point {
         width: calc($fancy-cursor-size-pointer / 4);
         height: calc($fancy-cursor-size-pointer * 2);
     }
@@ -79,13 +86,13 @@ fancy-cursor {
         opacity: 0;
     } */
 
-    &-container.cursor-pointer > &-shape.v1 {
+    &-container.cursor-pointer>&-shape.v1 {
         border-radius: 0;
         background-color: transparent;
         border: 4px solid $color-text;
     }
 
-    &-container.cursor-pointer > &-point {
+    &-container.cursor-pointer>&-point {
         opacity: 0;
         /* width: $fancy-cursor-size-pointer;
         height: $fancy-cursor-size-pointer; */

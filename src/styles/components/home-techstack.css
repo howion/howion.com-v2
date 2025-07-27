@@ -1,0 +1,28 @@
+$home-techstack-border-color: #303030;
+
+.home-techstack {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    &-title {
+        padding: 10px 0;
+
+    }
+
+    &-entry {
+        margin-top: 24px;
+
+        &:first-of-type {
+            margin-top: calc(18px + 48px * 2.5) !important;
+        }
+    }
+
+    &-item {
+        position: relative;
+        display: inline-block;
+        padding: 10px 12px;
+        background-color: $color-body-darker;
+    }
+}

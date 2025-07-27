@@ -1,5 +1,5 @@
 .footer {
-    background-color: #000;
+    background-color: $color-body-darker;
     padding-top: 72px;
     padding-bottom: 36px;
 

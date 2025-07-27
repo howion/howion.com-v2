@@ -2,6 +2,8 @@
 import DetailTable from "../detail-table.astro";
 
 export interface Props {
+    id?: string;
+
     class?: Classname;
     isRhs?: boolean;
     title: string;
@@ -12,6 +14,7 @@ export interface Props {
 }
 
 const {
+    id,
     class: classname,
     isRhs,
     title,
@@ -21,7 +24,7 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={[classname]}>
+<section class:list={[classname]} id={id}>
     <w class:list={[isRhs ? "reverse" : ""]}>
         <div class="h2-slick-wrapper">
             <h2 class={`text-slick${titleExtra ? "-extra" : ""}`}>{title}</h2>

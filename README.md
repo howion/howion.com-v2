@@ -13,13 +13,13 @@ See Ultimate Astro Boiler -->
 ### Active
 
 * Fix ticker
-* Featured Work Section
-* Waypoints
 * Better fancy cursor animation for links
-* Make links work
+* Featured Work Section
 * Design and code splash component. Maybe use the previous one?
 * Responsive (only works in 1920px atm.)
 * Add Easters
+* 404 and other error pages
+* ~~Waypoints~~
 
 ### Later
 

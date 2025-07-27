@@ -1,3 +1,7 @@
+:root {
+    --space-section-unit: 48px;
+}
+
 .space-table-top {
     margin-top: 14px;
 
@@ -7,7 +11,7 @@
 }
 
 .space-section {
-    $unit: 48px;
+    $unit: var(--space-section-unit);
 
     &-x {
         margin-top: $unit;
@@ -21,12 +25,20 @@
         margin-top: calc($unit * 3);
     }
 
+    &-4x {
+        margin-top: calc($unit * 4);
+    }
+
     &-5x {
         margin-top: calc($unit * 5);
     }
 
     &-6x {
         margin-top: calc($unit * 6);
+    }
+
+    &-7x {
+        margin-top: calc($unit * 7);
     }
 }
 

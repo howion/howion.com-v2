@@ -1,4 +1,5 @@
 // @ts-check
+import type { RedirectConfig } from 'astro'
 import { defineConfig } from 'astro/config'
 
 // official addons
@@ -12,9 +13,21 @@ import compress, { Default } from '@playform/compress'
 import betterImageService from 'astro-better-image-service'
 import critters from 'astro-critters'
 
+// dynamic conf
 import { APP } from './.boilerrc.ts'
+import { HomeData } from './constants/home-data.ts'
 
 const willAnalyze = process.env.ANALYZE === 'true'
+
+// SOCIAL REDIRECTS START
+const socialRedirects: Record<string, RedirectConfig> = {}
+for (const [site, url] of Object.entries(HomeData.contactSocials)) {
+    socialRedirects[site.toLowerCase()] = {
+        status: 301,
+        destination: url
+    }
+}
+// SOCIAL REDIRECTS END
 
 export default defineConfig({
     output: APP.ssr.enabled ? 'server' : 'static', // static | server
@@ -40,11 +53,7 @@ export default defineConfig({
             sourcemap: true
         }
     },
-    markdown: {
-        shikiConfig: {
-            theme: 'monokai'
-        }
-    },
+    redirects: socialRedirects,
     integrations: [
         // preact({ compat: true }),
         betterImageService(),

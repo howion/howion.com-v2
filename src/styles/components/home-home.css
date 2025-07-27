@@ -1,6 +1,6 @@
 .home {
     &-section {
-        padding-top: calc(32px + 72px);
+        padding-top: 72px;
     }
 
     &-hero {

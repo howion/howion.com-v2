@@ -6,28 +6,27 @@ import HomeHome from "#/components/home/home-home.astro";
 import HomeRnD from "#/components/home/home-rnd.astro";
 import HomeContact from "#/components/home/home-contact.astro";
 import Footer from "#/components/footer.astro";
-import { HomeData } from "#/constants/home-data";
+import { HomeData } from "##/constants/home-data";
+import HomeTechStack from "#/components/home/home-tech-stack.astro";
 ---
 
 <Document>
     <solidbox-layout></solidbox-layout>
 
-    <header>
+    <!-- <header>
         <WaypointHeader />
-    </header>
+    </header> -->
 
     <main>
         <!-- HOME START -->
-        <!-- <waypoint name="home"></waypoint> -->
         <HomeHome />
         <!-- HOME END -->
 
         <!-- ABOUT START -->
-        <!-- <waypoint name="about" ></waypoint> -->
         <SectionTicker text="ABOUT ME" class="space-section-2x" />
         <!-- ABOUT END -->
 
-        <!-- ABOUT / RnD START -->
+        <!-- ABOUT / Research START -->
         <HomeRnD
             class="space-section-6x"
             title="Research"
@@ -42,8 +41,11 @@ import { HomeData } from "#/constants/home-data";
             resolve: diagrams that flicker, axioms that almost hold, and
             languages that carry more than just logic.
         </HomeRnD>
+        <!-- ABOUT / Research END -->
+
+        <!-- ABOUT / Development START -->
         <HomeRnD
-            class="space-section-6x"
+            class="space-section-7x"
             title="Development"
             titleExtra={true}
             sup="&&"
@@ -55,7 +57,11 @@ import { HomeData } from "#/constants/home-data";
             implementation but articulation: a way to make abstract ideas move,
             respond, and sometimes, resonate.
         </HomeRnD>
-        <!-- ABOUT / RnD END -->
+        <!-- ABOUT / Development END -->
+
+        <!-- ABOUT / TECH STACK START -->
+        <HomeTechStack class="space-section-7x" id="tech-stack" data-d="dd" />
+        <!-- ABOUT / TECH STACK END -->
 
         <!-- CONTACT START -->
         <!-- <waypoint name="contact"></waypoint> -->

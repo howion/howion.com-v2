@@ -16,8 +16,8 @@ export const APP = {
     // When enabled, astro will switch to server mode. I haven't tested it yet
     // as I didn't find any use case for it.
     ssr: {
-        enabled: false
-        // adapter: 'vercel'
+        enabled: false,
+        adapter: 'vercel'
     }
 } as const
 

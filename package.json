@@ -12,8 +12,8 @@
     "dependencies": {
         "@astrojs/preact": "^4.1.0",
         "@astrojs/sitemap": "^3.4.1",
-        "@astrojs/vercel": "^8.2.2",
-        "astro": "^5.11.2",
+        "@astrojs/vercel": "8.2.3",
+        "astro": "5.12.3",
         "astro-better-image-service": "^2.1.8",
         "astro-robots-txt": "^1.0.0",
         "astro-seo": "^0.8.4",

@@ -1,5 +1,6 @@
-@import "./home/_index.css";
 @import "./footer.css";
+@import "./home-home.css";
+@import "./home-techstack.css";
 @import "./hr.css";
 @import "./indent.css";
 @import "./section-ticker.css";

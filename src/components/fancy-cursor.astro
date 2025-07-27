@@ -12,7 +12,13 @@
     import { isMobile } from "#/utils/client";
     import { distance, LERP } from "#/utils/math";
 
-    type CursorState = "default" | "pointer" | "hidden" | "text" | "lock";
+    type CursorState =
+        | "default"
+        | "pointer"
+        | "hidden"
+        | "text"
+        | "lock"
+        | "mini";
 
     const SIZE_POINT = 16; // px
     const SIZE_SHAPE1 = 120; // px
