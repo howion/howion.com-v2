@@ -1,6 +1,8 @@
 # :construction: howion.com-v2
 
-Personal website, updated. Still under construction, until then v1 will be served on [**howion.com**](https://howion.com/).
+Personal website, updated. Still under construction.
+
+Visit [**howion.com**](https://www.howion.com/).
 
 <!-- ## Tech Stack
 
