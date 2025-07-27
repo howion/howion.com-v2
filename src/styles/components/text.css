@@ -177,3 +177,9 @@ dim,
         row-gap: 16px;
     }
 }
+
+a:hover {
+    background-color: $color-text;
+    color: $color-body;
+    outline: 4px solid $color-text !important;
+}

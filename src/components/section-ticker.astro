@@ -37,10 +37,6 @@ const seperator = "    •    ";
     let lastTimestamp = performance.now();
 
     function renderBuffer() {
-        ctx.font = "500 18px sans-serif";
-        ctx.fillStyle = "#FFFFE3";
-        ctx.textBaseline = "middle";
-
         const repeatedText = (text + separator).repeat(100);
         textWidth = ctx.measureText(repeatedText).width;
 
@@ -49,9 +45,9 @@ const seperator = "    •    ";
         bufferCanvas.height = canvas.height;
 
         bufferCtx = bufferCanvas.getContext("2d");
-        bufferCtx.font = ctx.font;
-        bufferCtx.fillStyle = ctx.fillStyle;
-        bufferCtx.textBaseline = ctx.textBaseline;
+        bufferCtx.font = "500 18px sans-serif";
+        bufferCtx.fillStyle = "#FFFFE3";
+        bufferCtx.textBaseline = "middle";
         bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
         bufferCtx.fillText(repeatedText, 0, bufferCanvas.height / 2);
     }
@@ -68,34 +64,41 @@ const seperator = "    •    ";
 
     resizeCanvas();
 
-    // Scroll speed tracking
-    function updateScrollVelocity() {
-        const now = performance.now();
-        const deltaY = window.scrollY - lastScrollY;
-        const dt = now - lastTimestamp;
+    // // Scroll speed tracking
+    // function updateScrollVelocity() {
+    //     const now = performance.now();
+    //     const deltaY = window.scrollY - lastScrollY;
+    //     const dt = now - lastTimestamp;
 
-        if (dt > 0) {
-            const velocity = deltaY / dt; // px/ms
-            scrollVelocity = Math.abs(velocity) * 100; // scale up
-        }
+    //     if (dt > 0) {
+    //         const velocity = deltaY / dt; // px/ms
+    //         scrollVelocity = Math.round(velocity * 10); // scale up
+    //     }
 
-        lastScrollY = window.scrollY;
-        lastTimestamp = now;
-    }
+    //     lastScrollY = window.scrollY;
+    //     lastTimestamp = now;
+    // }
 
-    window.addEventListener("scroll", updateScrollVelocity);
+    // window.addEventListener("scroll", updateScrollVelocity);
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(bufferCanvas, -offset, 0);
-        offset += speed + scrollVelocity;
-        if (offset >= textWidth) {
-            offset = 0;
+
+        // offset += scrollVelocity !== 0 ? scrollVelocity : speed;
+        offset += speed;
+
+        if (offset >= textWidth - canvas.width) {
+            offset = textWidth / 2;
         }
         requestAnimationFrame(draw);
 
-        // Apply exponential decay to scroll effect
-        scrollVelocity *= 0.9;
+        // // Apply exponential decay to scroll effect
+        // scrollVelocity = scrollVelocity * 0.925;
+
+        // if (Math.abs(scrollVelocity) < 0.1) {
+        //     scrollVelocity = 0;
+        // }
     }
 
     draw();

@@ -12,7 +12,6 @@ See Ultimate Astro Boiler -->
 
 ### Active
 
-* Fix ticker
 * Better fancy cursor animation for links
 * Featured Work Section
 * Design and code splash component. Maybe use the previous one?

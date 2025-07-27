@@ -5,11 +5,13 @@ export const HomeData = {
         'Interaction Nets',
         'Complexity Theory',
         'Lattice Theory',
+        '',
         'Prediction Markets',
         'Probability Theory',
+        '',
         'Marxist Theory'
     ],
-    researchPrior: ['Kleene Algebra', 'Graph Theory', 'Number Theory'],
+    researchPrior: ['Kleene Algebra', 'Graph Theory', 'Number Theory', '', 'Philosophy of Science'],
 
     // DEVELOPMENT
     developmentEntries: {
