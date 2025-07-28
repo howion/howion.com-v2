@@ -18,7 +18,7 @@ const { class: classname } = Astro.props;
             ><span class="footer-head-title text-slick">HOWION</span></v
         >
     </h>
-    <h class="footer-body">
+    <h class="footer-body" data-parallax-style="translateY(calc($*0.05))">
         <v class="w5">
             <DetailTable title="Website" titleW={1} contentW={2} slick={true}>
                 <div class="text-stack-slick">
@@ -60,7 +60,10 @@ const { class: classname } = Astro.props;
             </DetailTable>
         </v>
     </h>
-    <h class="footer-foot space-section-5x">
+    <h
+        class="footer-foot space-section-6x"
+        data-parallax-style="translateY(calc($*0.2))"
+    >
         <v class="w5">
             <span class="text-slick-extra">OMER MERT COSKUN © 2025</span>
         </v>

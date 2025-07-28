@@ -11,7 +11,10 @@ const { class: classname } = Astro.props;
 
 <section class:list={[classname]}>
     <w>
-        <div class="h2-slick-wrapper">
+        <div
+            class="h2-slick-wrapper"
+            data-parallax-style="translateY(calc($*0.2))"
+        >
             <h2 class="text-slick">Let's Connect</h2>
         </div>
     </w>

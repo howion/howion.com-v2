@@ -26,7 +26,10 @@ const {
 
 <section class:list={[classname]} id={id}>
     <w class:list={[isRhs ? "reverse" : ""]}>
-        <div class="h2-slick-wrapper">
+        <div
+            class="h2-slick-wrapper"
+            data-parallax-style="translateY(calc($*0.25))"
+        >
             <h2 class={`text-slick${titleExtra ? "-extra" : ""}`}>{title}</h2>
             {
                 sup && (
@@ -46,7 +49,10 @@ const {
     <h class:list={["space-section-2x", isRhs ? "reverse" : ""]}>
         <v class="w1"></v>
         <v class="w3">
-            <p class="space-table-top text-just">
+            <p
+                class="space-table-top text-just"
+                data-parallax-style="translateY(calc($*0.2))"
+            >
                 <slot />
             </p>
         </v>

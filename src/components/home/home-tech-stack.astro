@@ -84,7 +84,10 @@ const numberOfEntries = Object.values(entries).reduce(
 
 <section class:list={[classname]} id={id}>
     <w class="center">
-        <div class="h2-slick-wrapper">
+        <div
+            class="h2-slick-wrapper"
+            data-parallax-style="translateY(calc($*0.2))"
+        >
             <h2 class="text-slick">Tech Stack</h2>
             <sup class="text-slick-extra text-tabular">({numberOfEntries})</sup>
         </div>
