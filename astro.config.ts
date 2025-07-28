@@ -60,6 +60,13 @@ export default defineConfig({
         APP.enableCritters ? critters() : undefined,
         compress({
             ...Default,
+            HTML: {
+                ...Default.HTML,
+                'html-minifier-terser': {
+                    ...Default.HTML['html-minifier-terser'],
+                    collapseWhitespace: false
+                }
+            },
             CSS: false, // postcss cssnano is used instead
             Image: false,
             SVG: false
