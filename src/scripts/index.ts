@@ -23,7 +23,6 @@ function raf(time: number) {
     const scroll = lenis.actualScroll
 
     for (const el of parallaxElements) {
-        if (!el.checkVisibility()) continue
         const h = el.offsetHeight
         const style = el.getAttribute('data-parallax-style')!
         const offset = el.offsetTop
@@ -36,7 +35,7 @@ function raf(time: number) {
 
 requestAnimationFrame(raf)
 
-if (APP.quickDevelopmentMode) {
+if (!APP.quickDevelopmentMode) {
     // scroll to hero onload
     lenis.scrollTo('#section-home', {})
 }
