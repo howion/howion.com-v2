@@ -4,7 +4,7 @@ import { HomeData } from "##/constants/home-data";
 ---
 
 <section class="home-section" id="section-home">
-    <h>
+    <h class="home-menu-container">
         <v class="w1">
             <img
                 class="home-hero-emblem"
@@ -17,65 +17,71 @@ import { HomeData } from "##/constants/home-data";
                 alt="howion.com emblem"
             />
         </v>
-        <v class="wauto"></v>
-        <v class="w1">
-            <div class="home-menu">
-                <dim class="p text-slick">NAVIGATION</dim>
-                <div class="text-stack-slick">
-                    <a class="text-slick" href="#">BLOG</a>
-                    <a class="text-slick" href="#">RESOURCES</a>
-                    <a class="text-slick" href="#">SOURCE</a>
+        <v class="wauto wmin1"></v>
+        <v class="w6 horizontal home-menu-wrapper">
+            <v class="w1">
+                <div class="home-menu">
+                    <dim class="p text-slick">NAVIGATION</dim>
+                    <div class="text-stack-slick">
+                        <a class="text-slick" href="#">BLOG</a>
+                        <a class="text-slick" href="#">RESOURCES</a>
+                        <a class="text-slick" href="#">SOURCE</a>
+                    </div>
                 </div>
-            </div>
-        </v>
-        <v class="w1"></v>
-        <v class="w1">
-            <div class="home-menu">
-                <dim class="p text-slick">LOCATION</dim>
-                <div class="text-stack-slick">
-                    <p class="text-slick">METU</p>
-                    <p class="text-slick">06800 ANKARA</p>
-                    <p class="text-slick">TURKIYE</p>
-                    <p class="text-slick"></p>
-                    <p class="text-slick">UTC +3</p>
+            </v>
+            <v class="w1"></v>
+            <v class="w1">
+                <div class="home-menu">
+                    <dim class="p text-slick">LOCATION</dim>
+                    <div class="text-stack-slick">
+                        <p class="text-slick">METU</p>
+                        <p class="text-slick">06800 ANKARA</p>
+                        <p class="text-slick">TURKIYE</p>
+                        <p class="text-slick"></p>
+                        <p class="text-slick">UTC +3</p>
+                    </div>
                 </div>
-            </div>
-        </v>
-        <v class="w1"></v>
-        <v class="w2">
-            <div class="home-menu">
-                <dim class="p text-slick">CONTACT</dim>
-                <div class="text-stack-slick">
-                    <p class="text-slick">{HomeData.contactMails[0]}</p>
-                    <p class="text-slick">{HomeData.contactPhone}</p>
-                    <p class="text-slick"></p>
-                    <p class="text-slick">
-                        {
-                            HomeData.contactAvailableForHire ? "" : "NOT "
-                        }AVAILABLE FOR HIRE
-                    </p>
+            </v>
+            <v class="w1"></v>
+            <v class="w2">
+                <div class="home-menu">
+                    <dim class="p text-slick">CONTACT</dim>
+                    <div class="text-stack-slick">
+                        <p class="text-slick">{HomeData.contactMails[0]}</p>
+                        <p class="text-slick">{HomeData.contactPhone}</p>
+                        <p class="text-slick"></p>
+                        <p class="text-slick">
+                            {
+                                HomeData.contactAvailableForHire ? "" : "NOT "
+                            }AVAILABLE FOR HIRE
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </v>
         </v>
     </h>
     <h>
-        <v class="wmax home-hero-title" data-parallax-speed="0.5">
-            <h1 class="slick uppercase text-slick">
+        <v
+            class="wmax home-hero-title"
+            data-parallax-style="translateY(calc($*0.25))"
+        >
+            <!-- <h1 class="slick uppercase text-slick">
                 MAPPING{""}<dim>\\</dim>{""}THE
             </h1>
             <h1 class="slick uppercase text-slick">
-                <div class="indent">
-                    <i class="indent-dot"></i>
-                    <i class="indent-dot"></i>
-                    <i class="indent-dot"></i>
-                    <i class="indent-dot"></i>
-                </div>{"INTELLIGIBLE"}<dim>\\</dim>{"TO THE"}
+                <dim>••••</dim>INTELLIGIBLE<dim>\\</dim>TO THE
             </h1>
-            <h1 class="slick uppercase text-slick">SENSIBLE</h1>
+            <h1 class="slick uppercase text-slick">SENSIBLE</h1> -->
+            <h1 class="text-slick text-wrap">
+                MAPPING<dim class="text-nowrap">&nbsp;\\&nbsp;</dim>THE
+                <dim>••••&nbsp;</dim>INTELLIGIBLE<dim class="text-nowrap"
+                    >&nbsp;\\&nbsp;</dim
+                >TO THE SENSIBLE
+            </h1>
         </v>
     </h>
     <h>
-        <v class="w8"></v>
+        <v class="wauto"></v>
         <v class="w3 space-section-4x">
             <p class="text-just">
                 A Mathematician and Developer exploring boundaries between
@@ -85,5 +91,6 @@ import { HomeData } from "##/constants/home-data";
                 I build systems where logic finds shape and structure meets design.
             </p>
         </v>
+        <v class="w1"></v>
     </h>
 </section>

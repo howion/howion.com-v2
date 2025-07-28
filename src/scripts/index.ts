@@ -9,7 +9,7 @@ const lenis = new Lenis({
     anchors: true
 })
 
-const parallaxElements = document.querySelectorAll('[data-parallax-speed]') as NodeListOf<HTMLElement>
+const parallaxElements = document.querySelectorAll('[data-parallax-style]') as NodeListOf<HTMLElement>
 
 // main raf loop
 function raf(time: number) {
@@ -18,13 +18,12 @@ function raf(time: number) {
     // handle scroll events here
     const scroll = lenis.actualScroll
 
-    // for (const el of parallaxElements) {
-    //     const speed = parseFloat(el.getAttribute('data-parallax-speed')!)
-    //     if (Number.isNaN(speed)) continue
-    //     const offset = el.getBoundingClientRect().top
-    //     const translateY = (scroll - offset) * speed
-    //     el.style.transform = `translateY(${translateY}px)`
-    // }
+    for (const el of parallaxElements) {
+        const style = el.getAttribute('data-parallax-style')!
+        const offset = el.offsetTop
+        const d = scroll - offset
+        el.style.transform = style.replaceAll('$', `${d}px`)
+    }
 
     requestAnimationFrame(raf)
 }

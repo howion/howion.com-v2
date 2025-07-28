@@ -1,3 +1,7 @@
+html {
+    font-size: 100%;
+}
+
 body {
     font-family: "Overused Grotesk", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-display: swap;

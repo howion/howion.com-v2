@@ -48,10 +48,14 @@ canvas {
 } */
 
 .text {
+    &-wrap {
+        white-space: normal !important;
+    }
+
     &-slick {
         line-height: 1 !important;
         overflow: hidden !important;
-        white-space: nowrap !important;
+        white-space: nowrap;
         /* margin-left: -0.425rem; */
 
         &::before,
@@ -84,6 +88,10 @@ canvas {
                 margin-top: 0;
             }
         }
+    }
+
+    &-nowrap {
+        white-space: nowrap;
     }
 
     &-just {

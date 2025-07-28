@@ -2,9 +2,10 @@
 /* CONFIGURATION */
 /*****************************************************************************/
 :root {
-    --solidbox-unit: 150px;
-    /* 150px * 12 = 1800px */
+    /* DO NOT CHANGE THIS VALUE */
     --solidbox-count: 12;
+
+    --solidbox-unit: 150px;
     --solidbox-outer-px-cannonical: min(2.5vw, 48px);
 
     --solidbox-cannonical-width: calc(var(--solidbox-unit) * var(--solidbox-count));
@@ -96,8 +97,14 @@ v,
     display: flex;
     flex: 0 0 auto;
     width: var(--solidbox-unit);
+    max-width: 100%;
     font-size: 0;
     flex-direction: column;
+    flex-wrap: wrap;
+
+    &.horizontal {
+        flex-direction: row;
+    }
 
     &.wmax {
         width: var(--solidbox-width);
@@ -109,8 +116,8 @@ v,
         flex: 1;
     }
 
-    &.wp5 {
-        width: calc(var(--solidbox-unit) / 2);
+    &.wmin1 {
+        min-width: calc(var(--solidbox-unit) * 1);
     }
 
     /* steps */

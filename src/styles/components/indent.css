@@ -17,7 +17,7 @@ h1 div.indent {
 
     i.indent-dot {
         border-radius: 8px;
-        width: 16px;
-        height: 16px;
+        aspect-ratio: 1;
+        height: 10px;
     }
 }
