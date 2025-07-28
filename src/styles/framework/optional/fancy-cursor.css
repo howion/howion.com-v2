@@ -69,32 +69,37 @@ fancy-cursor {
         }
     }
 
+    /* MINI CURSOR */
+
     &-container.cursor-mini>&-shape.v1 {
         opacity: 0 !important;
     }
 
+    /* HIDDEN CURSOR */
+
     &-container.cursor-hidden {
         opacity: 0;
     }
+
+    /* TEXT CURSOR */
 
     &-container.cursor-text>&-point {
         width: calc($fancy-cursor-size-pointer / 4);
         height: calc($fancy-cursor-size-pointer * 2);
     }
 
-    /* &-container.cursor-text > &-shape.v1 {
+    &-container.cursor-text>&-shape.v1 {
         opacity: 0;
-    } */
+    }
 
-    &-container.cursor-pointer>&-shape.v1 {
+    /* POINTER CURSOR */
+    /* &-container.cursor-pointer>&-shape.v1 {
         border-radius: 0;
         background-color: transparent;
         border: 4px solid $color-text;
-    }
+    } */
 
     &-container.cursor-pointer>&-point {
         opacity: 0;
-        /* width: $fancy-cursor-size-pointer;
-        height: $fancy-cursor-size-pointer; */
     }
 }

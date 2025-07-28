@@ -1,17 +1,19 @@
+body {
+    overflow: hidden !important;
+}
+
 html {
-    scroll-behavior: smooth;
-    /* scrollbar-gutter: stable; */
-    overscroll-behavior: contain;
-    /* scrollbar-width: thin; my on chrome */
+    /* rest is handled by lenis */
     scrollbar-color: $color-text transparent;
+    scrollbar-width: none;
+
+    /*
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+    scrollbar-color: $color-text transparent;
+    */
 }
 
-/* ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+::-webkit-scrollbar {
+    display: none;
 }
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-} */

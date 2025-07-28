@@ -1,11 +1,11 @@
 div.indent {
     display: inline-flex;
     align-items: center;
-    vertical-align:middle;
+    vertical-align: middle;
 
     i.indent-dot {
         display: block;
-        background-color: rgba($color-text, 0.1);
+        background-color: rgba($color-text, 0.25);
     }
 }
 

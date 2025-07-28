@@ -51,7 +51,7 @@
                 "noEmptyInterface": "off"
             },
             "style": {
-                "noNonNullAssertion": "info"
+                "noNonNullAssertion": "off"
             }
         }
     },

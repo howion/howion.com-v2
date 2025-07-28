@@ -14,3 +14,6 @@
 /* GLOBAL CUSTOM CSS */
 @import "./app/_index.css";
 @import "./components/_index.css";
+
+/* ADD MODULES */
+@import 'node_modules/lenis/dist/lenis.css';

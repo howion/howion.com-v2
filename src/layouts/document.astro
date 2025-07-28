@@ -36,8 +36,10 @@ const document_title = (subtitle ? `${subtitle} |` : '') + title
             <post-effect class="noise"></post-effect>
             <FancyCursor />
         )}
-        <div id="app">
-            <slot />
+        <div id="app-wrapper">
+            <div id="app">
+                <slot />
+            </div>
         </div>
     </body>
 </html>

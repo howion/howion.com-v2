@@ -12,10 +12,9 @@ See Ultimate Astro Boiler -->
 
 ### Active
 
-* Better fancy cursor animation for links
+* Responsive (only works in 1920px atm.)
 * Featured Work Section
 * Design and code splash component. Maybe use the previous one?
-* Responsive (only works in 1920px atm.)
 * Add Easters
 * 404 and other error pages
 * ~~Waypoints~~
