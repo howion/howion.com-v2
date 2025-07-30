@@ -58,6 +58,7 @@ w,
     max-width: var(--solidbox-width);
     margin-left: auto;
     margin-right: auto;
+    flex-wrap: wrap;
 
     &.vertical {
         flex-direction: column;
@@ -106,28 +107,29 @@ v,
         flex-direction: row;
     }
 
-    &.wmax {
-        width: var(--solidbox-width);
-        /* width: 100%; */
-    }
-
     &.wauto {
         width: auto;
         flex: 1;
     }
 
-    &.wmin1 {
-        min-width: calc(var(--solidbox-unit) * 1);
+    &.wmax {
+        width: 100%;
     }
 
     /* steps */
     @for $i from 0 to 12 {
         &.w$(i) {
-            width: calc(var(--solidbox-unit) * $(
-                    i)
-            );
+            width: calc(var(--solidbox-unit) * $(i));
+        }
+
+        &.wmin$(i) {
+            min-width: calc(var(--solidbox-unit) * $(i));
+        }
+
+        &.wmax$(i) {
+            max-width: calc(var(--solidbox-unit) * $(i));
+        }
     }
-}
 }
 
 

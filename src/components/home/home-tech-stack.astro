@@ -83,11 +83,8 @@ const numberOfEntries = Object.values(entries).reduce(
 ---
 
 <section class:list={[classname]} id={id}>
-    <w class="center">
-        <div
-            class="h2-slick-wrapper"
-            data-parallax-style="translateY(calc($*0.2))"
-        >
+    <w class="center" data-parallax-speed="0.85" data-parallax-opacity-out="0">
+        <div class="h2-slick-wrapper">
             <h2 class="text-slick">Tech Stack</h2>
             <sup class="text-slick-extra text-tabular">({numberOfEntries})</sup>
         </div>
@@ -102,7 +99,7 @@ const numberOfEntries = Object.values(entries).reduce(
                             * {title}
                         </span>
                     </v>
-                    <v class="wauto home-techstack">
+                    <v class="wauto wmin3 home-techstack">
                         {items.map((item) => (
                             <div class="home-techstack-item">
                                 <span class="text-slick">{item}</span>

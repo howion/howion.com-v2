@@ -5,13 +5,24 @@
 
     &-body {
         margin-top: 96px;
+        row-gap: calc(var(--space-section-unit)*3);
     }
 
     &-head {
+        row-gap: 12px;
+
         &-title {
-            font-size: 96px;
+            /* font-size: 96px; */
+            font-size: max(min(4.48vw, 96px), 40.96px);
+            word-break: keep-all;
+            line-height: 1;
+
             font-variation-settings: 'wght' 600 !important;
             letter-spacing: 0 !important;
         }
+    }
+
+    &-foot {
+        row-gap: 12px;
     }
 }

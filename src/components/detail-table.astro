@@ -21,10 +21,11 @@ export interface Props {
 const { class: classname, title, titleW, contentW, slick } = Astro.props;
 ---
 
-<w class:list={["vertical", classname]}>
+<w class:list={["detail-table", "vertical", classname]}>
     <w><hr /></w>
     <w
         class:list={[
+            "detail-table-table",
             slick ? "space-table-top-slick" : "space-table-top",
             "just",
         ]}

@@ -1,6 +1,6 @@
 .home {
     &-section {
-        padding-top: 72px;
+        padding-top: max(var(--space-section-unit), 72px);
     }
 
     &-hero {
@@ -8,13 +8,9 @@
             display: flex;
             flex-direction: column;
             row-gap: 28px;
-            margin-top: 640px;
 
             h1,
             .h1 {
-                font-size: max(min(7vw, 150px), 64px);
-                word-break: keep-all !important;
-                line-height: 1 !important;
                 user-select: none !important;
             }
 

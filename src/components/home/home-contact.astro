@@ -11,17 +11,14 @@ const { class: classname } = Astro.props;
 
 <section class:list={[classname]}>
     <w>
-        <div
-            class="h2-slick-wrapper"
-            data-parallax-style="translateY(calc($*0.2))"
-        >
+        <div class="h2-slick-wrapper" data-parallax-speed="0.8">
             <h2 class="text-slick">Let's Connect</h2>
         </div>
     </w>
     <DetailTable
         class="space-section-5x"
         title="Contact"
-        titleW={1}
+        titleW={2}
         contentW={3}
         slick={true}
     >
@@ -38,7 +35,7 @@ const { class: classname } = Astro.props;
     <DetailTable
         class="space-section-3x"
         title="Available For"
-        titleW={1}
+        titleW={2}
         contentW={3}
         slick={true}
     >
@@ -53,7 +50,7 @@ const { class: classname } = Astro.props;
     <DetailTable
         class="space-section-3x"
         title="Socials"
-        titleW={1}
+        titleW={2}
         contentW={3}
         slick={true}
     >

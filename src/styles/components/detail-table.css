@@ -1,0 +1,5 @@
+.detail-table {
+    &-table {
+        row-gap: min(calc(var(--space-section-unit)), 48px);
+    }
+}

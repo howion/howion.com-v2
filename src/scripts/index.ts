@@ -13,21 +13,37 @@ const lenis = new Lenis({
     anchors: true
 })
 
-const parallaxElements = document.querySelectorAll('[data-parallax-style]') as NodeListOf<HTMLElement>
+const parallaxElements = document.querySelectorAll('[data-parallax-speed]') as NodeListOf<HTMLElement>
 
 // main raf loop
 function raf(time: number) {
     lenis.raf(time)
 
     // handle scroll events here
-    const scroll = lenis.actualScroll
+    // const vh = document.documentElement.clientHeight
+    // const scrollY = lenis.actualScroll
+    // const vw = document.documentElement.clientWidth
 
     for (const el of parallaxElements) {
-        const h = el.offsetHeight
-        const style = el.getAttribute('data-parallax-style')!
-        const offset = el.offsetTop
-        const d = scroll - offset + 2 * h
-        el.style.transform = style.replaceAll('$', `${d}px`)
+        // const viewportTop = el.offsetTop - lenis.actualScroll
+        const viewportRest = window.innerHeight - (el.offsetTop - lenis.actualScroll)
+        // if (viewportRest < 0) continue // skip elements that are not in view
+        if (viewportRest > window.innerHeight) continue // skip elements that are too far down
+
+        const speed = Number.parseFloat(el.getAttribute('data-parallax-speed')! || '1')
+
+        const offset = viewportRest * (1 - speed)
+        const offsetRatio = viewportRest / window.innerHeight
+
+        if (speed !== 1) {
+            el.style.transform = `translateY(${offset}px)`
+        }
+
+        const opacityOut = Number.parseFloat(el.getAttribute('data-parallax-opacity-out') || '1')
+        if (opacityOut < 1) {
+            const opacity = 1 + (opacityOut - 1) * offsetRatio
+            el.style.opacity = `${Math.max(0, Math.min(1, opacity))}`
+        }
     }
 
     requestAnimationFrame(raf)
@@ -44,9 +60,11 @@ let isMouseDown = false
 let clientY = 0
 let scrollValue = 0
 
-app.addEventListener('contextmenu', (e) => {
-    e.preventDefault()
-})
+if (!APP.quickDevelopmentMode) {
+    app.addEventListener('contextmenu', (e) => {
+        e.preventDefault()
+    })
+}
 
 app.addEventListener('mouseleave', () => {
     if (isMouseDown) {

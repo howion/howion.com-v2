@@ -11,15 +11,19 @@ const { class: classname } = Astro.props;
 ---
 
 <footer class="footer" class:list={[classname]}>
-    <h class="footer-head">
-        <v class="w5"><span class="footer-head-title text-slick">MERT</span></v>
+    <h class="footer-head" data-parallax-speed="0.95">
+        <v class="w5"
+            ><span class="footer-head-title text-slick"
+                >MERT<dim>&nbsp;\\</dim></span
+            ></v
+        >
         <v class="w1"></v>
         <v class="w6"
             ><span class="footer-head-title text-slick">HOWION</span></v
         >
     </h>
-    <h class="footer-body" data-parallax-style="translateY(calc($*0.05))">
-        <v class="w5">
+    <h class="footer-body" data-parallax-speed="0.85">
+        <v class="wmax5 wmax">
             <DetailTable title="Website" titleW={1} contentW={2} slick={true}>
                 <div class="text-stack-slick">
                     <a
@@ -44,8 +48,8 @@ const { class: classname } = Astro.props;
                 </div>
             </DetailTable>
         </v>
-        <v class="w1"></v>
-        <v class="w6">
+        <v class="wmax1 wauto"></v>
+        <v class="wmax6 wmax">
             <DetailTable title="Contact" titleW={1} contentW={3} slick={true}>
                 <div class="text-stack-slick">
                     <p class="text-slick">{HomeData.contactMails[0]}</p>
@@ -60,10 +64,7 @@ const { class: classname } = Astro.props;
             </DetailTable>
         </v>
     </h>
-    <h
-        class="footer-foot space-section-6x"
-        data-parallax-style="translateY(calc($*0.2))"
-    >
+    <h class="footer-foot space-section-6x">
         <v class="w5">
             <span class="text-slick-extra">OMER MERT COSKUN © 2025</span>
         </v>

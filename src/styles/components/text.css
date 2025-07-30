@@ -112,12 +112,16 @@ h2,
 .h2 {
     position: relative;
     display: inline-block;
-    font-size: 150px;
-    line-height: 1.5;
+    /* font-size: 150px; */
+    /* line-height: 1.5; */
     /* overflow: hidden; */
     margin: 0;
     padding: 0;
     font-variation-settings: 'wght' 400;
+
+    font-size: max(min(7vw, 150px), 64px);
+    word-break: keep-all;
+    line-height: 1;
 
     &.uppercase {
         text-transform: uppercase;
@@ -131,17 +135,18 @@ span {
     text-decoration: none;
     display: inline-block;
     position: relative;
-    font-size: 18px;
+    font-size: var(--dynamicvar-text-size);
+
     line-height: 1.5;
     text-transform: uppercase;
     font-variation-settings: 'wght' 500;
     letter-spacing: 0.05em;
 
     &.nbsp {
-        height: calc(18px * 1.5);
+        height: calc(var(--dynamicvar-text-size) * 1.5);
 
         &.text-slick {
-            height: 18px !important;
+            height: var(--dynamicvar-text-size) !important;
         }
     }
 }
@@ -162,7 +167,7 @@ dim,
         top: 0;
         right: 0;
         transform: translate(100%, -100%);
-        font-size: 75px;
+        font-size: calc(max(min(7vw, 150px), 64px)/2);
         background-color: transparent;
 
         &.lhs {
@@ -173,8 +178,11 @@ dim,
     }
 }
 
-.text-stack {
+.text-blend {
+    mix-blend-mode: difference;
+}
 
+.text-stack {
     &,
     &-slick {
         display: flex;
@@ -182,7 +190,7 @@ dim,
     }
 
     &-slick {
-        row-gap: 16px;
+        row-gap: var(--dynamicvar-text-size);
     }
 }
 
