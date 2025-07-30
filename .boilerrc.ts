@@ -11,14 +11,7 @@ export const APP = {
     quickDevelopmentMode: isDev && false,
 
     // enable critters for production builds
-    enableCritters: false,
-
-    // When enabled, astro will switch to server mode. I haven't tested it yet
-    // as I didn't find any use case for it.
-    ssr: {
-        enabled: false,
-        adapter: 'vercel'
-    }
+    enableCritters: false
 } as const
 
 export const SEO_DEFAULTS = {

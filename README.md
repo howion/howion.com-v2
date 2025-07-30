@@ -12,8 +12,9 @@ See Ultimate Astro Boiler -->
 
 ### Active
 
-* Responsive (only works in 1920px atm.)
 * Featured Work Section
+* Keywords Page?
+* Notes & Blog Page?
 * Design and code splash component. Maybe use the previous one?
 * Add Easters
 * 404 and other error pages

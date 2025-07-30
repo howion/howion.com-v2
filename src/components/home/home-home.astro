@@ -23,9 +23,20 @@ import { HomeData } from "##/constants/home-data";
                 <div class="home-menu">
                     <dim class="p text-slick">NAVIGATION</dim>
                     <div class="text-stack-slick">
-                        <a class="text-slick" href="#">BLOG</a>
-                        <a class="text-slick" href="#">RESOURCES</a>
-                        <a class="text-slick" href="#">SOURCE</a>
+                        <a
+                            class="text-slick"
+                            href="https://github.com/howion/notes"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Howion's Notes">NOTES</a
+                        >
+                        <a
+                            class="text-slick"
+                            href="https://github.com/howion"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Howion's Github">MY GITHUB</a
+                        >
                     </div>
                 </div>
             </v>
@@ -70,10 +81,10 @@ import { HomeData } from "##/constants/home-data";
             </h1>
             <h1 class="slick uppercase text-slick">SENSIBLE</h1> -->
             <h1 class="text-slick text-wrap">
-                MAPPING<dim class="text-nowrap">&nbsp;\\&nbsp;</dim>THE{" "}<dim
-                    >••••&nbsp;</dim
-                >INTELLIGIBLE<dim class="text-nowrap">&nbsp;\\&nbsp;</dim>TO THE
-                SENSIBLE
+                MAPPING<dim class="text-nowrap">&nbsp;\\&nbsp;</dim>THE<br
+                /><dim>••••&nbsp;</dim>INTELLIGIBLE<dim class="text-nowrap"
+                    >&nbsp;\\&nbsp;</dim
+                >{"TO THE SENSIBLE"}
             </h1>
         </v>
     </h>
@@ -81,11 +92,16 @@ import { HomeData } from "##/constants/home-data";
         <v class="wauto"></v>
         <v class="w3 space-section-10x">
             <p class="text-just" data-parallax-speed="1.15">
-                A Mathematician and Developer exploring boundaries between
-                abstraction and experience.
+                {
+                    "A Mathematician and Developer exploring " +
+                        "boundaries between abstraction and experience."
+                }'
                 <br />
                 <br />
-                I build systems where logic finds shape and structure meets design.
+                {
+                    "I build systems where logic finds shape " +
+                        "and structure meets design."
+                }
             </p>
         </v>
     </h>

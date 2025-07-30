@@ -3,7 +3,7 @@ import type { RedirectConfig } from 'astro'
 import { defineConfig } from 'astro/config'
 
 // official addons
-import vercel from '@astrojs/vercel'
+// import vercel from '@astrojs/vercel'
 import sitemap from '@astrojs/sitemap'
 
 // other addons
@@ -16,6 +16,8 @@ import critters from 'astro-critters'
 // dynamic conf
 import { APP } from './.boilerrc.ts'
 import { HomeData } from './constants/home-data.ts'
+
+import cloudflare from '@astrojs/cloudflare'
 
 const willAnalyze = process.env.ANALYZE === 'true'
 
@@ -30,17 +32,17 @@ for (const [site, url] of Object.entries(HomeData.contactSocials)) {
 // SOCIAL REDIRECTS END
 
 export default defineConfig({
-    output: APP.ssr.enabled ? 'server' : 'static', // static | server
+    output: 'static', // static | server
     server: {
         port: 3000
     },
-    adapter: APP.ssr.enabled ? (APP.ssr.adapter === 'vercel' ? vercel() : undefined) : undefined,
+    adapter: cloudflare(), // choose your adapter
     security: {
         // server only
         checkOrigin: false
     },
     site: APP.site,
-    trailingSlash: 'never',
+    trailingSlash: 'always',
     devToolbar: {
         enabled: false
     },
@@ -63,8 +65,12 @@ export default defineConfig({
             HTML: {
                 ...Default.HTML,
                 'html-minifier-terser': {
-                    ...Default.HTML['html-minifier-terser'],
-                    collapseWhitespace: false
+                    removeAttributeQuotes: false,
+                    removeTagWhitespace: false,
+                    removeComments: true,
+                    removeOptionalTags: true,
+                    removeRedundantAttributes: true,
+                    collapseWhitespace: true // watch out for this, it can break some components
                 }
             },
             CSS: false, // postcss cssnano is used instead
