@@ -28,16 +28,17 @@ function raf(time: number) {
         // const viewportTop = el.offsetTop - lenis.actualScroll
         const viewportRest = window.innerHeight - (el.offsetTop - lenis.actualScroll)
         // if (viewportRest < 0) continue // skip elements that are not in view
-        if (viewportRest > window.innerHeight) continue // skip elements that are too far down
+        // if (viewportRest > window.innerHeight) continue // skip elements that are too far down
 
         const speed = Number.parseFloat(el.getAttribute('data-parallax-speed')! || '1')
 
         const offset = viewportRest * (1 - speed)
-        const offsetRatio = viewportRest / window.innerHeight
 
         if (speed !== 1) {
             el.style.transform = `translateY(${offset}px)`
         }
+
+        const offsetRatio = viewportRest / window.innerHeight
 
         const opacityOut = Number.parseFloat(el.getAttribute('data-parallax-opacity-out') || '1')
         if (opacityOut < 1) {
