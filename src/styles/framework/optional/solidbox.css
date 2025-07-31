@@ -6,7 +6,7 @@
     --solidbox-count: 12;
 
     --solidbox-unit: 150px;
-    --solidbox-outer-px-cannonical: min(2.5vw, 48px);
+    --solidbox-outer-px-cannonical: min(2vw, 48px);
 
     --solidbox-cannonical-width: calc(var(--solidbox-unit) * var(--solidbox-count));
     --solidbox-responsive-width: calc(100lvw - 2 * var(--solidbox-outer-px-cannonical));
@@ -19,6 +19,18 @@
 
     --solidbox-layout-color: $color-default-solidbox-layout-color;
     --solidbox-layout-width: 1px;
+}
+
+@media (max-width: 468px) {
+    :root {
+        --solidbox-unit: 115px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --solidbox-unit: 100px;
+    }
 }
 
 /*****************************************************************************/

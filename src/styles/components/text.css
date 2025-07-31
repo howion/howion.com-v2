@@ -119,7 +119,7 @@ h2,
     padding: 0;
     font-variation-settings: 'wght' 400;
 
-    font-size: max(min(7vw, 150px), 64px);
+    font-size: var(--dynamicvar-text-title-size);
     word-break: keep-all;
     line-height: 1;
 
@@ -167,7 +167,7 @@ dim,
         top: 0;
         right: 0;
         transform: translate(100%, -100%);
-        font-size: calc(max(min(7vw, 150px), 64px)/2);
+        font-size: calc(var(--dynamicvar-text-title-size)/2);
         background-color: transparent;
 
         &.lhs {

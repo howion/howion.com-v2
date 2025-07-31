@@ -1,15 +1,22 @@
 :root {
     --dynamicvar-device-pixel-ratio: 1;
     --dynamicvar-text-size: 18px;
+    --dynamicvar-text-title-size: max(min(8vw, 150px), 28px);
 }
 
 /*********************************/
 /* dynamicvar-device-pixel-ratio */
 /*********************************/
 
-@media (max-width: 1300px) {
+@media (max-width: 1268px) {
     :root {
         --dynamicvar-text-size: 16px;
+    }
+}
+
+@media (max-width: 468px) {
+    :root {
+        --dynamicvar-text-size: 14px;
     }
 }
 
