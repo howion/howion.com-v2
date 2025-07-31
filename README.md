@@ -12,6 +12,8 @@ See Ultimate Astro Boiler -->
 
 ### Active
 
+* Fix more responsive stuff adjust solidbox size (dynamic units) for mobile etc.
+* Remove lenis and code your own scroll manager
 * Featured Work Section
 * Keywords Page?
 * Notes & Blog Page?
