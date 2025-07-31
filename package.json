@@ -10,7 +10,6 @@
         "format": "biome format --write"
     },
     "dependencies": {
-        "@astrojs/cloudflare": "^12.6.0",
         "@astrojs/preact": "^4.1.0",
         "@astrojs/sitemap": "^3.4.1",
         "@astrojs/vercel": "8.2.3",
@@ -41,7 +40,6 @@
         "postcss-nested": "^7.0.2",
         "postcss-simple-vars": "^7.0.1",
         "postcss-will-change": "^4.0.1",
-        "sonda": "^0.9.0",
-        "wrangler": "^4.26.1"
+        "sonda": "^0.9.0"
     }
 }

@@ -17,8 +17,6 @@ import critters from 'astro-critters'
 import { APP } from './.boilerrc.ts'
 import { HomeData } from './constants/home-data.ts'
 
-import cloudflare from '@astrojs/cloudflare'
-
 const willAnalyze = process.env.ANALYZE === 'true'
 
 // SOCIAL REDIRECTS START
@@ -36,7 +34,7 @@ export default defineConfig({
     server: {
         port: 3000
     },
-    adapter: cloudflare(), // choose your adapter
+    // adapter: cloudflare(), // choose your adapter
     security: {
         // server only
         checkOrigin: false
