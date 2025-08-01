@@ -12,7 +12,6 @@ See Ultimate Astro Boiler -->
 
 ### Active
 
-* Remove lenis and code your own scroll manager
 * Featured Work Section
 * Keywords Page?
 * Notes & Blog Page?

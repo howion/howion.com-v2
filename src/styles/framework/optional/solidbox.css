@@ -17,7 +17,7 @@
             var(--solidbox-unit));
     --solidbox-outer-px: calc((100lvw - var(--solidbox-width))/2);
 
-    --solidbox-layout-color: $color-default-solidbox-layout-color;
+    --solidbox-layout-color: var(--color-default-solidbox-layout-color);
     --solidbox-layout-width: 1px;
 }
 
@@ -67,7 +67,7 @@ h,
 w,
 .w {
     width: 100%;
-    max-width: var(--solidbox-width);
+    max-width: min(var(--solidbox-width), 100%);
     margin-left: auto;
     margin-right: auto;
     flex-wrap: wrap;
@@ -153,16 +153,26 @@ solidbox-layout {
     width: var(--solidbox-width);
     height: 100%;
     left: 50%;
+    /* for some reason this fixes the dpi problem */
+    will-change: transform;
+
     transform: translateX(-50%) translateZ(0);
+
     z-index: $z-index-solidbox-lines;
 
     pointer-events: none;
 
-    /* mix-blend-mode: difference; */
-    /* overflow: hidden; */
-
     @mixin gradient-vertical-lines var(--solidbox-layout-color), var(--solidbox-layout-width), var(--solidbox-unit);
-
-    /* weird fix for last gradient line not rendering */
-    border-right: var(--solidbox-layout-width) solid transparent;
+    outline: var(--solidbox-layout-width) solid transparent;
+    box-shadow: 1px 0px 0px 0px var(--solidbox-layout-color);
 }
+
+/* #solidbox-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: $z-index-solidbox-lines;
+}  */

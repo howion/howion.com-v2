@@ -1,0 +1,16 @@
+/**
+ * Horizontal and Vertical Scroll,
+ * Nested Scroll
+ */
+
+export interface ScrollOptions {
+    wheelMultiplier?: number
+    touchMultiplier?: number
+
+    container: string | HTMLElement
+    wrapper?: string | HTMLElement
+}
+
+export interface ScrollData {
+    dY: number
+}

@@ -2,6 +2,14 @@ body {
     overflow: hidden !important;
 }
 
+[data-parallax-speed] {
+    will-change: transform;
+}
+
+[data-parallax-opacity] {
+    will-change: transform, opacity;
+}
+
 html {
     /* rest is handled by lenis */
     scrollbar-color: $color-text transparent;

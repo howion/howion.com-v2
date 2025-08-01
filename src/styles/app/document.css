@@ -11,16 +11,20 @@ body {
 
     width: 100%;
     user-drag: none;
-    overflow: hidden;
 
     /* TODO: enable in prod */
     /* overflow-x: hidden; */
 }
 
-#app-wrapper {
-    width: 100lvw;
-    height: 100lvh;
-    overflow: hidden;
+#app {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+
+    &-wrapper {
+        width: 100lvw;
+        height: 100lvh;
+        overflow: hidden;
+    }
 }
 
 *:focus {

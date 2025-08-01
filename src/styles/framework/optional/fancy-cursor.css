@@ -63,7 +63,7 @@ fancy-cursor {
             z-index: 9;
             width: $fancy-cursor-size-shape1;
             height: $fancy-cursor-size-shape1;
-            background-color: rgba(#ffffe3, 1);
+            background-color: $color-text;
             border-radius: $fancy-cursor-size-shape1;
             /* transform: translate3d(-1000px, -1000px, 0); */
         }

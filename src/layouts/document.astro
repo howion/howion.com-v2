@@ -1,5 +1,5 @@
 ---
-import FancyCursor from "#/components/fancy-cursor.astro";
+import FancyCursorProvider from "#/components/optional/fancy-cursor-provider.astro";
 import { APP, SEO_DEFAULTS } from "##/.boilerrc";
 
 export interface Props {
@@ -39,8 +39,9 @@ const document_title = (subtitle ? `${subtitle} |` : "") + title;
         {description && <meta name="description" content={description} />}
     </head>
     <body>
+        <!-- <SolidboxLayout /> -->
         <post-effect class="noise"></post-effect>
-        {!APP.quickDevelopmentMode && <FancyCursor />}
+        {!APP.quickDevelopmentMode && <FancyCursorProvider />}
         <div id="app-wrapper">
             <div id="app">
                 <slot />

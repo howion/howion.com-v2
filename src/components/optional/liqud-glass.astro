@@ -1,0 +1,18 @@
+---
+import { randomId } from "#/utils/math";
+
+export interface Props {
+    id?: string;
+    class?: Classname;
+}
+
+const { class: classname } = Astro.props;
+const id = Astro.props.id ?? `liquid-glass-${randomId()}`;
+---
+
+<div id={id} class:list={["liquid-container", classname]}>
+    <slot />
+</div>
+
+<!-- <script define:vars={{ id, liquidOptions }}></script> -->
+<script src="#/scripts/liquid-glass.ts"></script>

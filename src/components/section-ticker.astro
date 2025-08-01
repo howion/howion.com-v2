@@ -12,7 +12,7 @@ const { text, speed, class: classname, style } = Astro.props;
 
 const tickerId = randomId();
 const h = 56;
-const seperator = "    •    ";
+const separator = "    •    ";
 ---
 
 <canvas
@@ -21,22 +21,26 @@ const seperator = "    •    ";
     style={style}
     height={h}></canvas>
 
-<script define:vars={{ tickerId, text, speed: speed ?? 1, h, seperator }}>
+<script define:vars={{ tickerId, text, speed: speed ?? 1, h, separator }}>
     const canvas = document.getElementById(tickerId);
     const ctx = canvas.getContext("2d");
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = h;
 
-    const separator = seperator;
-
     let bufferCanvas, bufferCtx, textWidth;
     let offset = 0;
 
-    let scrollVelocity = 0;
-    let lastScrollY = window.scrollY;
-    let lastTimestamp = performance.now();
+    let fontSize = 18;
 
     function renderBuffer() {
+        if (canvas.width < 468) {
+            fontSize = 14;
+        } else if (canvas.width < 1268) {
+            fontSize = 16;
+        } else {
+            fontSize = 18;
+        }
+
         const repeatedText = (text + separator).repeat(100);
         textWidth = ctx.measureText(repeatedText).width;
 
@@ -45,7 +49,7 @@ const seperator = "    •    ";
         bufferCanvas.height = canvas.height;
 
         bufferCtx = bufferCanvas.getContext("2d");
-        bufferCtx.font = "500 18px sans-serif";
+        bufferCtx.font = `500 ${fontSize}px "Overused Grotesk", sans-serif`;
         bufferCtx.fillStyle = "#FFFFE3";
         bufferCtx.textBaseline = "middle";
         bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
@@ -64,23 +68,6 @@ const seperator = "    •    ";
 
     resizeCanvas();
 
-    // // Scroll speed tracking
-    // function updateScrollVelocity() {
-    //     const now = performance.now();
-    //     const deltaY = window.scrollY - lastScrollY;
-    //     const dt = now - lastTimestamp;
-
-    //     if (dt > 0) {
-    //         const velocity = deltaY / dt; // px/ms
-    //         scrollVelocity = Math.round(velocity * 10); // scale up
-    //     }
-
-    //     lastScrollY = window.scrollY;
-    //     lastTimestamp = now;
-    // }
-
-    // window.addEventListener("scroll", updateScrollVelocity);
-
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(bufferCanvas, -offset, 0);
@@ -91,14 +78,8 @@ const seperator = "    •    ";
         if (offset >= textWidth - canvas.width) {
             offset = textWidth / 2;
         }
+
         requestAnimationFrame(draw);
-
-        // // Apply exponential decay to scroll effect
-        // scrollVelocity = scrollVelocity * 0.925;
-
-        // if (Math.abs(scrollVelocity) < 0.1) {
-        //     scrollVelocity = 0;
-        // }
     }
 
     draw();

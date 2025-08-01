@@ -2,4 +2,8 @@
     &-table {
         row-gap: min(calc(var(--space-section-unit)), 48px);
     }
+
+    span, p {
+        max-width: fit-content;
+    }
 }

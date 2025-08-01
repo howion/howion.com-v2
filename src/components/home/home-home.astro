@@ -1,6 +1,7 @@
 ---
 import Emblem from "##/public/emblem.svg";
 import { HomeData } from "##/constants/home-data";
+import LiqudGlass from "../optional/liqud-glass.astro";
 ---
 
 <section class="home-section" id="section-home">
@@ -72,25 +73,29 @@ import { HomeData } from "##/constants/home-data";
         </v>
     </h>
     <h>
-        <v class="home-hero-title space-section-2x" data-parallax-speed="0.85">
-            <!-- <h1 class="slick uppercase text-slick">
-                MAPPING{""}<dim>\\</dim>{""}THE
-            </h1>
-            <h1 class="slick uppercase text-slick">
-                <dim>••••</dim>INTELLIGIBLE<dim>\\</dim>TO THE
-            </h1>
-            <h1 class="slick uppercase text-slick">SENSIBLE</h1> -->
-            <h1 class="text-slick text-wrap">
-                MAPPING<dim class="text-nowrap">&nbsp;\\&nbsp;</dim>THE<br
-                /><dim>••••&nbsp;</dim>INTELLIGIBLE<dim class="text-nowrap"
-                    >&nbsp;\\&nbsp;</dim
-                >{"TO THE SENSIBLE"}
-            </h1>
+        <v class="space-section-2x" data-parallax-speed="0.85">
+            <div class="home-hero-title">
+                <h1 class="text-slick">
+                    MAPPING<dim class="text-nowrap">&nbsp;\\&nbsp;</dim>THE
+                </h1>
+                <h1 class="text-slick">
+                    <dim>••••&nbsp;</dim>INTELLIGIBLE<dim class="text-nowrap"
+                        >&nbsp;\\&nbsp;</dim
+                    >TO
+                </h1>
+                <h1 class="text-slick">{"THE SENSIBLE"}</h1>
+            </div>
+        </v>
+    </h>
+    <h data-parallax-speed="1.15">
+        <v class="wauto wmax1"></v>
+        <v class="wauto wmax3 home-hero-liquid-wrapper">
+            <LiqudGlass class="home-hero-liquid" />
         </v>
     </h>
     <h>
         <v class="wauto"></v>
-        <v class="w3 space-section-10x">
+        <v class="w3 space-section-8x">
             <p class="text-just" data-parallax-speed="1.15">
                 {
                     "A Mathematician and Developer exploring " +

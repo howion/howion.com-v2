@@ -1,6 +1,16 @@
 $color-body-darker: #000;
 $color-body: #10100E;
 $color-text: #FFFFE3;
+$color-text-dim: rgba($color-text, 0.25);
 
 /* optional */
 $color-default-solidbox-layout-color: rgba($color-text, 0.05);
+
+:root {
+    --color-body-darker: $color-body-darker;
+    --color-body: $color-body;
+    --color-text: $color-text;
+    --color-text-dim: $color-text-dim;
+
+    --color-default-solidbox-layout-color: $color-default-solidbox-layout-color;
+}
