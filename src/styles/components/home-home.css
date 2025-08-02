@@ -4,6 +4,10 @@
     }
 
     &-hero {
+        &-emblem {
+            cursor: pointer;
+        }
+
         &-title {
             display: flex;
             flex-direction: column;

@@ -12,8 +12,16 @@ body {
     width: 100%;
     user-drag: none;
 
+    /* &.universal {
+        font-family: "SGA", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    } */
+
     /* TODO: enable in prod */
     /* overflow-x: hidden; */
+}
+
+img {
+    pointer-events: none;
 }
 
 #app {

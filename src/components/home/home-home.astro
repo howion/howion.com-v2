@@ -8,6 +8,7 @@ import LiqudGlass from "../optional/liqud-glass.astro";
     <h class="home-menu-container">
         <v class="w1">
             <img
+                id="home-emblem"
                 class="home-hero-emblem"
                 src={Emblem.src}
                 width={Emblem.width}
@@ -111,3 +112,9 @@ import LiqudGlass from "../optional/liqud-glass.astro";
         </v>
     </h>
 </section>
+
+<!-- <script>
+    document.getElementById("home-emblem")!.addEventListener("click", () => {
+        document.body.classList.toggle("universal");
+    });
+</script> -->

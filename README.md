@@ -12,10 +12,12 @@ See Ultimate Astro Boiler -->
 
 ### Active
 
+* Type effect for hero title
+* Design and code splash component. Maybe use the previous one?
 * Featured Work Section
 * Keywords Page?
+* 3D Transformations
 * Notes & Blog Page?
-* Design and code splash component. Maybe use the previous one?
 * Add Easters
 * 404 and other error pages
 * ~~Waypoints~~

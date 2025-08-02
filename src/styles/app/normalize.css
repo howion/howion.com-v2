@@ -39,10 +39,6 @@ body {
     outline: none;
 }
 
-img {
-    pointer-events: none;
-}
-
 svg {
     display: inline-block;
     fill: currentColor;

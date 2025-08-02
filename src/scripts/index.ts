@@ -10,8 +10,7 @@ const lenis = new Lenis({
     wrapper: appWrapper,
     infinite: true,
     syncTouch: true,
-    anchors: true,
-    touchMultiplier: 1.5
+    anchors: true
 })
 
 const parallaxElements = document.querySelectorAll('[data-parallax-speed]') as NodeListOf<HTMLElement>
