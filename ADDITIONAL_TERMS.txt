@@ -4,7 +4,7 @@ These terms are added by the original author in accordance with Section 7 of the
 
 1. Attribution Requirement
    If you publicly deploy or distribute this software (modified or unmodified), you must include a prominent, user-visible link to the original project repository:
-   https://github.com/howion/anatolia-19th
+   https://github.com/howion/howion.com-v2
    This link must appear in the publicly accessible UI, such as in a footer, "About" page, or equivalent location.
 
 2. Modification Disclosure
