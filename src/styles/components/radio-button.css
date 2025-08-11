@@ -1,0 +1,17 @@
+.radiobutton {
+    padding: calc(var(--dynamicvar-home-text-size) * 0.75) calc(var(--dynamicvar-home-text-size) * 1.35);
+    border: 1px solid var(--color-text);
+    border-radius: 100px;
+    cursor: pointer;
+
+    &.selected {
+        background-color: var(--color-text);
+        color: var(--color-body);
+    }
+
+    &-container {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+}

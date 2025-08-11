@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: "Overused Grotesk", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-display: swap;
     background-color: $color-body;
     color: $color-text;
@@ -35,7 +35,7 @@ img {
     }
 }
 
-*:focus {
+*:not(.no-focus):focus {
     /* outline: none; */
     background-color: $color-text;
     color: $color-body;

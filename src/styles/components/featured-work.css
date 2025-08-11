@@ -1,0 +1,30 @@
+.featuredwork {
+    &-radios {
+        margin-top: 48px;
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+
+        &-entry {
+            display: flex;
+            flex-direction: column;
+            padding: 24px 0;
+
+            &-title {
+                font-size: var(--dynamicvar-entry-text-size);
+                text-decoration: none;
+                line-height: 1;
+                overflow: visible !important;
+                white-space: normal !important;
+            }
+
+            border-top: 1px solid var(--color-text);
+
+            &:last-child {
+                border-bottom: 1px solid var(--color-text);
+            }
+        }
+    }
+}

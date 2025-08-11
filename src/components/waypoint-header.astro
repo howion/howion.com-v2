@@ -1,10 +1,10 @@
 ---
-export interface Props {
-    class?: Classname;
-    style?: Style;
+interface Props {
+    class?: Classname
+    style?: Style
 }
 
-const { class: classname, style } = Astro.props;
+const { class: classname, style } = Astro.props
 ---
 
 <div class:list={["waypoint-header-wrapper", classname]} style={style}>

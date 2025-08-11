@@ -1,0 +1,56 @@
+---
+import Footer from "#/components/footer.astro";
+import HomeHomeHeader from "#/components/home/home-home-header.astro";
+import Document from "#/layouts/document.astro";
+
+interface Props {
+    marks?: string[];
+    title?: string;
+}
+---
+
+<Document subtitle={Astro.props.title}>
+    <solidbox-layout></solidbox-layout>
+    <div class="continuum-top"></div>
+
+    <section class="home-section scroll-into-view">
+        <HomeHomeHeader />
+    </section>
+
+    <main>
+        <section id="section-entry" class="space-section-6x">
+            <article>
+                <!-- <h data-parallax-speed="1.15">
+                    <v class="wauto wmax6 centered">
+                        <span class="entry-mark text-slick">POEM</span>
+                    </v>
+                </h> -->
+                <h data-parallax-speed="0.95">
+                    <v class="wauto wmax6 centered">
+                        <h1 class="entry-title">{Astro.props.title}</h1>
+                    </v>
+                </h>
+                <!-- <h data-parallax-speed="1.15">
+                    <v class="wauto wmax6 centered">
+                        <dim class="entry-date"
+                            >{"06 / 08 / 2025    •    Omer Mert Coskun"}</dim
+                        >
+                    </v>
+                </h> -->
+                <h class="space-section-2x">
+                    <v class="wauto wmax6 centered" data-parallax-speed="0.95">
+                        <slot />
+                    </v>
+                </h>
+            </article>
+        </section>
+    </main>
+
+    <Footer class="space-section-6x" />
+
+    <div class="continuum-bot"></div>
+</Document>
+
+<style is:global>
+    @import "#/styles/entry.css";
+</style>

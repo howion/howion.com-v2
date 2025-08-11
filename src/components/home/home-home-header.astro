@@ -1,0 +1,86 @@
+---
+import Emblem from '##/public/emblem.svg'
+import { HomeData } from '##/constants/home-data'
+---
+
+<h class="home-menu-container">
+    <v class="w1">
+        <a href={Astro.site} class="home-emblem-link home-link">
+            <img
+                id="home-emblem"
+                class="home-hero-emblem"
+                src={Emblem.src}
+                width={Emblem.width}
+                height={Emblem.height}
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                alt="howion.com emblem"
+            />
+        </a>
+    </v>
+    <v class="wauto wmin1"></v>
+    <v class="w6 horizontal home-menu-wrapper">
+        <v class="w1">
+            <div class="home-menu">
+                <dim class="home-text text-slick">NAVIGATION</dim>
+                <div class="text-stack-slick">
+                    <a
+                        class="home-text text-slick home-link"
+                        href={Astro.site}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Howion's Notes">HOMEPAGE</a
+                    >
+                    <a
+                        class="home-text text-slick home-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Howion's Notes">BLOG</a
+                    >
+                    <a
+                        class="home-text text-slick home-link"
+                        href="https://github.com/howion/notes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Howion's Github">SOURCE</a
+                    >
+                </div>
+            </div>
+        </v>
+        <v class="w1"></v>
+        <v class="w1">
+            <div class="home-menu">
+                <dim class="home-text text-slick">LOCATION</dim>
+                <div class="text-stack-slick">
+                    <p class="home-text text-slick">METU</p>
+                    <p class="home-text text-slick">06800 ANKARA</p>
+                    <p class="home-text text-slick">TURKIYE</p>
+                    <p class="home-text text-slick"></p>
+                    <p class="home-text text-slick">UTC +3</p>
+                </div>
+            </div>
+        </v>
+        <v class="w1"></v>
+        <v class="w2">
+            <div class="home-menu">
+                <dim class="home-text text-slick">CONTACT</dim>
+                <div class="text-stack-slick">
+                    <p class="home-text text-slick">
+                        {HomeData.contactMails[0]}
+                    </p>
+                    <p class="home-text text-slick">
+                        {HomeData.contactPhone}
+                    </p>
+                    <p class="home-text text-slick"></p>
+                    <p class="home-text text-slick">
+                        {
+                            HomeData.contactAvailableForHire ? "" : "NOT "
+                        }AVAILABLE FOR HIRE
+                    </p>
+                </div>
+            </div>
+        </v>
+    </v>
+</h>

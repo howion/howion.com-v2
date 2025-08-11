@@ -16,7 +16,7 @@ $home-techstack-border-color: #303030;
         row-gap: 12px;
 
         &:first-of-type {
-            margin-top: calc(var(--dynamicvar-text-size) + 48px * 2.5) !important;
+            margin-top: calc(var(--dynamicvar-home-text-size) + 48px * 2.5) !important;
         }
     }
 

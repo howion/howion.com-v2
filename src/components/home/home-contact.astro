@@ -1,18 +1,18 @@
 ---
-import { HomeData } from "##/constants/home-data";
-import DetailTable from "../detail-table.astro";
+import { HomeData } from '##/constants/home-data'
+import DetailTable from '../detail-table.astro'
 
-export interface Props {
-    class?: Classname;
+interface Props {
+    class?: Classname
 }
 
-const { class: classname } = Astro.props;
+const { class: classname } = Astro.props
 ---
 
 <section class:list={[classname]}>
     <w>
-        <div class="h2-slick-wrapper" data-parallax-speed="0.8">
-            <h2 class="text-slick">Let's Connect</h2>
+        <div class="home-h2-slick-wrapper" data-parallax-speed="0.8">
+            <h2 class="home-h2 text-slick">Let's Connect</h2>
         </div>
     </w>
     <DetailTable
@@ -25,11 +25,11 @@ const { class: classname } = Astro.props;
         <div class="text-stack-slick">
             {
                 HomeData.contactMails.map((mail) => (
-                    <p class="text-slick">* {mail}</p>
+                    <p class="home-text text-slick">* {mail}</p>
                 ))
             }
-            <p class="text-slick"></p>
-            <p class="text-slick">* {HomeData.contactPhone}</p>
+            <p class="home-text text-slick"></p>
+            <p class="home-text text-slick">* {HomeData.contactPhone}</p>
         </div>
     </DetailTable>
     <DetailTable
@@ -42,7 +42,9 @@ const { class: classname } = Astro.props;
         <div class="text-stack-slick">
             {
                 HomeData.contactAvailableFor.map((item) => (
-                    <p class="text-slick">{item ? `* ${item}` : ""}</p>
+                    <p class="home-text text-slick">
+                        {item ? `* ${item}` : ""}
+                    </p>
                 ))
             }
         </div>
@@ -58,7 +60,7 @@ const { class: classname } = Astro.props;
             {
                 Object.entries(HomeData.contactSocials).map(([site, link]) => (
                     <a
-                        class="text-slick"
+                        class="home-text text-slick home-link"
                         href={link}
                         target={link !== "#" ? "_blank" : undefined}
                     >

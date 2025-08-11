@@ -1,13 +1,13 @@
 ---
-import { randomId } from "#/utils/math";
+import { randomId } from '#/utils/math'
 
-export interface Props {
-    id?: string;
-    class?: Classname;
+interface Props {
+    id?: string
+    class?: Classname
 }
 
-const { class: classname } = Astro.props;
-const id = Astro.props.id ?? `liquid-glass-${randomId()}`;
+const { class: classname } = Astro.props
+const id = Astro.props.id ?? `liquid-glass-${randomId()}`
 ---
 
 <div id={id} class:list={["liquid-container", classname]}>

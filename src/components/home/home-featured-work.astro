@@ -1,0 +1,105 @@
+---
+interface Props {
+    class?: Classname;
+}
+---
+
+<section id="section-featuredwork" class:list={[Astro.props.class]}>
+    <w data-parallax-speed="1">
+        <div class="home-h2-slick-wrapper">
+            <h2 class="home-h2 text-slick-extra">Featured Work</h2>
+            <sup class="text-slick text-tabular">05</sup>
+        </div>
+    </w>
+    <!-- <w data-parallax-speed="1" class="featuredwork-radios">
+        <div class="radiobutton-container">
+            <div class="radiobutton selected">
+                <span class="home-text text-slick">Open Source</span>
+            </div>
+            <div class="radiobutton">
+                <span class="home-text text-slick">Drawing</span>
+            </div>
+            <div class="radiobutton">
+                <span class="home-text text-slick">Writing</span>
+            </div>
+            <div class="radiobutton">
+                <span class="home-text text-slick">Misc</span>
+            </div>
+        </div>
+    </w> -->
+    <w class="featuredwork-list space-section-3x" data-parallax-speed="1.15">
+        <div class="featuredwork-list-entry">
+            <a
+                class="featuredwork-list-entry-title primary-text text-slick no-focus"
+                href="https://anatolia19.metu.edu.tr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Anatolia: 19th Century"
+            >
+                Anatolia: Nineteenth Century
+            </a>
+        </div>
+        <div class="featuredwork-list-entry">
+            <a
+                class="featuredwork-list-entry-title primary-text text-slick no-focus"
+                href="https://github.com/howion/howion.com-v2"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="howion.com"
+            >
+                howion.com (v2)
+            </a>
+        </div>
+        <div class="featuredwork-list-entry">
+            <a
+                class="featuredwork-list-entry-title primary-text text-slick no-focus"
+                href="https://www.npmjs.com/package/lambert-w-function"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="lambert-w-function"
+            >
+                lambert-w-function
+            </a>
+        </div>
+        <div class="featuredwork-list-entry">
+            <a
+                class="featuredwork-list-entry-title primary-text text-slick no-focus"
+                href="https://github.com/howion/nth-harmonic"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="nth-harmonic"
+            >
+                nth-harmonic
+            </a>
+        </div>
+        <div class="featuredwork-list-entry">
+            <a
+                class="featuredwork-list-entry-title primary-text text-slick no-focus"
+                href="/entries/salve-salve-salve-parve/"
+                title="Salvé, salvé, salvé, Parve?"
+            >
+                Salvé, salvé, salvé, Parve?
+            </a>
+        </div>
+        <div class="featuredwork-list-entry">
+            <a
+                class="featuredwork-list-entry-title primary-text text-slick no-focus"
+                href="/entries/to-be-or-not-to-be/"
+                title="To be, or not to be"
+            >
+                To be, or not to be
+            </a>
+        </div>
+        <!-- <div class="featuredwork-list-entry">
+            <a
+                class="featuredwork-list-entry-title primary-text text-slick"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Mathematica Par Excellence"
+            >
+                Mathematica Par Excellence
+            </a>
+        </div> -->
+    </w>
+</section>

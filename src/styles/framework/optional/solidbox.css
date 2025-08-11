@@ -119,6 +119,11 @@ v,
         flex-direction: row;
     }
 
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     &.wauto {
         width: auto;
         flex: 1;

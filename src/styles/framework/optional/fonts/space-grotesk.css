@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("/assets/fonts/space-grotesk/variable.woff2") format("woff2-variations");
+    font-weight: 300 700;
+}

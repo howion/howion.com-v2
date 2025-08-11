@@ -54,7 +54,7 @@ requestAnimationFrame(raf)
 
 if (!APP.quickDevelopmentMode) {
     // scroll to hero onload
-    lenis.scrollTo('#section-home', {})
+    lenis.scrollTo('.scroll-into-view', {})
 }
 
 let isMouseDown = false

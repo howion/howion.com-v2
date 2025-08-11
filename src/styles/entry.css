@@ -1,0 +1,71 @@
+@import "./framework/variables/_index.css";
+@import "./framework/mixins/_index.css";
+
+:root {
+    --dynamicvar-entry-title-size: 96px;
+    --dynamicvar-entry-text-size: 24px;
+    --dynamicvar-entry-extra-size: 18px;
+}
+
+@media (max-width: 1268px) {
+    :root {
+        --dynamicvar-entry-title-size: calc(96px * 0.825);
+        --dynamicvar-entry-text-size: calc(24px * 0.825);
+        --dynamicvar-entry-extra-size: calc(18px * 0.825);
+    }
+}
+
+@media (max-width: 468px) {
+    :root {
+        --dynamicvar-entry-title-size: calc(96px * 0.75);
+        --dynamicvar-entry-text-size: calc(24px * 0.75);
+        --dynamicvar-entry-extra-size: calc(18px * 0.75);
+    }
+}
+
+.entry {
+    &-title, &-text, &-mark, &-date {
+        font-family: "Overused Grotesk", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        font-feature-settings:
+            "kern" on,
+            "liga" on;
+        margin: 0;
+        padding: 0;
+    }
+
+    &-title {
+        font-variation-settings: 'wght' 700;
+
+        font-size: var(--dynamicvar-entry-title-size);
+        line-height: 1.2;
+        margin-top: var(--dynamicvar-entry-extra-size);
+    }
+
+    &-text {
+        display: inline-block;
+        font-size: var(--dynamicvar-entry-text-size);
+        line-height: 1.5;
+        font-variation-settings: 'wght' 500;
+    }
+
+    &-mark {
+        display: inline-block;
+        width: fit-content;
+        font-size: var(--dynamicvar-entry-extra-size);
+        line-height: 1;
+        padding: 12px;
+        background-color: $color-body-darker;
+    }
+
+    &-date {
+        font-size: var(--dynamicvar-entry-extra-size);
+        line-height: 1;
+        margin-top: 0px;
+        white-space: pre;
+    }
+}
+
+w.entry-w {
+    width: 100%;
+    max-width: calc(var(--solidbox-unit) * 6);
+}

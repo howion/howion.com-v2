@@ -15,9 +15,16 @@ export const HomeData = {
 
     // DEVELOPMENT
     developmentEntries: {
-        'TBA Mobile App': ['iOS', 'Native - Swift', 'Bun'],
-        'Mathematica Par Excellence': ['My Magnum Opus', 'Postponed'],
-        "Mahler's Hammer": ['Cryptography', 'Postponed']
+        'TBA Mobile App': ['iOS', 'Swift', 'Bun', '', 'Currently in Development'],
+        'Book of History': [
+            'Nondeterministic Type Theory',
+            'Interaction Nets',
+            'NEO4J',
+            '',
+            'Currently in Development'
+        ],
+        'Mathematica Par Excellence': ['My Magnum Opus', '', 'Postponed'],
+        "Mahler's Hammer": ['Cryptography', '', 'Postponed']
     },
 
     // CONTACT
@@ -34,6 +41,7 @@ export const HomeData = {
         Spotify: 'https://open.spotify.com/user/avxit10lkjwlmlw605mxg7nbe',
         IMDb: 'https://www.imdb.com/user/ur106540372',
         Instagram: 'https://www.instagram.com/omermertcoskun/',
-        ORCID: 'https://orcid.org/0000-0002-8324-2325'
+        ORCID: 'https://orcid.org/0000-0002-8324-2325',
+        Onlyfans: 'http://bit.ly/4liDoYb'
     }
 } as const

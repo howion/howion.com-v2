@@ -1,18 +1,18 @@
 ---
-import { randomId } from "#/utils/math";
+import { randomId } from '#/utils/math'
 
-export interface Props {
-    text: string;
-    speed?: number;
-    class?: Classname;
-    style?: Style;
+interface Props {
+    text: string
+    speed?: number
+    class?: Classname
+    style?: Style
 }
 
-const { text, speed, class: classname, style } = Astro.props;
+const { text, speed, class: classname, style } = Astro.props
 
-const tickerId = randomId();
-const h = 56;
-const separator = "    •    ";
+const tickerId = randomId()
+const h = 56
+const separator = '    •    '
 ---
 
 <canvas

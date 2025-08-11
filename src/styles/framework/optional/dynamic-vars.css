@@ -1,7 +1,12 @@
 :root {
     --dynamicvar-device-pixel-ratio: 1;
-    --dynamicvar-text-size: 18px;
-    --dynamicvar-text-title-size: max(min(8vw, 150px), 28px);
+
+    --dynamicvar-home-text-size: 18px;
+
+    --dynamicvar-home-text-hero-title-size: max(min(8vw, 150px), 28px);
+    --dynamicvar-home-text-title-size: max(min(8vw, 150px), 44px);
+
+    --dynamicvar-entry-text-size: max(min(4vw, 48px), 28px);
 }
 
 /*********************************/
@@ -10,13 +15,13 @@
 
 @media (max-width: 1268px) {
     :root {
-        --dynamicvar-text-size: 16px;
+        --dynamicvar-home-text-size: 16px;
     }
 }
 
 @media (max-width: 468px) {
     :root {
-        --dynamicvar-text-size: 14px;
+        --dynamicvar-home-text-size: 14px;
     }
 }
 

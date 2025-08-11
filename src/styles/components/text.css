@@ -12,17 +12,15 @@
   * ss11: serif capital I,
   * zero: slashed zero
 **********************************/
-h1,
-h1+sup,
-h2,
-h2+sup,
-.h1,
-.h1+sup,
-.h2,
-.h2+sup {
+.home-h1,
+.home-h1+sup,
+.home-h2,
+.home-h2+sup {
+    font-family: "Overused Grotesk", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-feature-settings:
         "kern" on,
         "liga" on,
+        "zero" on,
         "ss04" on,
         "ss05" on,
         "ss06" on,
@@ -30,13 +28,12 @@ h2+sup,
         "ss11" on;
 }
 
-span,
-p,
-a,
-canvas {
+.home-text, .secondary-text, canvas {
+    font-family: "Overused Grotesk", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-feature-settings:
         "kern" on,
         "liga" on,
+        /* "zero" on, */
         "ss04" on,
         "ss05" on,
         "ss06" on,
@@ -54,7 +51,7 @@ canvas {
 
     &-slick {
         line-height: 1 !important;
-        overflow: hidden !important;
+        overflow: hidden;
         white-space: nowrap;
         /* margin-left: -0.425rem; */
 
@@ -106,10 +103,8 @@ canvas {
     }
 }
 
-h1,
-.h1,
-h2,
-.h2 {
+.home-h1,
+.home-h2 {
     position: relative;
     display: inline-block;
     /* font-size: 150px; */
@@ -119,7 +114,6 @@ h2,
     padding: 0;
     font-variation-settings: 'wght' 400;
 
-    font-size: var(--dynamicvar-text-title-size);
     word-break: keep-all;
     line-height: 1;
 
@@ -128,14 +122,32 @@ h2,
     }
 }
 
-a,
-p,
-.p,
-span {
+.home-h1 {
+    font-size: var(--dynamicvar-home-text-hero-title-size);
+}
+
+.home-h2 {
+    font-size: var(--dynamicvar-home-text-title-size);
+}
+
+.hard-break {
+    display: block;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    background-color:red;
+    margin: 18px 0 0 0;
+    height: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.home-text {
     text-decoration: none;
     display: inline-block;
     position: relative;
-    font-size: var(--dynamicvar-text-size);
+    font-size: var(--dynamicvar-home-text-size);
 
     line-height: 1.5;
     text-transform: uppercase;
@@ -143,10 +155,10 @@ span {
     letter-spacing: 0.05em;
 
     &.nbsp {
-        height: calc(var(--dynamicvar-text-size) * 1.5);
+        height: calc(var(--dynamicvar-home-text-size) * 1.5);
 
         &.text-slick {
-            height: var(--dynamicvar-text-size) !important;
+            height: var(--dynamicvar-home-text-size) !important;
         }
     }
 }
@@ -156,7 +168,7 @@ dim,
     color: $color-text-dim;
 }
 
-.h2-slick-wrapper {
+.home-h2-slick-wrapper {
     position: relative;
     display: inline-block;
 
@@ -167,7 +179,7 @@ dim,
         top: 0;
         right: 0;
         transform: translate(100%, -100%);
-        font-size: calc(var(--dynamicvar-text-title-size)/2);
+        font-size: calc(var(--dynamicvar-home-text-title-size)/2);
         background-color: transparent;
 
         &.lhs {
@@ -190,11 +202,11 @@ dim,
     }
 
     &-slick {
-        row-gap: var(--dynamicvar-text-size);
+        row-gap: var(--dynamicvar-home-text-size);
     }
 }
 
-a:hover {
+.home-link:hover {
     background-color: $color-text;
     color: $color-body;
     outline: 4px solid $color-text !important;

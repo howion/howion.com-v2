@@ -1,33 +1,27 @@
 ---
-import DetailTable from "../detail-table.astro";
+import DetailTable from '../detail-table.astro'
 
-export interface Props {
-    id?: string;
+interface Props {
+    id?: string
 
-    class?: Classname;
-    isRhs?: boolean;
-    title: string;
-    titleExtra?: boolean;
-    sup?: string;
+    class?: Classname
+    isRhs?: boolean
+    title: string
+    titleExtra?: boolean
+    sup?: string
 
-    entries: Record<string, readonly string[]>;
+    entries: Record<string, readonly string[]>
 }
 
-const {
-    id,
-    class: classname,
-    isRhs,
-    title,
-    titleExtra,
-    sup,
-    entries,
-} = Astro.props;
+const { id, class: classname, isRhs, title, titleExtra, sup, entries } = Astro.props
 ---
 
 <section class:list={[classname]} id={id}>
     <w class:list={[isRhs ? "reverse" : ""]} data-parallax-speed="1">
-        <div class="h2-slick-wrapper">
-            <h2 class={`text-slick${titleExtra ? "-extra" : ""}`}>{title}</h2>
+        <div class="home-h2-slick-wrapper">
+            <h2 class={`home-h2 text-slick${titleExtra ? "-extra" : ""}`}>
+                {title}
+            </h2>
             {
                 sup && (
                     <sup
@@ -46,7 +40,7 @@ const {
     <h class:list={["space-section-2x", isRhs ? "reverse" : ""]}>
         <v class="w1"></v>
         <v class="w3" data-parallax-speed="1">
-            <p class="space-table-top text-just">
+            <p class="home-text space-table-top text-just">
                 <slot />
             </p>
         </v>
@@ -67,7 +61,7 @@ const {
                     >
                         <div class="text-stack-slick">
                             {items.map((item) => (
-                                <p class="text-slick">{item}</p>
+                                <p class="home-text text-slick">{item}</p>
                             ))}
                         </div>
                     </DetailTable>

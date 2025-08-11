@@ -1,94 +1,26 @@
 ---
-import Emblem from "##/public/emblem.svg";
-import { HomeData } from "##/constants/home-data";
-import LiqudGlass from "../optional/liqud-glass.astro";
+import LiqudGlass from '../optional/liqud-glass.astro'
+import HomeHomeHeader from './home-home-header.astro'
 ---
 
-<section class="home-section" id="section-home">
-    <h class="home-menu-container">
-        <v class="w1">
-            <img
-                id="home-emblem"
-                class="home-hero-emblem"
-                src={Emblem.src}
-                width={Emblem.width}
-                height={Emblem.height}
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-                alt="howion.com emblem"
-            />
-        </v>
-        <v class="wauto wmin1"></v>
-        <v class="w6 horizontal home-menu-wrapper">
-            <v class="w1">
-                <div class="home-menu">
-                    <dim class="p text-slick">NAVIGATION</dim>
-                    <div class="text-stack-slick">
-                        <a
-                            class="text-slick"
-                            href="https://github.com/howion/notes"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Howion's Notes">NOTES</a
-                        >
-                        <a
-                            class="text-slick"
-                            href="https://github.com/howion"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Howion's Github">MY GITHUB</a
-                        >
-                    </div>
-                </div>
-            </v>
-            <v class="w1"></v>
-            <v class="w1">
-                <div class="home-menu">
-                    <dim class="p text-slick">LOCATION</dim>
-                    <div class="text-stack-slick">
-                        <p class="text-slick">METU</p>
-                        <p class="text-slick">06800 ANKARA</p>
-                        <p class="text-slick">TURKIYE</p>
-                        <p class="text-slick"></p>
-                        <p class="text-slick">UTC +3</p>
-                    </div>
-                </div>
-            </v>
-            <v class="w1"></v>
-            <v class="w2">
-                <div class="home-menu">
-                    <dim class="p text-slick">CONTACT</dim>
-                    <div class="text-stack-slick">
-                        <p class="text-slick">{HomeData.contactMails[0]}</p>
-                        <p class="text-slick">{HomeData.contactPhone}</p>
-                        <p class="text-slick"></p>
-                        <p class="text-slick">
-                            {
-                                HomeData.contactAvailableForHire ? "" : "NOT "
-                            }AVAILABLE FOR HIRE
-                        </p>
-                    </div>
-                </div>
-            </v>
-        </v>
-    </h>
+<section class="home-section scroll-into-view" id="section-home">
+    <HomeHomeHeader />
     <h>
-        <v class="space-section-2x" data-parallax-speed="0.85">
+        <v class="space-section-3x" data-parallax-speed="0.75">
             <div class="home-hero-title">
-                <h1 class="text-slick">
+                <h1 class="home-h1 text-slick">
                     MAPPING<dim class="text-nowrap">&nbsp;\\&nbsp;</dim>THE
                 </h1>
-                <h1 class="text-slick">
+                <h1 class="home-h1 text-slick">
                     <dim>••••&nbsp;</dim>INTELLIGIBLE<dim class="text-nowrap"
                         >&nbsp;\\&nbsp;</dim
                     >TO
                 </h1>
-                <h1 class="text-slick">{"THE SENSIBLE"}</h1>
+                <h1 class="home-h1 text-slick">{"THE SENSIBLE"}</h1>
             </div>
         </v>
     </h>
-    <h data-parallax-speed="1.15">
+    <h data-parallax-speed="1.15" class="space-section-x">
         <v class="wauto wmax1"></v>
         <v class="wauto wmax3 home-hero-liquid-wrapper">
             <LiqudGlass class="home-hero-liquid" />
@@ -96,8 +28,8 @@ import LiqudGlass from "../optional/liqud-glass.astro";
     </h>
     <h>
         <v class="wauto"></v>
-        <v class="w3 space-section-8x">
-            <p class="text-just" data-parallax-speed="1.15">
+        <v class="w3 space-section-5x">
+            <p class="home-text text-just" data-parallax-speed="1.15">
                 {
                     "A Mathematician and Developer exploring " +
                         "boundaries between abstraction and experience."

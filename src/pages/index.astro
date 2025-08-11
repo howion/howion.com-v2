@@ -1,12 +1,13 @@
 ---
-import SectionTicker from "#/components/section-ticker.astro";
-import Document from "#/layouts/document.astro";
-import HomeHome from "#/components/home/home-home.astro";
-import HomeRnD from "#/components/home/home-rnd.astro";
-import HomeContact from "#/components/home/home-contact.astro";
-import Footer from "#/components/footer.astro";
-import HomeTechStack from "#/components/home/home-tech-stack.astro";
-import { HomeData } from "##/constants/home-data";
+import SectionTicker from '#/components/section-ticker.astro'
+import Document from '#/layouts/document.astro'
+import HomeHome from '#/components/home/home-home.astro'
+import HomeRnD from '#/components/home/home-rnd.astro'
+import HomeContact from '#/components/home/home-contact.astro'
+import Footer from '#/components/footer.astro'
+import HomeTechStack from '#/components/home/home-tech-stack.astro'
+import { HomeData } from '##/constants/home-data'
+import HomeFeaturedWork from '#/components/home/home-featured-work.astro'
 ---
 
 <Document>
@@ -38,10 +39,7 @@ import { HomeData } from "##/constants/home-data";
                 Prior: HomeData.researchPrior,
             }}
             >{
-                "My research follows questions that resist containment. From the formal " +
-                    "to the fragile, I seek structures that reveal more than they resolve: " +
-                    "diagrams that flicker, axioms that almost hold, and languages that carry " +
-                    "more than just logic."
+                "From the complex to the simple I seek structures that reveal more than they resolve."
             }</HomeRnD
         >
         <!-- ABOUT / Research END -->
@@ -55,10 +53,9 @@ import { HomeData } from "##/constants/home-data";
             isRhs={true}
             entries={HomeData.developmentEntries}
             >{
-                "I build with intent and restraint: tools, interfaces, and languages " +
-                    "shaped by clarity and structure. Development, for me, is not just " +
-                    "implementation but articulation: a way to make abstract ideas move, " +
-                    "respond, and sometimes, resonate."
+                "For me the development is not just an " +
+                    "implementation but rather an articulation. It is a way to make abstract ideas move " +
+                    "respond and sometimes even resonate."
             }</HomeRnD
         >
         <!-- ABOUT / Development END -->
@@ -67,9 +64,14 @@ import { HomeData } from "##/constants/home-data";
         <HomeTechStack class="space-section-3x" id="tech-stack" data-d="dd" />
         <!-- ABOUT / TECH STACK END -->
 
+        <!-- FEATURED WORK START -->
+        <SectionTicker text="FEATURED WORK" class="space-section-6x" />
+        <HomeFeaturedWork class="space-section-5x" />
+        <!-- FEATURED WORK END -->
+
         <!-- CONTACT START -->
         <!-- <waypoint name="contact"></waypoint> -->
-        <SectionTicker text="CONTACT" class="space-section-6x" />
+        <SectionTicker text="CONTACT" class="space-section-3x" />
         <HomeContact class="space-section-4x" />
         <!-- CONTACT END -->
     </main>
@@ -79,7 +81,3 @@ import { HomeData } from "##/constants/home-data";
     <div class="continuum-bot"></div>
     <!-- <div class="continuum-bot2"></div> -->
 </Document>
-
-<script>
-    import "#/scripts/index.ts";
-</script>

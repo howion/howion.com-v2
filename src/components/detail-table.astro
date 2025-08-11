@@ -1,24 +1,24 @@
 ---
-export interface Props {
-    class?: Classname;
+interface Props {
+    class?: Classname
 
-    title: string;
+    title: string
 
     /**
      * @description Width of the title column in the table.
      * @default "1"
      */
-    titleW?: number;
+    titleW?: number
 
     /**
      * @description Width of the content column in the table.
      */
-    contentW?: number;
+    contentW?: number
 
-    slick?: boolean;
+    slick?: boolean
 }
 
-const { class: classname, title, titleW, contentW, slick } = Astro.props;
+const { class: classname, title, titleW, contentW, slick } = Astro.props
 ---
 
 <w class:list={["detail-table", "vertical", classname]}>
@@ -31,7 +31,9 @@ const { class: classname, title, titleW, contentW, slick } = Astro.props;
         ]}
     >
         <v class={`w${titleW}`}>
-            <p class:list={[slick ? "text-slick" : undefined]}>{title}</p>
+            <p class:list={["home-text", slick ? "text-slick" : undefined]}>
+                {title}
+            </p>
         </v>
         <v class={`w${contentW}`}>
             <slot />
