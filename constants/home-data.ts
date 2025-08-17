@@ -41,7 +41,6 @@ export const HomeData = {
         Spotify: 'https://open.spotify.com/user/avxit10lkjwlmlw605mxg7nbe',
         IMDb: 'https://www.imdb.com/user/ur106540372',
         Instagram: 'https://www.instagram.com/omermertcoskun/',
-        ORCID: 'https://orcid.org/0000-0002-8324-2325',
-        Onlyfans: 'http://bit.ly/4liDoYb'
+        ORCID: 'https://orcid.org/0000-0002-8324-2325'
     }
 } as const
