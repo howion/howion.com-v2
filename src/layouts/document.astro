@@ -1,6 +1,7 @@
 ---
 import FancyCursorProvider from '#/components/optional/fancy-cursor-provider.astro'
 import { APP, SEO_DEFAULTS } from '##/.boilerrc'
+import SmoothBlur from '#/components/optional/smooth-blur.astro'
 
 interface Props {
     title?: string
@@ -40,11 +41,16 @@ const document_title = (subtitle ? `${subtitle} | ` : '') + title
     </head>
     <body>
         <post-effect class="noise"></post-effect>
+
         {!APP.quickDevelopmentMode && <FancyCursorProvider />}
         <div id="app-wrapper">
+            <SmoothBlur position="top" direction="top" />
+
             <div id="app">
                 <slot />
             </div>
+
+            <SmoothBlur position="bottom" direction="bottom" />
         </div>
     </body>
 </html>

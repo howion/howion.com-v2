@@ -1,15 +1,14 @@
 export const HomeData = {
     // RESEARCH
     researchCurrent: [
-        'Linear Logic',
+        'Homotopy Type Theory',
+        '',
         'Interaction Nets',
         'Complexity Theory',
-        'Lattice Theory',
+        // 'Lattice Theory',
         '',
         'Prediction Markets',
         'Probability Theory',
-        '',
-        'Marxist Theory'
     ],
     researchPrior: ['Kleene Algebra', 'Graph Theory', 'Number Theory', '', 'Philosophy of Science'],
 

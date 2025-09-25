@@ -73,15 +73,17 @@ app.addEventListener('mouseleave', () => {
     }
 })
 
-app.addEventListener('mousedown', (e) => {
-    // RMB
-    if (e.button === 2) {
-        e.preventDefault()
-        isMouseDown = true
-        scrollValue = lenis.scroll
-        clientY = e.clientY
-    }
-})
+if (!APP.quickDevelopmentMode) {
+    app.addEventListener('mousedown', (e) => {
+        // RMB
+        if (e.button === 2) {
+            e.preventDefault()
+            isMouseDown = true
+            scrollValue = lenis.scroll
+            clientY = e.clientY
+        }
+    })
+}
 
 app.addEventListener('mouseup', (e) => {
     // RMB
