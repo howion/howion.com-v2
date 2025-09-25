@@ -62,11 +62,11 @@
         }
 
         &::before {
-            margin-bottom: -0.225em;
+            margin-bottom: -0.219em;
         }
 
         &::after {
-            margin-top: -0.1em;
+            margin-top: -0.09em;
         }
 
         &-extra {
@@ -141,6 +141,10 @@
     padding: 0;
     border: none;
     overflow: hidden;
+}
+
+br {
+    user-select: none !important;
 }
 
 .home-text {
