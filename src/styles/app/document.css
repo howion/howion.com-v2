@@ -5,7 +5,7 @@ html {
 body {
     font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-display: swap;
-    background-color: $color-body;
+    background-color: $color-body !important;
     color: $color-text;
     font-size: 0;
 

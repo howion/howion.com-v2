@@ -1,0 +1,72 @@
+---
+export interface Props {}
+---
+
+<div class="emblem">
+    <div class="s r"><div class="c"></div></div>
+    <div class="s r"><div class="v"></div></div>
+    <div class="s"><div class="h"></div></div>
+    <div class="s x"></div>
+    <div class="s r t"><div class="h"></div></div>
+    <div class="s t"><div class="v"></div></div>
+</div>
+
+<style>
+    $emblem-color: #ffffe3;
+    $emblem-unit: 50px;
+    $emblem-border-size: 2px;
+
+    .emblem {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc($emblem-unit * 3);
+        /* gap: calc($emblem-outline-size * -1px); */
+        /* margin-left: 2px; */
+
+        > .s {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $emblem-unit;
+            height: $emblem-unit;
+            border: $emblem-border-size solid $emblem-color;
+            overflow: hidden;
+
+            &.x {
+                border: 0;
+                z-index: -1;
+            }
+
+            &.r {
+                border-right: 0;
+            }
+
+            &.t {
+                border-top: 0;
+            }
+
+            .c {
+                background-color: $emblem-color;
+                width: calc($emblem-unit/3);
+                height: calc($emblem-unit/3);
+                /* border-radius: calc($emblem-unit/2); */
+            }
+
+            .h {
+                width: 100%;
+                background-color: $emblem-color;
+                height: $emblem-border-size;
+            }
+
+            .v {
+                height: 100%;
+                background-color: $emblem-color;
+                width: $emblem-border-size;
+            }
+
+            /* .h, .v {
+                transition: transform 300ms;
+            } */
+        }
+    }
+</style>

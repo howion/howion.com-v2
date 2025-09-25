@@ -2,6 +2,7 @@
 import FancyCursorProvider from '#/components/optional/fancy-cursor-provider.astro'
 import { APP, SEO_DEFAULTS } from '##/.boilerrc'
 import SmoothBlur from '#/components/optional/smooth-blur.astro'
+import Loader from '#/components/loader.astro'
 
 interface Props {
     title?: string
@@ -39,7 +40,8 @@ const document_title = (subtitle ? `${subtitle} | ` : '') + title
         <title>{document_title}</title>
         {description && <meta name="description" content={description} />}
     </head>
-    <body>
+    <body style="background-color:#000;">
+        <!-- <Loader /> -->
         <post-effect class="noise"></post-effect>
 
         {!APP.quickDevelopmentMode && <FancyCursorProvider />}

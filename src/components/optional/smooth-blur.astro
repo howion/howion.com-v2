@@ -14,13 +14,13 @@ export interface Props {
     intensity?: number;
 
     /**
-     * @default 10
+     * @default 5
      */
     divCount?: number;
 }
 
 const CURVE_FUNCTION = (p: number) => p * p * (3 - 2 * p);
-const DIV_COUNT = Astro.props.divCount ?? 10;
+const DIV_COUNT = Astro.props.divCount ?? 5;
 
 const divs = [];
 const increment = 100 / DIV_COUNT;
@@ -59,41 +59,3 @@ for (let i = 0; i < DIV_COUNT; i++) {
         {divs.map((d) => <div class="smoothblur" style={d.style} />)}
     </div>
 </div>
-
-<style>
-    .smoothblur {
-        &-container {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 10vh;
-            pointer-events: none;
-            z-index: 9999;
-            isolation: isolate;
-            background-color: transparent;
-            overflow: hidden;
-
-            &.is-top {
-                top: 0;
-            }
-
-            &.is-bottom {
-                bottom: 0;
-            }
-        }
-
-        &-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-        }
-
-        position: absolute;
-        inset: 0px;
-        opacity: 1px;
-        mask: linear-gradient(black, black, transparent);
-        backdrop-filter: blur(8px);
-        background-color: transparent;
-    }
-</style>

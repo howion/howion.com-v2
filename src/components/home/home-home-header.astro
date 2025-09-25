@@ -1,12 +1,14 @@
 ---
-import Emblem from '##/public/emblem.svg'
+// import Emblem from '##/public/emblem.svg'
 import { HomeData } from '##/constants/home-data'
+import Emblem from '../emblem.astro'
 ---
 
 <h class="home-menu-container">
     <v class="w1">
         <a href={Astro.site} class="home-emblem-link home-link">
-            <img
+            <Emblem />
+            <!-- <img
                 id="home-emblem"
                 class="home-hero-emblem"
                 src={Emblem.src}
@@ -16,7 +18,7 @@ import { HomeData } from '##/constants/home-data'
                 decoding="async"
                 fetchpriority="high"
                 alt="howion.com emblem"
-            />
+            /> -->
         </a>
     </v>
     <v class="wauto wmin1"></v>

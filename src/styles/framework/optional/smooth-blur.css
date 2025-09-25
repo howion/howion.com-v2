@@ -1,0 +1,39 @@
+.smoothblur {
+    &-container {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 10vh;
+        pointer-events: none;
+        z-index: $z-index-smooth-blur;
+        isolation: isolate;
+        background-color: transparent;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            display: none !important;
+        }
+
+        &.is-top {
+            top: 0;
+        }
+
+        &.is-bottom {
+            bottom: 0;
+        }
+    }
+
+    &-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    position: absolute;
+    inset: 0px;
+    opacity: 1px;
+    mask: linear-gradient(black, black, transparent);
+    backdrop-filter: blur(8px);
+    background-color: transparent;
+}

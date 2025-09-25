@@ -12,6 +12,7 @@
 @import "./framework/optional/fancy-cursor.css";
 @import "./framework/optional/presets/best-quality.css";
 @import "./framework/optional/liquid-glass.css";
+@import "./framework/optional/smooth-blur.css";
 
 /* GLOBAL CUSTOM CSS */
 @import "./app/_index.css";

@@ -1,4 +1,6 @@
 $z-index-waypoint-header: 10;
-$z-index-solidbox-lines: 100;
-$z-index-post-effect: 1000;
-$z-index-fancy-cursor: 10000;
+$z-index-smooth-blur: 50;
+$z-index-solidbox-lines: 90;
+$z-index-loader: 100;
+$z-index-fancy-cursor: 200;
+$z-index-post-effect: 500;
