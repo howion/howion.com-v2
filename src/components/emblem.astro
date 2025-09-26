@@ -13,13 +13,14 @@ export interface Props {}
 
 <style>
     $emblem-color: #ffffe3;
-    $emblem-unit: 50px;
+    $emblem-width: var(--solidbox-unit, 150px);
     $emblem-border-size: 2px;
+    $emblem-unit: calc($emblem-width / 3);
 
     .emblem {
         display: flex;
         flex-wrap: wrap;
-        width: calc($emblem-unit * 3);
+        width: $emblem-width;
         /* gap: calc($emblem-outline-size * -1px); */
         /* margin-left: 2px; */
 

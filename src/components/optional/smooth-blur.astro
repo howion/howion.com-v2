@@ -24,7 +24,7 @@ const DIV_COUNT = Astro.props.divCount ?? 5;
 
 const divs = [];
 const increment = 100 / DIV_COUNT;
-const intensity = Astro.props.intensity ?? 2;
+const intensity = Astro.props.intensity ?? 1;
 
 for (let i = 0; i < DIV_COUNT; i++) {
     const value = CURVE_FUNCTION(i / DIV_COUNT);
