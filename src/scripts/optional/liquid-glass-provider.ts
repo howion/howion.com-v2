@@ -40,7 +40,7 @@ function roundedRectSDF(x: number, y: number, width: number, height: number, rad
     return Math.min(Math.max(qx, qy), 0) + distanceDelta(Math.max(qx, 0), Math.max(qy, 0)) - radius
 }
 
-export function defaultUVShader(uvX: number, uvY: number): ShaderTexture {
+function defaultUVShader(uvX: number, uvY: number): ShaderTexture {
     const ix = uvX - 0.5
     const iy = uvY - 0.5
     const distanceToEdge = roundedRectSDF(ix, iy, 0.3, 0.2, 0.6)
@@ -51,6 +51,10 @@ export function defaultUVShader(uvX: number, uvY: number): ShaderTexture {
         x: ix * scaled + 0.5,
         y: iy * scaled + 0.5
     }
+}
+
+function round(value: number, multiplier = 1): number {
+    return Math.ceil(value / multiplier) * multiplier
 }
 
 // export function isLiquidGlassSupported(): boolean {
@@ -185,6 +189,13 @@ export class LiquidGlass {
         const w = this.width * this.canvasDPI
         const h = this.height * this.canvasDPI
         const data = new Uint8ClampedArray(w * h * 4)
+
+        // if (w % 4 !== 0 || h % 4 !== 0) {
+        //     console.warn(
+        //         `LiquidGlassShader: For optimal performance, consider using dimensions that are multiples of 4. Current dimensions: ${this.width}x${this.height}`
+        //     )
+        //     return
+        // }
 
         let maxScale = 0
         const rawValues = []

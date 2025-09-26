@@ -16,11 +16,12 @@
     height: 100%;
     z-index: $z-index-loader;
 
+    pointer-events: none;
     background-color: transparent;
     backdrop-filter: sepia(1) invert(1);
     opacity: 1;
 
-    transition: opacity 500ms ease;
+    transition: opacity 1s ease;
     will-change: opacity;
 
     /* &-trio {
@@ -82,5 +83,4 @@
 
 body.is-loaded .loader {
     opacity: 0;
-    pointer-events: none;
 }

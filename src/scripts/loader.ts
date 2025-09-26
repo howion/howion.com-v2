@@ -6,5 +6,5 @@
     setTimeout(() => {
         // loader.classList.add('loader--loaded')
         window.document.body.classList.add('is-loaded')
-    }, 2000)
+    }, 1000)
 })();
