@@ -1,18 +1,16 @@
 ---
-import { randomId } from '#/utils/math'
+import { randomId } from "#/utils/math";
 
 interface Props {
-    text: string
-    speed?: number
-    class?: Classname
-    style?: Style
+    text: string;
+    class?: Classname;
+    style?: Style;
 }
 
-const { text, speed, class: classname, style } = Astro.props
+const { text, class: classname, style } = Astro.props;
 
-const tickerId = randomId()
-const h = 56
-const separator = '    •    '
+const tickerId = randomId();
+const h = 56;
 ---
 
 <canvas
@@ -21,7 +19,11 @@ const separator = '    •    '
     style={style}
     height={h}></canvas>
 
-<script define:vars={{ tickerId, text, speed: speed ?? 1, h, separator }}>
+<script define:vars={{ tickerId, text, h }}>
+    const speed = 1;
+    const separator = "    •    ";
+    const fontFamily = '"Overused Grotesk", sans-serif';
+
     const canvas = document.getElementById(tickerId);
     const ctx = canvas.getContext("2d");
     ctx.canvas.width = window.innerWidth;
@@ -49,26 +51,16 @@ const separator = '    •    '
         bufferCanvas.height = canvas.height;
 
         bufferCtx = bufferCanvas.getContext("2d");
-        bufferCtx.font = `500 ${fontSize}px "Overused Grotesk"`;
+        bufferCtx.font = `500 ${fontSize}px ${fontFamily}`;
         bufferCtx.fillStyle = "#FFFFE3";
         bufferCtx.textBaseline = "middle";
         bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
         bufferCtx.fillText(repeatedText, 0, bufferCanvas.height / 2);
     }
 
-    function resizeCanvas() {
-        const rect = canvas.getBoundingClientRect();
-        canvas.width = rect.width;
-        renderBuffer();
-    }
-
-    window.addEventListener("resize", () => {
-        resizeCanvas();
-    });
-
-    resizeCanvas();
-
     function draw() {
+        if (!bufferCanvas) return;
+
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(bufferCanvas, -offset, 0);
 
@@ -82,5 +74,19 @@ const separator = '    •    '
         requestAnimationFrame(draw);
     }
 
-    draw();
+    function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        renderBuffer();
+    }
+
+    window.addEventListener("resize", () => {
+        resizeCanvas();
+    });
+
+    document.fonts.load(`500 18px ${fontFamily}`).then(() => {
+        console.log("Fonts loaded");
+        resizeCanvas();
+        draw();
+    });
 </script>

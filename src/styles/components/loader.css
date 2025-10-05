@@ -1,10 +1,10 @@
 @keyframes keyframe-loader-bar {
     from {
-        width: 0%;
+        margin-left: -100%;
     }
 
     to {
-        width: 90%;
+        margin-left: 150%;
     }
 }
 
@@ -16,13 +16,17 @@
     height: 100%;
     z-index: $z-index-loader;
 
-    pointer-events: none;
-    background-color: transparent;
-    backdrop-filter: sepia(1) invert(1);
+    /* pointer-events: none; */
+    /* background-color: transparent; */
+    /* backdrop-filter: sepia(1) invert(1); */
+    background-color: $color-text;
     opacity: 1;
 
     transition: opacity 1s ease;
     will-change: opacity;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* &-trio {
         background-color: $color-body-darker;
@@ -63,24 +67,36 @@
             align-items: center;
         }
     }
-
+    */
     &-bar {
         &-container {
             width: var(--solidbox-unit);
 
-            height: 4px;
-            background-color: $color-text-dim;
+            height: 8px;
+            background-color: transparent;
+            outline: 2px solid $color-body;
+            padding: 3px;
             pointer-events: none;
+            overflow: hidden;
         }
 
-        width: 0%;
+        width: 50%;
         height: 100%;
 
-        background-color: $color-text;
-        animation: keyframe-loader-bar 5s cubic-bezier(0.5, 1, 0.5, 1) forwards;
-    } */
+        background-color: $color-body;
+        animation: keyframe-loader-bar 2s infinite ease-in-out;
+    }
 }
 
 body.is-loaded .loader {
     opacity: 0;
+    pointer-events: none;
+
+    /*
+    &-bar {
+        &-container {
+            background-color: $color-body;
+        }
+    }
+    */
 }

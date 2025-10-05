@@ -5,7 +5,7 @@ const appWrapper = document.querySelector('#app-wrapper') as HTMLElement
 const app = document.querySelector('#app') as HTMLElement
 
 // initialize Lenis
-const lenis = new Lenis({
+export const lenis = new Lenis({
     content: app,
     wrapper: appWrapper,
     infinite: true,
@@ -51,11 +51,6 @@ function raf(time: number) {
 }
 
 requestAnimationFrame(raf)
-
-if (!APP.quickDevelopmentMode) {
-    // scroll to hero onload
-    lenis.scrollTo('.scroll-into-view', {})
-}
 
 let isMouseDown = false
 let clientY = 0
