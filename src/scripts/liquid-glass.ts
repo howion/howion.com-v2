@@ -1,10 +1,13 @@
 import { LiquidGlass } from '#/scripts/optional/liquid-glass-provider'
+import { isMobile } from '#/utils/client'
 
-const lq = new LiquidGlass(document.querySelector('.liquid-container')!, {
-    blur: 1,
-    brightness: 2
-})
-
-setTimeout(() => {
-    lq.update()
-}, 1)
+if (!isMobile()) {
+    setTimeout(() => {
+        const lq = new LiquidGlass(document.querySelector('.liquid-container')!, {
+            blur: 1,
+            brightness: 2
+        })
+        lq.update()
+        window.addEventListener('resize', () => lq.update())
+    }, 1)
+}

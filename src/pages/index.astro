@@ -1,5 +1,4 @@
 ---
-import SectionTicker from '#/components/section-ticker.astro'
 import Document from '#/layouts/document.astro'
 import HomeHome from '#/components/home/home-home.astro'
 import HomeRnD from '#/components/home/home-rnd.astro'
@@ -8,6 +7,9 @@ import Footer from '#/components/footer.astro'
 import HomeTechStack from '#/components/home/home-tech-stack.astro'
 import HomeFeaturedWork from '#/components/home/home-featured-work.astro'
 import { HomeData } from '##/constants/home-data'
+
+// CLIENT:LOAD
+import { SectionTicker } from '#/components/section-ticker'
 ---
 
 <Document>
@@ -26,7 +28,7 @@ import { HomeData } from '##/constants/home-data'
         <!-- HOME END -->
 
         <!-- ABOUT START -->
-        <SectionTicker text="ABOUT ME" class="space-section-2x" />
+        <SectionTicker text="ABOUT ME" classname="space-section-2x" client:load />
         <!-- ABOUT END -->
 
         <!-- ABOUT / Research START -->
@@ -39,7 +41,7 @@ import { HomeData } from '##/constants/home-data'
                 Prior: HomeData.researchPrior,
             }}
             >{
-                "From the complex to the simple I seek structures that reveal more than they resolve."
+                "I seek structures that reveal more than they resolve"
             }</HomeRnD
         >
         <!-- ABOUT / Research END -->
@@ -53,9 +55,9 @@ import { HomeData } from '##/constants/home-data'
             isRhs={true}
             entries={HomeData.developmentEntries}
             >{
-                "For me the development is not just an " +
-                    "implementation but rather an articulation. It is a way to make abstract ideas move " +
-                    "respond and sometimes even resonate."
+                "Development is " +
+                    "a way to make abstract ideas move " +
+                    "respond and sometimes even resonate"
             }</HomeRnD
         >
         <!-- ABOUT / Development END -->
@@ -65,13 +67,13 @@ import { HomeData } from '##/constants/home-data'
         <!-- ABOUT / TECH STACK END -->
 
         <!-- FEATURED WORK START -->
-        <SectionTicker text="FEATURED WORK" class="space-section-6x" />
+        <SectionTicker text="FEATURED WORK" classname="space-section-6x" client:load />
         <HomeFeaturedWork class="space-section-5x" />
         <!-- FEATURED WORK END -->
 
         <!-- CONTACT START -->
         <!-- <waypoint name="contact"></waypoint> -->
-        <SectionTicker text="CONTACT" class="space-section-3x" />
+        <SectionTicker text="CONTACT" classname="space-section-3x" client:load />
         <HomeContact class="space-section-4x" />
         <!-- CONTACT END -->
     </main>

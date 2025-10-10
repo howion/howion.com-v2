@@ -10,9 +10,10 @@
         "format": "biome format --write ./src"
     },
     "dependencies": {
+        "@astrojs/preact": "^4.1.1",
         "@astrojs/sitemap": "^3.6.0",
-        "@astrojs/vercel": "8.2.8",
-        "astro": "5.14.1",
+        "@astrojs/vercel": "8.2.9",
+        "astro": "5.14.4",
         "astro-better-image-service": "^2.1.9",
         "astro-robots-txt": "^1.0.0",
         "astro-seo": "^0.8.4",
@@ -21,6 +22,7 @@
         "nanoid": "^5.1.6",
         "nanostores": "^1.0.1",
         "normalize.css": "^8.0.1",
+        "preact": "^10.27.2",
         "zustand": "^5.0.8"
     },
     "devDependencies": {
@@ -39,5 +41,9 @@
         "postcss-simple-vars": "^7.0.1",
         "postcss-will-change": "^4.0.1",
         "sonda": "^0.9.0"
+    },
+    "overrides": {
+        "react": "npm:@preact/compat@latest",
+        "react-dom": "npm:@preact/compat@latest"
     }
 }

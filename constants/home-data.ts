@@ -1,6 +1,7 @@
 export const HomeData = {
     // RESEARCH
     researchCurrent: [
+        'Nondeterministic Type Theory',
         'Homotopy Type Theory',
         '',
         'Interaction Nets',

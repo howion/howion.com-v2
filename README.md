@@ -12,8 +12,8 @@ See Ultimate Astro Boiler -->
 
 ### Active
 
+* Poems
 * Type effect for hero title
-* Design and code splash component. Maybe use the previous one?
 * Featured Work Section
 * Keywords Page?
 * 3D Transformations
@@ -21,6 +21,7 @@ See Ultimate Astro Boiler -->
 * Add Easters
 * 404 and other error pages
 * ~~Waypoints~~
+* Design and code splash component. Maybe use the previous one?
 
 ### Later
 

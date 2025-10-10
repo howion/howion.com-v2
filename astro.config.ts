@@ -5,6 +5,7 @@ import { defineConfig } from 'astro/config'
 // official addons
 // import vercel from '@astrojs/vercel'
 import sitemap from '@astrojs/sitemap'
+import preact from '@astrojs/preact'
 
 // other addons
 import robotsTxt from 'astro-robots-txt'
@@ -55,7 +56,7 @@ export default defineConfig({
     },
     redirects: socialRedirects,
     integrations: [
-        // preact({ compat: true }),
+        preact({ compat: true }),
         betterImageService(),
         APP.enableCritters ? critters() : undefined,
         compress({

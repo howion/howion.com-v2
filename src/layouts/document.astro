@@ -47,11 +47,11 @@ const document_title = (subtitle ? `${subtitle} | ` : "") + title;
 
         {!APP.quickDevelopmentMode && <FancyCursorProvider />}
         <div id="app-wrapper">
-            {
+            <!-- {
                 !APP.quickDevelopmentMode && (
                     <SmoothBlur position="top" direction="top" />
                 )
-            }
+            } -->
 
             <div id="app">
                 <slot />

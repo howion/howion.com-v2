@@ -22,7 +22,7 @@ export function isMobile(): boolean {
 }
 
 // https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser-javascript
-export function isMobileOrTable(): boolean {
+export function isMobileOrTablet(): boolean {
     let check = false
     // biome-ignore lint: - this is a common pattern for mobile detection
     ;(function (a) {

@@ -186,11 +186,11 @@ export class LiquidGlass {
             return
         }
 
-        const w = this.width * this.canvasDPI
-        const h = this.height * this.canvasDPI
-        const data = new Uint8ClampedArray(w * h * 4)
+        const w = round(this.width * this.canvasDPI)
+        const h = round(this.height * this.canvasDPI)
+        const data = new Uint8ClampedArray(round(w * h * 4, 4 * round(w)))
 
-        // if (w % 4 !== 0 || h % 4 !== 0) {
+        // if (data.length % 4 !== 0) {
         //     console.warn(
         //         `LiquidGlassShader: For optimal performance, consider using dimensions that are multiples of 4. Current dimensions: ${this.width}x${this.height}`
         //     )

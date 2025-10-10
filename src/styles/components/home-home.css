@@ -19,7 +19,7 @@
                 aspect-ratio: 2;
 
                 @media (max-width: 1300px) {
-                    transform: scale(0.5);
+                    /* transform: scale(0.5); */
                 }
             }
 
