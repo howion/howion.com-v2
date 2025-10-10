@@ -29,6 +29,7 @@ fancy-cursor {
         transition: opacity $fancy-cursor-container-opacity-transition ease-out;
         z-index: $z-index-fancy-cursor;
         mix-blend-mode: difference;
+        isolation: isolate;
     }
 
     &-point,
@@ -47,7 +48,6 @@ fancy-cursor {
     }
 
     &-point {
-        mix-blend-mode: difference;
         z-index: 10;
         width: $fancy-cursor-size-pointer;
         height: $fancy-cursor-size-pointer;
@@ -64,6 +64,7 @@ fancy-cursor {
             width: $fancy-cursor-size-shape1;
             height: $fancy-cursor-size-shape1;
             background-color: $color-text;
+            opacity: 0.25;
             border-radius: $fancy-cursor-size-shape1;
             /* transform: translate3d(-1000px, -1000px, 0); */
         }
@@ -99,6 +100,9 @@ fancy-cursor {
         border: 4px solid $color-text;
     } */
 
+    &-container.cursor-pointer>&-shape.v1 {
+        opacity: 1;
+    }
     &-container.cursor-pointer>&-point {
         opacity: 0;
     }
