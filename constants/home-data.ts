@@ -9,7 +9,7 @@ export const HomeData = {
         // 'Lattice Theory',
         '',
         'Prediction Markets',
-        'Probability Theory',
+        'Probability Theory'
     ],
     researchPrior: ['Kleene Algebra', 'Graph Theory', 'Number Theory', '', 'Philosophy of Science'],
 
@@ -42,5 +42,64 @@ export const HomeData = {
         IMDb: 'https://www.imdb.com/user/ur106540372',
         Instagram: 'https://www.instagram.com/omermertcoskun/',
         ORCID: 'https://orcid.org/0000-0002-8324-2325'
+    },
+
+    techStack: {
+        Languages: [
+            'Bash',
+            'HTML5',
+            'CSS',
+            'TypeScript',
+            'JavaScript',
+            'LaTeX',
+            'Python',
+            'PHP',
+            'CSharp',
+            'Visual Basic',
+            'Markdown'
+        ],
+        'Frontend and DevTools': [
+            'PostCSS',
+            'SASS',
+            'React',
+            'React Native',
+            'Next',
+            'Astro',
+            'WebRTC',
+            'Mapbox',
+            'Vite',
+            'PhoneGap'
+        ],
+        'Backend and DevOps': [
+            'AWS',
+            'Docker',
+            'Git',
+            'Postgres',
+            'Redis',
+            'Elysia',
+            'tRPC',
+            'Serverless',
+            'Wireguard',
+            'FFMPEG',
+            'OpenVPN',
+            'Nginx',
+            'Caddy',
+            'Prisma',
+            'Cloudflare',
+            'OpenAI APIs',
+            'Sentry',
+            'Plausible'
+        ],
+        'Tools and Services': [
+            'Figma',
+            'arxiv',
+            'Adobe PS6',
+            'Github Copilot',
+            'CSS Design Awards',
+            'awwwards',
+            'Desmos',
+            'WolframAlpha'
+        ],
+        Opinionated: ['Arch Linux', 'XFCE', 'ZSH', 'VSCodium', 'Bun', 'Biome', 'Mullvad VPN', 'LibreWolf', 'Signal']
     }
 } as const

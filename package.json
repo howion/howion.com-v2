@@ -12,8 +12,8 @@
     "dependencies": {
         "@astrojs/preact": "^4.1.1",
         "@astrojs/sitemap": "^3.6.0",
-        "@astrojs/vercel": "8.2.9",
-        "astro": "5.14.4",
+        "@astrojs/vercel": "8.2.10",
+        "astro": "5.14.7",
         "astro-better-image-service": "^2.1.9",
         "astro-robots-txt": "^1.0.0",
         "astro-seo": "^0.8.4",
@@ -26,7 +26,7 @@
         "zustand": "^5.0.8"
     },
     "devDependencies": {
-        "@biomejs/biome": "2.2.5",
+        "@biomejs/biome": "2.2.6",
         "@playform/compress": "0.2.0",
         "astro-critters": "^2.2.1",
         "autoprefixer": "^10.4.21",
