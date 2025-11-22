@@ -4,9 +4,15 @@ Personal website, updated. Still under construction.
 
 Visit [**howion.com**](https://www.howion.com/).
 
-<!-- ## Tech Stack
+## Tech Stack
 
-See Ultimate Astro Boiler -->
+> I plan to use this Astro project as a boilerplate for my future Astro stuff.
+
+* Typescript
+* Astro
+* React \ Preact
+* PostCSS
+* cssnano
 
 ## To-Do's
 

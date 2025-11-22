@@ -1,0 +1,93 @@
+.spotify {
+    &-player {
+        display: flex;
+        background-color: rgba($color-spotify, 0.05);
+        border: 1px solid rgba($color-spotify, 0.15);
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        box-sizing: border-box !important;
+
+        &-container {
+            row-gap: 32px;
+        }
+
+        &-lhs {
+            aspect-ratio: 1;
+        }
+
+        &-cover {
+            height: 100%;
+            aspect-ratio: 1;
+        }
+
+        &-rhs {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px 24px 16px 24px;
+
+            &-top {
+                display: flex;
+                justify-content: space-between;
+
+                &-lhs {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 12px;
+                }
+            }
+
+            &-bot {
+
+            }
+        }
+
+        &-artist {
+            opacity: 0.5;
+        }
+
+        &-bar {
+            position: relative;
+            background-color: rgba($color-spotify, 0.5);
+            height: 1px;
+            width: 100%;
+
+            &-container {
+                display: flex;
+                flex-direction: column;
+                row-gap: 12px;
+            }
+
+            &-times {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &-inner {
+                height: 100%;
+                background-color: $color-spotify;
+            }
+        }
+    }
+
+    &-color {
+        color: $color-spotify;
+    }
+
+    &-dash {
+        height: 1px;
+        border-top: 1px dashed rgba($color-spotify, 0.5);
+        width: 100%;
+
+        &-container {
+            &-inner {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: var(--solidbox-unit);
+                margin-top: 32px;
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@ $color-body-darker: #000;
 $color-body: #10100E;
 $color-text: #FFFFE3;
 $color-text-dim: rgba($color-text, 0.25);
+$color-spotify: #1DB954;
 
 /* optional */
 $color-default-solidbox-layout-color: rgba($color-text, 0.05);

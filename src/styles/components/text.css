@@ -49,6 +49,10 @@
         white-space: normal !important;
     }
 
+    &-noselect {
+        user-select: none !important;
+    }
+
     &-slick {
         line-height: 1 !important;
         overflow: hidden;

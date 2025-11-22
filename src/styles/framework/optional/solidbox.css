@@ -90,6 +90,10 @@ h,
 
     font-size: 0;
 
+    &.nowrap {
+        flex-wrap: nowrap;
+    }
+
     &.wide {
         width: 100%;
         padding-left: var(--solidbox-outer-px);
@@ -127,6 +131,7 @@ v,
     &.wauto {
         width: auto;
         flex: 1;
+        min-width: 0;
     }
 
     &.wmax {

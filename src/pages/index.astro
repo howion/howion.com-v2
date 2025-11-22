@@ -10,9 +10,10 @@ import { HomeData } from '##/constants/home-data'
 
 // CLIENT:LOAD
 import { SectionTicker } from '#/components/section-ticker'
+import HomeSpotify from '#/components/home/home-spotify.astro'
 ---
 
-<Document>
+<Document subtitle="Home">
     <solidbox-layout></solidbox-layout>
 
     <!-- <header>
@@ -30,6 +31,8 @@ import { SectionTicker } from '#/components/section-ticker'
         <!-- ABOUT START -->
         <SectionTicker text="ABOUT ME" classname="space-section-2x" client:load />
         <!-- ABOUT END -->
+
+        <!-- <HomeSpotify /> -->
 
         <!-- ABOUT / Research START -->
         <HomeRnD

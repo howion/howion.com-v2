@@ -191,7 +191,7 @@ button {
     margin: 0;
     padding: 0;
     border: none;
-    background-color: inherit;
+    /* background-color: inherit; */
     font: inherit;
     color: inherit;
 }

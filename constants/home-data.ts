@@ -1,3 +1,7 @@
+export interface FeaturedWork {
+
+}
+
 export const HomeData = {
     // RESEARCH
     researchCurrent: [
@@ -100,6 +104,13 @@ export const HomeData = {
             'Desmos',
             'WolframAlpha'
         ],
-        Opinionated: ['Arch Linux', 'XFCE', 'ZSH', 'VSCodium', 'Bun', 'Biome', 'Mullvad VPN', 'LibreWolf', 'Signal']
-    }
+        Opinionated: ['Arch Linux', 'XFCE', 'ZSH', 'VSCodium', 'Bun', 'Biome', 'Mullvad VPN', 'LibreWolf', 'Signal'],
+    },
+
+    featuredWorks: {
+        Websites: [],
+        Poems: [],
+        Notes: [],
+        Misc: []
+    } satisfies Record<string, FeaturedWork[]>,
 } as const
