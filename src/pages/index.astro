@@ -1,16 +1,17 @@
 ---
-import Document from '#/layouts/document.astro'
-import HomeHome from '#/components/home/home-home.astro'
-import HomeRnD from '#/components/home/home-rnd.astro'
-import HomeContact from '#/components/home/home-contact.astro'
-import Footer from '#/components/footer.astro'
-import HomeTechStack from '#/components/home/home-tech-stack.astro'
-import HomeFeaturedWork from '#/components/home/home-featured-work.astro'
-import { HomeData } from '##/constants/home-data'
+import Document from "#/layouts/document.astro";
+import HomeHome from "#/components/home/home-home.astro";
+import HomeRnD from "#/components/home/home-rnd.astro";
+import HomeContact from "#/components/home/home-contact.astro";
+import Footer from "#/components/footer.astro";
+import HomeTechStack from "#/components/home/home-tech-stack.astro";
+import HomeFeaturedWork from "#/components/home/home-featured-work.astro";
+import { HomeData } from "##/constants/home-data";
 
 // CLIENT:LOAD
-import { SectionTicker } from '#/components/section-ticker'
-import { HomeSpotify } from '#/components/home/home-spotify'
+import { SectionTicker } from "#/components/section-ticker";
+import { HomeSpotify } from "#/components/home/home-spotify";
+import { APP } from "##/.boilerrc";
 ---
 
 <Document subtitle="Home">
@@ -29,10 +30,14 @@ import { HomeSpotify } from '#/components/home/home-spotify'
         <!-- HOME END -->
 
         <!-- ABOUT START -->
-        <SectionTicker text="ABOUT ME" classname="space-section-2x" client:load />
+        <SectionTicker
+            text="ABOUT ME"
+            classname="space-section-2x"
+            client:load
+        />
         <!-- ABOUT END -->
 
-        <HomeSpotify client:load />
+        {APP.quickDevelopmentMode ? null : <HomeSpotify client:load />}
 
         <!-- ABOUT / Research START -->
         <HomeRnD
@@ -42,10 +47,7 @@ import { HomeSpotify } from '#/components/home/home-spotify'
             entries={{
                 Current: HomeData.researchCurrent,
                 Prior: HomeData.researchPrior,
-            }}
-            >{
-                "I seek structures that reveal more than they resolve"
-            }</HomeRnD
+            }}>{"I seek structures that reveal more than they resolve"}</HomeRnD
         >
         <!-- ABOUT / Research END -->
 
@@ -70,13 +72,21 @@ import { HomeSpotify } from '#/components/home/home-spotify'
         <!-- ABOUT / TECH STACK END -->
 
         <!-- FEATURED WORK START -->
-        <SectionTicker text="FEATURED WORK" classname="space-section-6x" client:load />
+        <SectionTicker
+            text="FEATURED WORK"
+            classname="space-section-6x"
+            client:load
+        />
         <HomeFeaturedWork class="space-section-5x" />
         <!-- FEATURED WORK END -->
 
         <!-- CONTACT START -->
         <!-- <waypoint name="contact"></waypoint> -->
-        <SectionTicker text="CONTACT" classname="space-section-3x" client:load />
+        <SectionTicker
+            text="CONTACT"
+            classname="space-section-3x"
+            client:load
+        />
         <HomeContact class="space-section-4x" />
         <!-- CONTACT END -->
     </main>

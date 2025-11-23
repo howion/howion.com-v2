@@ -45,6 +45,8 @@ function SpotifyPlaybackBar({ at0, total }: { at0: number; total: number }) {
     const intervalRef = useRef<number | null>(null)
 
     useEffect(() => {
+        setAt(at0)
+
         if (intervalRef.current !== null) {
             clearInterval(intervalRef.current)
         }
