@@ -60,7 +60,7 @@ function SpotifyPlaybackBar({ at0, total }: { at0: number; total: number }) {
                     return total
                 }
 
-                return next + 1000
+                return next
             })
         }, 1000)
 
