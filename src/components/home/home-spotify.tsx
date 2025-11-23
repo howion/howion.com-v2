@@ -23,7 +23,7 @@ async function retrieveSpotifyData(): Promise<ApiSpotifyResponse | null> {
             return null
         }
 
-        console.log('new data', data.data)
+        console.info('Fetched Spotify Data.')
 
         return data.data
     } catch (e: unknown) {
@@ -45,8 +45,6 @@ function SpotifyPlaybackBar({ at0, total }: { at0: number; total: number }) {
     const intervalRef = useRef<number | null>(null)
 
     useEffect(() => {
-        setAt(at0)
-
         if (intervalRef.current !== null) {
             clearInterval(intervalRef.current)
         }
@@ -132,14 +130,11 @@ export function HomeSpotify({ id }: Props) {
         const nextUpdateIn = total > 0 ? Math.max(0, total - at0) : 30 * 1000
         const minmax = Math.min(nextUpdateIn, 60 * 1000)
 
-        console.log('nextUpdateIn', minmax)
-
         if (timeoutRef.current !== null) {
             clearTimeout(timeoutRef.current)
         }
 
         timeoutRef.current = setTimeout(() => {
-            console.log('hit spotify update')
             updateData()
         }, minmax)
 
