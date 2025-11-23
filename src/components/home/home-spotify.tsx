@@ -75,6 +75,10 @@ function SpotifyPlaybackBar({ at0, total }: { at0: number; total: number }) {
 
     const percentage = total > 0 ? (at / total) * 100 : 0
 
+    if (total === 0 || at === 0 || at > total || at < 0 || at === total) {
+        return null
+    }
+
     return (
         <div class="spotify-player-bar-container">
             <div class="spotify-player-bar-times">
@@ -196,7 +200,9 @@ export function HomeSpotify({ id }: Props) {
                                     </div>
                                 </div>
                                 <div class="spotify-player-rhs-bot">
-                                    <SpotifyPlaybackBar at0={data.playback.at} total={data.playback.total} />
+                                    {data.playback.isActive && (
+                                        <SpotifyPlaybackBar at0={data.playback.at} total={data.playback.total} />
+                                    )}
                                 </div>
                             </div>
                         </div>
