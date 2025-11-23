@@ -167,7 +167,7 @@ export function HomeSpotify({ id }: Props) {
                 <div class="v wauto wmax10 horizontal" data-parallax-speed="1.25">
                     <div class="v w5 spotify-player-container">
                         <p class="home-text text-slick spotify-color">
-                            Currently Playing
+                            {data.playback.isActive ? 'Currently Playing' : 'Last Played'}
                         </p>
 
                         <div class="v w5 nowrap horizontal spotify-player">
