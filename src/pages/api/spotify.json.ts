@@ -59,9 +59,31 @@ async function retrievePlaybackState(token: string) {
         throw new Error(`Failed to retrieve playback state: ${res.status}`);
     }
 
-    const data = await res.json();
+    try {
+        const data = await res.json();
 
-    return data;
+        return data;
+    } catch (_) {
+        // this probably means empty response, so return last known state
+        const res2 = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=1', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!res2.ok) {
+            throw new Error(`Failed to retrieve recently played: ${res2.status}`);
+        }
+
+        const data2 = await res2.json();
+
+        return {
+            is_playing: false,
+            progress_ms: 0,
+            item: data2.items[0]?.track || null
+        };
+    }
 }
 
 export interface ApiSpotifyTrack {
