@@ -1,3 +1,9 @@
+body.is-mobile {
+    .smoothblur {
+        display: none !important;
+    }
+}
+
 .smoothblur {
     &-container {
         position: absolute;

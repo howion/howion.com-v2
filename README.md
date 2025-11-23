@@ -36,7 +36,6 @@ Visit [**howion.com**](https://www.howion.com/).
 * Draw and code more sections
   * NPM?
   * GitHub Summary?
-  * Spotify?
 * Distill codebase as a seperate boilerplate (template)
 
 ## Contact

@@ -16,12 +16,14 @@
 @media (max-width: 1268px) {
     :root {
         --dynamicvar-home-text-size: 16px;
+        --space-m: calc(16/18 * 8px);
     }
 }
 
 @media (max-width: 468px) {
     :root {
         --dynamicvar-home-text-size: 14px;
+        --space-m: calc(14/18 * 8px);
     }
 }
 

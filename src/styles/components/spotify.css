@@ -1,3 +1,21 @@
+@media (max-width: 1406px) {
+    .spotify-dash {
+        &-container {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .spotify-player-lhs, .spotify-player-rhs-top-rhs {
+        display: none !important;
+    }
+
+    .spotify-player-bar-container {
+        margin-top: calc(var(--space-m) * 4) !important;
+    }
+}
+
 .spotify {
     &-player {
         display: flex;
@@ -8,7 +26,7 @@
         box-sizing: border-box !important;
 
         &-container {
-            row-gap: 32px;
+            row-gap: calc(var(--space-m) * 3.5);
         }
 
         &-lhs {
@@ -18,13 +36,16 @@
         &-cover {
             height: 100%;
             aspect-ratio: 1;
+            object-fit: cover;
+            padding: 8px;
+            border: 1px solid rgba($color-spotify, 0.5);
         }
 
         &-rhs {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 24px 24px 16px 24px;
+            padding: calc(var(--space-m) * 3) calc(var(--space-m) * 3) calc(var(--space-m) * 2) calc(var(--space-m) * 3);
 
             &-top {
                 display: flex;
@@ -33,13 +54,11 @@
                 &-lhs {
                     display: flex;
                     flex-direction: column;
-                    row-gap: 12px;
+                    row-gap: calc(var(--space-m) * 1.5);
                 }
             }
 
-            &-bot {
-
-            }
+            &-bot {}
         }
 
         &-artist {
@@ -55,7 +74,7 @@
             &-container {
                 display: flex;
                 flex-direction: column;
-                row-gap: 12px;
+                row-gap: calc(var(--space-m) * 1.5);
             }
 
             &-times {
@@ -86,8 +105,35 @@
                 align-items: center;
                 width: 100%;
                 height: var(--solidbox-unit);
-                margin-top: 32px;
+                margin-top: calc(var(--space-m) * 4);
             }
+        }
+    }
+
+    &-lists {
+        row-gap: var(--space-section-unit);
+    }
+
+    &-list {
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-top: calc(var(--space-m) * 4);
+            row-gap: calc(var(--space-m) * 4);
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            &-subtitle {
+                opacity: 0.5;
+                margin-top: calc(var(--space-m) * 1.5);
+            }
+        }
+
+        &-simple &-wrapper {
+            row-gap: calc(var(--space-m) * 2);
         }
     }
 }

@@ -40,7 +40,8 @@
         "postcss-nested": "^7.0.2",
         "postcss-simple-vars": "^7.0.1",
         "postcss-will-change": "^4.0.1",
-        "sonda": "^0.10.0"
+        "sonda": "^0.10.0",
+        "vite-plugin-svgr": "^4.5.0"
     },
     "overrides": {
         "react": "npm:@preact/compat@latest",

@@ -3,7 +3,7 @@ import type { RedirectConfig } from 'astro'
 import { defineConfig } from 'astro/config'
 
 // official addons
-// import vercel from '@astrojs/vercel'
+import vercel from '@astrojs/vercel'
 import sitemap from '@astrojs/sitemap'
 import preact from '@astrojs/preact'
 
@@ -13,6 +13,9 @@ import Sonda from 'sonda/astro'
 import compress, { Default } from '@playform/compress'
 import betterImageService from 'astro-better-image-service'
 import critters from 'astro-critters'
+
+// vite addons
+import svgr from 'vite-plugin-svgr'
 
 // dynamic conf
 import { APP } from './.boilerrc.ts'
@@ -35,13 +38,13 @@ export default defineConfig({
     server: {
         port: 3000
     },
-    // adapter: cloudflare(), // choose your adapter
+    adapter: vercel(), // choose your adapter
     security: {
         // server only
         checkOrigin: false
     },
     site: APP.site,
-    trailingSlash: 'always',
+    trailingSlash: 'ignore',
     devToolbar: {
         enabled: false
     },
@@ -50,6 +53,7 @@ export default defineConfig({
         defaultStrategy: 'hover'
     },
     vite: {
+        plugins: [svgr()],
         build: {
             sourcemap: true
         }
@@ -82,5 +86,5 @@ export default defineConfig({
             policy: [{ allow: '/', userAgent: '*' }]
         }),
         willAnalyze ? Sonda({ server: true }) : undefined
-    ]
+    ],
 })

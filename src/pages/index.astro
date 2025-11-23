@@ -10,7 +10,7 @@ import { HomeData } from '##/constants/home-data'
 
 // CLIENT:LOAD
 import { SectionTicker } from '#/components/section-ticker'
-import HomeSpotify from '#/components/home/home-spotify.astro'
+import { HomeSpotify } from '#/components/home/home-spotify'
 ---
 
 <Document subtitle="Home">
@@ -32,7 +32,7 @@ import HomeSpotify from '#/components/home/home-spotify.astro'
         <SectionTicker text="ABOUT ME" classname="space-section-2x" client:load />
         <!-- ABOUT END -->
 
-        <!-- <HomeSpotify /> -->
+        <HomeSpotify client:load />
 
         <!-- ABOUT / Research START -->
         <HomeRnD

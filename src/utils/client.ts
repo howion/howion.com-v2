@@ -21,6 +21,14 @@ export function isMobile(): boolean {
     return check
 }
 
+export function hasFocus(): boolean {
+    if (typeof document === 'undefined') {
+        return false
+    }
+
+    return document.hasFocus()
+}
+
 // https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser-javascript
 export function isMobileOrTablet(): boolean {
     let check = false

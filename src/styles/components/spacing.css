@@ -1,5 +1,6 @@
 :root {
     --space-section-unit: min(max(calc(5vw), 48px), 72px);
+    --space-m: 8px;
 }
 
 .space-table-top {

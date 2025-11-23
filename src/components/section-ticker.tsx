@@ -17,7 +17,6 @@ export function SectionTicker(props: SectionTickerProps) {
     const didMountRef = useRef(false);
 
     useEffect(() => {
-        console.log('hi')
         if (!canvasRef.current) return;
         if (didMountRef.current) return;
         didMountRef.current = true;
