@@ -178,7 +178,7 @@ export function HomeSpotify({ id }: Props) {
                                     alt=""
                                 />
                             </div>
-                            <div class="v wauto spotify-player-rhs">
+                            <div class="v wauto mw0 spotify-player-rhs">
                                 <div class="spotify-player-rhs-top">
                                     <div class="spotify-player-rhs-top-lhs">
                                         <p
@@ -227,7 +227,7 @@ export function HomeSpotify({ id }: Props) {
                                     alt="Howion's Spotify Avatar"
                                 />
                             </div>
-                            <div class="wauto spotify-player-rhs">
+                            <div class="wauto mw0 spotify-player-rhs">
                                 <div class="spotify-player-rhs-top">
                                     <div class="spotify-player-rhs-top-lhs">
                                         <p

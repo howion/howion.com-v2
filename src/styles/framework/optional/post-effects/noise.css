@@ -74,5 +74,6 @@ post-effect.noise {
     background-image: url('/assets/image/noise.png');
     opacity: $post-effects-noise-opacity;
     pointer-events: none;
+    will-change: transform;
     animation: keyframe-post-effects-noise $post-effects-noise-speed steps(2) infinite;
 }

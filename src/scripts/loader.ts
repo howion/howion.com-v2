@@ -13,8 +13,8 @@ import { lenis } from "./lenis";
             if (!APP.quickDevelopmentMode) {
                 setTimeout(() => {
                     lenis.scrollTo('.scroll-into-view', {})
-                }, 500)
+                }, 500);
             }
-        }, 500)
+        }, 4000)
     });
 })();

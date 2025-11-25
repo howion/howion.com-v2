@@ -28,7 +28,9 @@
         "ss11" on;
 }
 
-.home-text, .secondary-text, canvas {
+.home-text,
+.secondary-text,
+canvas {
     font-family: "Overused Grotesk", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-feature-settings:
         "kern" on,
@@ -57,6 +59,9 @@
         line-height: 1 !important;
         overflow: hidden;
         white-space: nowrap;
+
+        max-width: 100%;
+        text-overflow: ellipsis;
         /* margin-left: -0.425rem; */
 
         &::before,
@@ -141,7 +146,7 @@
     width: 100%;
     height: 0;
     font-size: 0;
-    background-color:red;
+    background-color: red;
     margin: 18px 0 0 0;
     height: 0;
     padding: 0;
@@ -205,6 +210,7 @@ dim,
 }
 
 .text-stack {
+
     &,
     &-slick {
         display: flex;
