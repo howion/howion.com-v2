@@ -18,7 +18,7 @@ Visit [**howion.com**](https://www.howion.com/).
 
 ### Active
 
-* Poems
+* Poems, custom entry page with optional music player.
 * Type effect for hero title
 * Featured Work Section
 * Keywords Page?

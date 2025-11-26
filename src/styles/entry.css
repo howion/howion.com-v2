@@ -1,5 +1,9 @@
+/**
+ * This page contains styles for the Entry page structure. Since it's
+ * independently imported, we need to import variables here as well. Which is
+ * fine, since this file doesn't produce any CSS on its own.
+ */
 @import "./framework/variables/_index.css";
-@import "./framework/mixins/_index.css";
 
 :root {
     --dynamicvar-entry-title-size: 96px;
@@ -24,7 +28,11 @@
 }
 
 .entry {
-    &-title, &-text, &-mark, &-date {
+
+    &-title,
+    &-text,
+    &-mark,
+    &-date {
         font-family: "Overused Grotesk", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
         font-feature-settings:
             "kern" on,
