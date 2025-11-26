@@ -1,5 +1,7 @@
 export interface FeaturedWork {
-
+    name: string;
+    description?: string;
+    link: string;
 }
 
 export const HomeData = {
@@ -108,9 +110,78 @@ export const HomeData = {
     },
 
     featuredWorks: {
-        Websites: [],
-        Poems: [],
-        Notes: [],
-        Misc: []
+        Websites: [
+            {
+                name: 'Anatolia: 19th Centruy',
+                link: 'https://anatolia19.metu.edu.tr/',
+                description: 'An undergraduate digital humanities project aiming to compile as well as digitize intricate data on the region in this century.'
+            },
+            {
+                name: 'howion.com (v2)',
+                link: 'https://github.com/howion/howion.com-v2',
+                description: 'This website you are currently browsing, rebuilt from scratch using Astro and Preact.'
+            },
+            {
+                name: 'Speculo',
+                link: 'https://speculo.howion.com/',
+                description: 'P2P mobile to desktop device orientation mirroring.'
+            },
+        ],
+        'Lectures, Presentations': [
+            {
+                name: 'Gödel ve Ontolojik Kanıtı',
+                link: 'https://github.com/howion/notes/blob/main/lectures/godel-ve-ontolojik-kaniti/00-index.md'
+            },
+            {
+                name: 'Sembolik Form Olarak Perspektif',
+                link: 'https://github.com/howion/notes/blob/main/lectures/sembolik-form-olarak-perspektif/00-index.md'
+            }
+        ],
+        Poems: [
+            {
+                name: 'Salvé, salvé, salvé, Parve?',
+                link: 'https://github.com/howion/notes/blob/main/poems/02-salve-salve-salve-parve.md'
+            },
+            {
+                name: 'Bitscript',
+                link: 'https://github.com/howion/notes/blob/main/poems/05-bitscript.md'
+            }
+        ],
+        Miscellaneous: [
+            {
+                name: 'lambert-w-function',
+                link: 'https://www.npmjs.com/package/lambert-w-function',
+                description: 'An open source TypeScript implementation of the Lambert W function for both Node.js and browser environments with ~500 downloads a week.'
+            },
+            {
+                name: 'nth-harmonic',
+                link: 'https://github.com/howion/nth-harmonic',
+                description: 'An open source TypeScript library to compute the nth harmonic number efficiently using advanced mathematical techniques.'
+            }
+        ],
+                Notes: [
+            {
+                name: 'Group Theory',
+                link: 'https://notes.howion.com/abstract-algebra/group-theory.html',
+                description: 'Comprehensive notes on Group Theory, covering fundamental concepts, theorems, and applications in abstract algebra.'
+            },
+            {
+                name: 'Ring Theory',
+                link: 'https://notes.howion.com/abstract-algebra/ring-theory.html',
+            },
+            {
+                name: 'Logic',
+                link: 'https://notes.howion.com/logic.html'
+            },
+            {
+                name: 'Probability Theory',
+                link: 'https://notes.howion.com/probability-theory.html'
+            }
+        ],
     } satisfies Record<string, FeaturedWork[]>,
 } as const
+
+export const HomeDataFeaturedWorksCategories = [
+    'All',
+    ...Object.keys(HomeData.featuredWorks)
+]

@@ -1,5 +1,3 @@
-// export const prerender = false;
-
 import type { ApiSpotifyResponse } from '#/pages/api/spotify.json';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import SpotifyIcon from '#/assets/spotify.svg?react';
@@ -260,7 +258,7 @@ export function HomeSpotify({ id }: Props) {
                         </p>
                         <div class="spotify-list-wrapper">
                             {data.tracks.map((track, i) => (
-                                <div class="spotify-list-item">
+                                <div class="spotify-list-item" key={i}>
                                     <p class="home-text text-slick spotify-list-item-title">
                                         {track.name}
                                     </p>
@@ -282,7 +280,7 @@ export function HomeSpotify({ id }: Props) {
                         </p>
                         <div class="spotify-list-wrapper">
                             {data.artists.map((name, i) => (
-                                <div class="spotify-list-item">
+                                <div class="spotify-list-item" key={i}>
                                     <p class="home-text text-slick spotify-list-item-title">
                                         {name}
                                     </p>
@@ -301,7 +299,7 @@ export function HomeSpotify({ id }: Props) {
                         </p>
                         <div class="spotify-list-wrapper">
                             {data.genres.map((name, i) => (
-                                <div class="spotify-list-item">
+                                <div class="spotify-list-item" key={i}>
                                     <p class="home-text text-slick spotify-list-item-title">
                                         {name}
                                     </p>

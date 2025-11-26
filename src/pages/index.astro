@@ -5,13 +5,13 @@ import HomeRnD from "#/components/home/home-rnd.astro";
 import HomeContact from "#/components/home/home-contact.astro";
 import Footer from "#/components/footer.astro";
 import HomeTechStack from "#/components/home/home-tech-stack.astro";
-import HomeFeaturedWork from "#/components/home/home-featured-work.astro";
 import { HomeData } from "##/constants/home-data";
 
 // CLIENT:LOAD
 import { SectionTicker } from "#/components/section-ticker";
 import { HomeSpotify } from "#/components/home/home-spotify";
 import { APP } from "##/.boilerrc";
+import { HomeFeaturedWork } from "#/components/home/home-featured-work";
 ---
 
 <Document subtitle="Home">
@@ -77,7 +77,7 @@ import { APP } from "##/.boilerrc";
             classname="space-section-6x"
             client:load
         />
-        <HomeFeaturedWork class="space-section-5x" />
+        <HomeFeaturedWork client:load/>
         <!-- FEATURED WORK END -->
 
         <!-- CONTACT START -->

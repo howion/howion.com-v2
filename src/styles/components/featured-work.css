@@ -10,7 +10,7 @@
         &-entry {
             display: flex;
             flex-direction: column;
-            padding: 24px 0;
+            padding: calc(var(--space-m) * 3) 0;
 
             &-title {
                 font-size: var(--dynamicvar-entry-text-size);
