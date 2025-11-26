@@ -221,7 +221,7 @@ export function HomeSpotify({ id }: Props) {
                             <div class="v w1 spotify-player-lhs">
                                 <img
                                     class="spotify-player-cover"
-                                    src="/assets/image/avatar.png"
+                                    src="/assets/images/avatar.webp"
                                     alt="Howion's Spotify Avatar"
                                 />
                             </div>

@@ -1,6 +1,7 @@
 export interface FeaturedWork {
     name: string;
     description?: string;
+    picture?: string;
     link: string;
 }
 
@@ -112,28 +113,33 @@ export const HomeData = {
     featuredWorks: {
         Websites: [
             {
-                name: 'Anatolia: 19th Centruy',
+                name: 'Anatolia: 19th Century',
                 link: 'https://anatolia19.metu.edu.tr/',
+                picture: 'a19.webp',
                 description: 'An undergraduate digital humanities project aiming to compile as well as digitize intricate data on the region in this century.'
             },
             {
                 name: 'howion.com (v2)',
                 link: 'https://github.com/howion/howion.com-v2',
+                picture: 'howioncom.webp',
                 description: 'This website you are currently browsing, rebuilt from scratch using Astro and Preact.'
             },
             {
                 name: 'Speculo',
                 link: 'https://speculo.howion.com/',
+                picture: 'speculo.webp',
                 description: 'P2P mobile to desktop device orientation mirroring.'
             },
         ],
-        'Lectures, Presentations': [
+        'Lectures': [
             {
                 name: 'Gödel ve Ontolojik Kanıtı',
+                picture: 'godel.webp',
                 link: 'https://github.com/howion/notes/blob/main/lectures/godel-ve-ontolojik-kaniti/00-index.md'
             },
             {
                 name: 'Sembolik Form Olarak Perspektif',
+                picture: 'perspective.webp',
                 link: 'https://github.com/howion/notes/blob/main/lectures/sembolik-form-olarak-perspektif/00-index.md'
             }
         ],
@@ -178,8 +184,8 @@ export const HomeData = {
                 link: 'https://notes.howion.com/probability-theory.html'
             }
         ],
-    } satisfies Record<string, FeaturedWork[]>,
-} as const
+    } satisfies Record<string, FeaturedWork[]> as Record<string, FeaturedWork[]>,
+}
 
 export const HomeDataFeaturedWorksCategories = [
     'All',

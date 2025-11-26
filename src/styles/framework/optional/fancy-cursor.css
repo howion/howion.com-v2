@@ -18,19 +18,36 @@ body.is-cursor-none {
     }
 }
 
+#fancy-cursor {
+    &-picture {
+        display: none;
+        max-width: 90vw;
+        height: auto;
+        object-fit: cover;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 1;
+
+        transition-duration: $fancy-cursor-container-opacity-transition;
+        transition-property: opacity;
+
+        will-change: transform, opacity;
+    }
+}
+
 fancy-cursor {
     display: block;
 
-    &-container {
-        position: relative;
-        display: block;
-        opacity: 1;
-        pointer-events: none;
-        transition: opacity $fancy-cursor-container-opacity-transition ease-out;
-        z-index: $z-index-fancy-cursor;
-        mix-blend-mode: difference;
-        isolation: isolate;
-    }
+    position: relative;
+    display: block;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity $fancy-cursor-container-opacity-transition ease-out;
+    z-index: $z-index-fancy-cursor;
+    mix-blend-mode: difference;
+    isolation: isolate;
 
     &-point,
     &-shape {
@@ -72,38 +89,52 @@ fancy-cursor {
 
     /* MINI CURSOR */
 
-    &-container.cursor-mini>&-shape.v1 {
+    &.cursor-mini>&-shape.v1 {
         opacity: 0 !important;
     }
 
     /* HIDDEN CURSOR */
 
-    &-container.cursor-hidden {
+    &.cursor-hidden {
         opacity: 0;
     }
 
     /* TEXT CURSOR */
 
-    &-container.cursor-text>&-point {
+    &.cursor-text>&-point {
         width: calc($fancy-cursor-size-pointer / 4);
         height: calc($fancy-cursor-size-pointer * 2);
     }
 
-    &-container.cursor-text>&-shape.v1 {
+    &.cursor-text>&-shape.v1 {
         opacity: 0;
     }
 
     /* POINTER CURSOR */
-    /* &-container.cursor-pointer>&-shape.v1 {
+    /* &.cursor-pointer>&-shape.v1 {
         border-radius: 0;
         background-color: transparent;
         border: 4px solid $color-text;
     } */
 
-    &-container.cursor-pointer>&-shape.v1 {
+    &.cursor-pointer>&-shape.v1 {
         opacity: 1;
     }
-    &-container.cursor-pointer>&-point {
+
+    &.cursor-pointer>&-point {
         opacity: 0;
+    }
+
+    &.cursor-picture {
+        mix-blend-mode:normal !important;
+    }
+    &.cursor-picture>&-shape.v1 {
+        opacity: 0;
+    }
+    &.cursor-picture>&-point {
+        opacity: 0;
+    }
+    &.cursor-picture>#fancy-cursor-picture {
+        display: block !important;
     }
 }

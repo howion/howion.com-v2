@@ -5,8 +5,6 @@ import { useState } from 'preact/hooks'
 export function HomeFeaturedWork() {
     const [selectedCat, setSelectedCat] = useState<(typeof HomeDataFeaturedWorksCategories)[number]>('All')
 
-    console.log(selectedCat)
-
     return (
         <section id="section-featuredwork" class="space-section-5x">
             <div className="w" data-parallax-speed="1">
@@ -33,13 +31,17 @@ export function HomeFeaturedWork() {
                     ([cat, works]) =>
                         (selectedCat === 'All' || selectedCat === cat) &&
                         works.map((work) => (
-                            <div className="featuredwork-list-entry">
+                            <div
+                                className="featuredwork-list-entry"
+                                data-cursor={work.picture ? 'picture' : 'pointer'}
+                                data-cursor-src={`/assets/screenshots/${work.picture}`}
+                            >
                                 <a
                                     className="featuredwork-list-entry-title primary-text text-slick no-focus"
                                     href={work.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    title={work.name}
+                                    title=""
                                 >
                                     {work.name}
                                 </a>

@@ -8,7 +8,10 @@
 
 @media (max-width: 470px) {
 
-    .spotify-player-lhs,
+    .spotify-player-cover {
+        padding: 0 !important;
+    }
+
     .spotify-player-rhs-top-rhs {
         display: none !important;
     }

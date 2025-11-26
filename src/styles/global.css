@@ -1,5 +1,6 @@
 /* BOILER OPINIONATED METACSS */
 @import "./framework/variables/_index.css";
+@import "./framework/keyframes/_index.css";
 @import "./framework/mixins/_index.css";
 
 /* GLOBAL OPTIONAL CSS */

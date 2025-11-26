@@ -71,7 +71,7 @@ post-effect.noise {
     height: auto;
     z-index: $z-index-post-effect;
     background-position: 50%;
-    background-image: url('/assets/image/noise.png');
+    background-image: url('/assets/images/noise.png');
     opacity: $post-effects-noise-opacity;
     pointer-events: none;
     will-change: transform;
