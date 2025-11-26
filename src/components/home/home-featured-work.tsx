@@ -21,6 +21,7 @@ export function HomeFeaturedWork() {
                         <div
                             className={c('radiobutton', cat === selectedCat && 'selected')}
                             onClick={() => setSelectedCat(cat)}
+                            data-cursor="pointer"
                         >
                             <span className="home-text text-slick">{cat}</span>
                         </div>

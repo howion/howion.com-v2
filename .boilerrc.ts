@@ -8,7 +8,7 @@ export const APP = {
     // Set quick development mode to true to hinder or disable some stuff. This
     // includes but not limited to: post-effects, fancy-cursor and possibly
     // your loaders that you will possibly conditionally hide from now on.
-    quickDevelopmentMode: isDev && true,
+    quickDevelopmentMode: isDev && false,
 
     // enable critters for production builds
     enableCritters: false
