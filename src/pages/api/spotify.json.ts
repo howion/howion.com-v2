@@ -1,88 +1,93 @@
 import { failure, success } from '#/api/api'
 
-export const prerender = false;
+export const prerender = false
 
 async function retrieveAccessToken(): Promise<string> {
-    const refreshToken = import.meta.env.SPOTIFY_REFRESH_TOKEN;
-    const clientId = import.meta.env.SPOTIFY_CLIENT_ID;
-    const clientSecret = import.meta.env.SPOTIFY_CLIENT_SECRET;
+    const refreshToken = import.meta.env.SPOTIFY_REFRESH_TOKEN
+    const clientId = import.meta.env.SPOTIFY_CLIENT_ID
+    const clientSecret = import.meta.env.SPOTIFY_CLIENT_SECRET
 
     const params = new URLSearchParams({
         grant_type: 'refresh_token',
-        refresh_token: refreshToken,
+        refresh_token: refreshToken
     })
 
     const res = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': `Basic ${btoa(`${clientId}:${clientSecret}`)}`
+            Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}`
         },
         body: params.toString()
     })
 
-    const data = await res.json();
+    const data = await res.json()
 
     if (!data || !data.access_token) {
-        throw new Error('No access token in response');
+        throw new Error('No access token in response')
     }
 
-    return data.access_token;
+    return data.access_token
 }
 
-async function retrieveTop(token: string, type: 'artists' | 'tracks', limit = 20, range: 'short_term' | 'medium_term' | 'long_term' = 'medium_term') {
+async function retrieveTop(
+    token: string,
+    type: 'artists' | 'tracks',
+    limit = 20,
+    range: 'short_term' | 'medium_term' | 'long_term' = 'medium_term'
+) {
     const res = await fetch(`https://api.spotify.com/v1/me/top/${type}?time_range=${range}&limit=${limit}`, {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${token}`
+            Authorization: `Bearer ${token}`
         }
-    });
+    })
 
     if (!res.ok) {
-        throw new Error(`Failed to retrieve top ${type}: ${res.status}`);
+        throw new Error(`Failed to retrieve top ${type}: ${res.status}`)
     }
 
-    const data = await res.json();
+    const data = await res.json()
 
-    return data;
+    return data
 }
 
 async function retrievePlaybackState(token: string) {
     const res = await fetch('https://api.spotify.com/v1/me/player', {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${token}`
+            Authorization: `Bearer ${token}`
         }
-    });
+    })
 
     if (!res.ok) {
-        throw new Error(`Failed to retrieve playback state: ${res.status}`);
+        throw new Error(`Failed to retrieve playback state: ${res.status}`)
     }
 
     try {
-        const data = await res.json();
+        const data = await res.json()
 
-        return data;
+        return data
     } catch (_) {
         // this probably means empty response, so return last known state
         const res2 = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=1', {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
+                Authorization: `Bearer ${token}`
             }
-        });
+        })
 
         if (!res2.ok) {
-            throw new Error(`Failed to retrieve recently played: ${res2.status}`);
+            throw new Error(`Failed to retrieve recently played: ${res2.status}`)
         }
 
-        const data2 = await res2.json();
+        const data2 = await res2.json()
 
         return {
             is_playing: false,
             progress_ms: 0,
             item: data2.items[0]?.track || null
-        };
+        }
     }
 }
 
@@ -107,7 +112,7 @@ export interface ApiSpotifyResponse {
 
 export async function GET() {
     try {
-        const token = await retrieveAccessToken();
+        const token = await retrieveAccessToken()
 
         const [playback, artists, tracks] = await Promise.all([
             retrievePlaybackState(token),
@@ -115,12 +120,12 @@ export async function GET() {
             retrieveTop(token, 'tracks', 8, 'short_term') // ~4 weeks
         ])
 
-        const genresSet = new Set<string>();
+        const genresSet = new Set<string>()
 
         for (const artist of artists.items) {
             if (artist.genres && Array.isArray(artist.genres)) {
                 for (const g of artist.genres) {
-                    genresSet.add(g);
+                    genresSet.add(g)
                 }
             }
         }
@@ -130,12 +135,14 @@ export async function GET() {
                 isActive: playback.is_playing,
                 at: playback.progress_ms || 0,
                 total: playback.item?.duration_ms || 0,
-                track: playback.item ? {
-                    name: playback.item.name,
-                    albumArtUrl: playback.item.album.images[0]?.url || null,
-                    spotifyUrl: playback.item.external_urls?.spotify || null,
-                    artists: playback.item.artists.map((a: any) => a.name)
-                } : null
+                track: playback.item
+                    ? {
+                          name: playback.item.name,
+                          albumArtUrl: playback.item.album.images[0]?.url || null,
+                          spotifyUrl: playback.item.external_urls?.spotify || null,
+                          artists: playback.item.artists.map((a: any) => a.name)
+                      }
+                    : null
             },
             artists: artists.items.map((a: any) => a.name),
             tracks: tracks.items.map((t: any) => ({
@@ -147,7 +154,7 @@ export async function GET() {
             genres: Array.from(genresSet)
         } satisfies ApiSpotifyResponse)
     } catch (e: unknown) {
-        console.error(e);
+        console.error(e)
         return failure()
     }
 }

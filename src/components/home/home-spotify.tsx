@@ -1,10 +1,8 @@
-import type { ApiSpotifyResponse } from '#/pages/api/spotify.json';
-import { useEffect, useRef, useState } from 'preact/hooks';
-import SpotifyIcon from '#/assets/spotify.svg?react';
-import { hasFocus } from '#/utils/client';
+import type { ApiSpotifyResponse } from '#/pages/api/spotify.json'
+import { useEffect, useRef, useState } from 'preact/hooks'
 
 interface Props {
-    id?: string;
+    id?: string
 }
 
 async function retrieveSpotifyData(): Promise<ApiSpotifyResponse | null> {
@@ -80,16 +78,8 @@ function SpotifyPlaybackBar({ at0, total }: { at0: number; total: number }) {
     return (
         <div class="spotify-player-bar-container">
             <div class="spotify-player-bar-times">
-                <p
-                    class="home-text text-slick spotify-color"
-                >
-                    {msToTime(at)}
-                </p>
-                <p
-                    class="home-text text-slick spotify-color"
-                >
-                    {msToTime(total)}
-                </p>
+                <p class="home-text text-slick spotify-color">{msToTime(at)}</p>
+                <p class="home-text text-slick spotify-color">{msToTime(total)}</p>
             </div>
             <div class="spotify-player-bar">
                 <div
@@ -97,8 +87,7 @@ function SpotifyPlaybackBar({ at0, total }: { at0: number; total: number }) {
                     style={{
                         width: `${percentage}%`
                     }}
-                >
-                </div>
+                ></div>
             </div>
         </div>
     )
@@ -109,7 +98,7 @@ export function HomeSpotify({ id }: Props) {
     const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
     async function updateData() {
-        if (!hasFocus()) {
+        if (!document.hasFocus()) {
             return
         }
 
@@ -119,7 +108,7 @@ export function HomeSpotify({ id }: Props) {
     }
 
     useEffect(() => {
-        if (data === null && hasFocus()) {
+        if (data === null && document.hasFocus()) {
             updateData()
             return
         }
@@ -170,28 +159,20 @@ export function HomeSpotify({ id }: Props) {
 
                         <div class="v w5 nowrap horizontal spotify-player">
                             <div class="v w1 spotify-player-lhs">
-                                <img
-                                    class="spotify-player-cover"
-                                    src={data.playback.track.albumArtUrl}
-                                    alt=""
-                                />
+                                <img class="spotify-player-cover" src={data.playback.track.albumArtUrl} alt="" />
                             </div>
                             <div class="v wauto mw0 spotify-player-rhs">
                                 <div class="spotify-player-rhs-top">
                                     <div class="spotify-player-rhs-top-lhs">
-                                        <p
-                                            class="spotify-player-title home-text text-slick"
-                                        >
+                                        <p class="spotify-player-title home-text text-slick">
                                             {data.playback.track.name}
                                         </p>
-                                        <p
-                                            class="spotify-player-artist home-text text-slick"
-                                        >
+                                        <p class="spotify-player-artist home-text text-slick">
                                             {data.playback.track.artists.join(', ')}
                                         </p>
                                     </div>
                                     <div class="spotify-player-rhs-top-rhs">
-                                        <SpotifyIcon />
+                                        <img src="/assets/spotify.svg" alt="Spotify Emblem" width="38" height="38" />
                                     </div>
                                 </div>
                                 <div class="spotify-player-rhs-bot">
@@ -204,18 +185,14 @@ export function HomeSpotify({ id }: Props) {
                     </div>
 
                     <div class="v wauto mw0 wmax2 spotify-dash-container">
-                        <p class="home-text text-slick spotify-color text-noselect">
-                            &nbsp;
-                        </p>
+                        <p class="home-text text-slick spotify-color text-noselect">&nbsp;</p>
                         <div class="v spotify-dash-container-inner">
                             <div class="spotify-dash"></div>
                         </div>
                     </div>
 
                     <div class="v w3 spotify-player-container">
-                        <p class="home-text text-slick spotify-color text-noselect">
-                            &nbsp;
-                        </p>
+                        <p class="home-text text-slick spotify-color text-noselect">&nbsp;</p>
 
                         <div class="v w3 nowrap horizontal spotify-player">
                             <div class="v w1 spotify-player-lhs">
@@ -228,15 +205,9 @@ export function HomeSpotify({ id }: Props) {
                             <div class="wauto mw0 spotify-player-rhs">
                                 <div class="spotify-player-rhs-top">
                                     <div class="spotify-player-rhs-top-lhs">
-                                        <p
-                                            class="spotify-player-title home-text text-slick"
-                                        >
-                                            Mert &mdash; howion
-                                        </p>
+                                        <p class="spotify-player-title home-text text-slick">Mert &mdash; howion</p>
                                         {data.playback.isActive && (
-                                            <p class="home-text text-slick spotify-color">
-                                                Online
-                                            </p>
+                                            <p class="home-text text-slick spotify-color">Online</p>
                                         )}
                                     </div>
                                 </div>
@@ -246,25 +217,14 @@ export function HomeSpotify({ id }: Props) {
                 </div>
             </div>
             <div class="w space-section-x center">
-                <div
-                    class="v wauto wmax10 horizontal spotify-lists"
-                    data-parallax-speed="1.25"
-                >
+                <div class="v wauto wmax10 horizontal spotify-lists" data-parallax-speed="1.25">
                     <div class="v w3 spotify-list">
-                        <p
-                            class="home-text text-slick spotify-color spotify-list-title"
-                        >
-                            Top Tracks This Month
-                        </p>
+                        <p class="home-text text-slick spotify-color spotify-list-title">Top Tracks This Month</p>
                         <div class="spotify-list-wrapper">
                             {data.tracks.map((track, i) => (
                                 <div class="spotify-list-item" key={i}>
-                                    <p class="home-text text-slick spotify-list-item-title">
-                                        {track.name}
-                                    </p>
-                                    <p
-                                        class="home-text text-slick spotify-list-item-subtitle"
-                                    >
+                                    <p class="home-text text-slick spotify-list-item-title">{track.name}</p>
+                                    <p class="home-text text-slick spotify-list-item-subtitle">
                                         {track.artists.join(', ')}
                                     </p>
                                 </div>
@@ -273,17 +233,11 @@ export function HomeSpotify({ id }: Props) {
                     </div>
 
                     <div class="v w2 spotify-list spotify-list-simple">
-                        <p
-                            class="home-text text-slick spotify-color spotify-list-title"
-                        >
-                            Recent Top Artists
-                        </p>
+                        <p class="home-text text-slick spotify-color spotify-list-title">Recent Top Artists</p>
                         <div class="spotify-list-wrapper">
                             {data.artists.map((name, i) => (
                                 <div class="spotify-list-item" key={i}>
-                                    <p class="home-text text-slick spotify-list-item-title">
-                                        {name}
-                                    </p>
+                                    <p class="home-text text-slick spotify-list-item-title">{name}</p>
                                 </div>
                             ))}
                         </div>
@@ -292,17 +246,11 @@ export function HomeSpotify({ id }: Props) {
                     <div className="v wauto wmax2"></div>
 
                     <div class="v w2 spotify-list spotify-list-simple">
-                        <p
-                            class="home-text text-slick spotify-color spotify-list-title"
-                        >
-                            Recent Top Genres
-                        </p>
+                        <p class="home-text text-slick spotify-color spotify-list-title">Recent Top Genres</p>
                         <div class="spotify-list-wrapper">
                             {data.genres.map((name, i) => (
                                 <div class="spotify-list-item" key={i}>
-                                    <p class="home-text text-slick spotify-list-item-title">
-                                        {name}
-                                    </p>
+                                    <p class="home-text text-slick spotify-list-item-title">{name}</p>
                                 </div>
                             ))}
                         </div>

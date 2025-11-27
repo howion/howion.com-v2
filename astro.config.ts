@@ -14,9 +14,6 @@ import compress, { Default } from '@playform/compress'
 import betterImageService from 'astro-better-image-service'
 import critters from 'astro-critters'
 
-// vite addons
-import svgr from 'vite-plugin-svgr'
-
 // dynamic conf
 import { APP } from './.boilerrc.ts'
 import { HomeData } from './constants/home-data.ts'
@@ -53,14 +50,34 @@ export default defineConfig({
         defaultStrategy: 'hover'
     },
     vite: {
-        plugins: [svgr()],
+        esbuild: {
+            minifyIdentifiers: true,
+            treeShaking: true,
+            drop: ['console', 'debugger'],
+            legalComments: 'none',
+            keepNames: false,
+        },
         build: {
-            sourcemap: true
+            sourcemap: willAnalyze,
+            minify: 'esbuild',
+            modulePreload: {
+                polyfill: false,
+            },
+            rollupOptions: {
+                treeshake: {
+                    moduleSideEffects: false,
+                    propertyReadSideEffects: false,
+                    tryCatchDeoptimization: false,
+                    unknownGlobalSideEffects: false,
+                    correctVarValueBeforeDeclaration: false,
+                    preset: 'smallest'
+                }
+            },
         }
     },
     redirects: socialRedirects,
     integrations: [
-        preact({ compat: true }),
+        preact({ compat: false, devtools: false }),
         betterImageService(),
         APP.enableCritters ? critters() : undefined,
         compress({
@@ -85,6 +102,6 @@ export default defineConfig({
             sitemap: true,
             policy: [{ allow: '/', userAgent: '*' }]
         }),
-        willAnalyze ? Sonda({ server: true }) : undefined
+        willAnalyze ? Sonda({ server: true, gzip: true }) : undefined
     ],
 })

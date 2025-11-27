@@ -66,11 +66,11 @@
             clientY = e.clientY;
         });
 
-        document.body.addEventListener('wheel', (e) => {
-            if (clientCursor === 'picture') {
-                clientCursor = 'default';
+        document.body.addEventListener("wheel", () => {
+            if (clientCursor === "picture") {
+                clientCursor = "default";
             }
-        })
+        });
 
         document.body.addEventListener("mouseover", (e) => {
             const path = e.composedPath && (e.composedPath() as HTMLElement[]);
