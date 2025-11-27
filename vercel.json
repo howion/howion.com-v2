@@ -1,4 +1,6 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
+    "framework": "astro",
+    "trailingSlash": false,
     "bunVersion": "1.x"
 }
