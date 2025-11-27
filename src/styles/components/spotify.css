@@ -43,7 +43,7 @@
             aspect-ratio: 1;
             object-fit: cover;
             padding: 8px;
-            border: 1px solid rgba($color-spotify, 0.5);
+            /*border: 1px solid rgba($color-spotify, 0.5);*/
         }
 
         &-rhs {

@@ -165,7 +165,7 @@ export const HomeData = {
                 description: 'An open source TypeScript library to compute the nth harmonic number efficiently using advanced mathematical techniques.'
             }
         ],
-                Notes: [
+        Notes: [
             {
                 name: 'Group Theory',
                 link: 'https://notes.howion.com/abstract-algebra/group-theory.html',
@@ -191,3 +191,8 @@ export const HomeDataFeaturedWorksCategories = [
     'All',
     ...Object.keys(HomeData.featuredWorks)
 ]
+
+export const HomeDatFeaturedWorkPicturesPath = Object.values(HomeData.featuredWorks)
+    .flat()
+    .map((w) => w.picture)
+    .filter(p => p !== undefined)

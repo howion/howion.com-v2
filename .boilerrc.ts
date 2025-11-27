@@ -1,7 +1,7 @@
 export const isDev = process.env.NODE_ENV === 'development'
 
 export const APP = {
-    name: 'Howion.com',
+    name: 'howion.com',
     description: 'Personal website of Mert "howion" Coskun, updated to v2.',
     site: 'https://www.howion.com/',
 
