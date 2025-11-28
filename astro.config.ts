@@ -58,19 +58,17 @@ export default defineConfig({
             keepNames: false,
         },
         build: {
+            modulePreload: {
+                polyfill: false
+            },
             sourcemap: willAnalyze,
             minify: 'esbuild',
-            modulePreload: {
-                polyfill: false,
-            },
             rollupOptions: {
                 treeshake: {
-                    moduleSideEffects: false,
+                    unknownGlobalSideEffects: false,
                     propertyReadSideEffects: false,
                     tryCatchDeoptimization: false,
-                    unknownGlobalSideEffects: false,
-                    correctVarValueBeforeDeclaration: false,
-                    preset: 'smallest'
+                    moduleSideEffects: 'no-external'
                 }
             },
         }
@@ -95,7 +93,7 @@ export default defineConfig({
             },
             CSS: false, // postcss cssnano is used instead
             Image: false,
-            SVG: false
+            SVG: true
         }),
         sitemap(),
         robotsTxt({
