@@ -12,25 +12,22 @@ export const HomeData = {
         'Homotopy Type Theory',
         '',
         'Interaction Nets',
-        'Complexity Theory',
+        'Linear Logic',
         // 'Lattice Theory',
-        '',
-        'Prediction Markets',
-        'Probability Theory'
     ],
-    researchPrior: ['Kleene Algebra', 'Graph Theory', 'Number Theory', '', 'Philosophy of Science'],
+    researchPrior: ['Kleene Algebra', 'Computation Complexity Theory', 'Prediction Markets', '', 'Philosophy of Science'],
 
     // DEVELOPMENT
     developmentEntries: {
-        'TBA Mobile App': ['iOS', 'Swift', 'Bun', '', 'Currently in Development'],
+        // 'TBA Mobile App': ['iOS', 'Swift', 'Bun', '', 'Currently in Development'],
+        'Book of Mathematics': ['My Magnum Opus', '', 'Currently in Development'],
         'Book of History': [
             'Nondeterministic Type Theory',
             'Interaction Nets',
             'NEO4J',
             '',
-            'Currently in Development'
+            'Postponed'
         ],
-        'Mathematica Par Excellence': ['My Magnum Opus', '', 'Postponed'],
         "Mahler's Hammer": ['Cryptography', '', 'Postponed']
     },
 
@@ -176,8 +173,8 @@ export const HomeData = {
                 link: 'https://notes.howion.com/abstract-algebra/ring-theory.html',
             },
             {
-                name: 'Logic',
-                link: 'https://notes.howion.com/logic.html'
+                name: 'Logic and Computation',
+                link: 'https://notes.howion.com/logic-and-computation.html'
             },
             {
                 name: 'Probability Theory',
