@@ -35,7 +35,12 @@ export default defineConfig({
     server: {
         port: 3000
     },
-    adapter: vercel(), // choose your adapter
+    adapter: vercel({
+        webAnalytics: {
+            enabled: true
+        },
+        imageService: false,
+    }),
     security: {
         // server only
         checkOrigin: false
