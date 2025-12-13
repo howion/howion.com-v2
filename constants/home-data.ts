@@ -169,9 +169,8 @@ export const HomeData = {
                 link: 'https://notes.howion.com/probability-theory.html'
             }
         ],
-        Drawings: [
-
-        ],
+        // Drawings: [
+        // ],
         Miscellaneous: [
             {
                 name: 'lambert-w-function',
