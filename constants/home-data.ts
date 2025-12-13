@@ -150,19 +150,7 @@ export const HomeData = {
                 link: 'https://github.com/howion/notes/blob/main/poems/05-bitscript.md'
             }
         ],
-        Miscellaneous: [
-            {
-                name: 'lambert-w-function',
-                link: 'https://www.npmjs.com/package/lambert-w-function',
-                description: 'An open source TypeScript implementation of the Lambert W function for both Node.js and browser environments with ~500 downloads a week.'
-            },
-            {
-                name: 'nth-harmonic',
-                link: 'https://github.com/howion/nth-harmonic',
-                description: 'An open source TypeScript library to compute the nth harmonic number efficiently using advanced mathematical techniques.'
-            }
-        ],
-        Notes: [
+                Notes: [
             {
                 name: 'Group Theory',
                 link: 'https://notes.howion.com/abstract-algebra/group-theory.html',
@@ -179,6 +167,21 @@ export const HomeData = {
             {
                 name: 'Probability Theory',
                 link: 'https://notes.howion.com/probability-theory.html'
+            }
+        ],
+        Drawings: [
+
+        ],
+        Miscellaneous: [
+            {
+                name: 'lambert-w-function',
+                link: 'https://www.npmjs.com/package/lambert-w-function',
+                description: 'An open source TypeScript implementation of the Lambert W function for both Node.js and browser environments with ~500 downloads a week.'
+            },
+            {
+                name: 'nth-harmonic',
+                link: 'https://github.com/howion/nth-harmonic',
+                description: 'An open source TypeScript library to compute the nth harmonic number efficiently using advanced mathematical techniques.'
             }
         ],
     } satisfies Record<string, FeaturedWork[]> as Record<string, FeaturedWork[]>,

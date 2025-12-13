@@ -39,7 +39,7 @@ export default defineConfig({
         webAnalytics: {
             enabled: true
         },
-        imageService: false,
+        imageService: false
     }),
     security: {
         // server only

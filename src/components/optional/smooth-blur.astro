@@ -1,47 +1,47 @@
 ---
 export interface Props {
-    position: "top" | "bottom";
-    direction: "top" | "bottom";
+    position: 'top' | 'bottom'
+    direction: 'top' | 'bottom'
 
-    id?: string;
-    class?: Classname;
+    id?: string
+    class?: Classname
 
     /**
      * @default 1
      */
-    intensity?: number;
+    intensity?: number
 
     /**
      * @default 5
      */
-    divCount?: number;
+    divCount?: number
 }
 
-const CURVE_FUNCTION = (p: number) => p * p * (3 - 2 * p);
-const DIV_COUNT = Astro.props.divCount ?? 5;
+const CURVE_FUNCTION = (p: number) => p * p * (3 - 2 * p)
+const DIV_COUNT = Astro.props.divCount ?? 5
 
-const divs = [];
-const increment = 100 / DIV_COUNT;
-const intensity = Astro.props.intensity ?? 1;
+const divs = []
+const increment = 100 / DIV_COUNT
+const intensity = Astro.props.intensity ?? 1
 
 for (let i = 0; i < DIV_COUNT; i++) {
-    const value = CURVE_FUNCTION(i / DIV_COUNT);
-    const blur = 2 ** (value * 4) * 0.625 * intensity;
+    const value = CURVE_FUNCTION(i / DIV_COUNT)
+    const blur = 2 ** (value * 4) * 0.625 * intensity
 
-    const p1 = Math.round((increment * i - increment) * 10) / 10;
-    const p2 = Math.round(increment * i * 10) / 10;
-    const p3 = Math.round((increment * i + increment) * 10) / 10;
-    const p4 = Math.round((increment * i + increment * 2) * 10) / 10;
+    const p1 = Math.round((increment * i - increment) * 10) / 10
+    const p2 = Math.round(increment * i * 10) / 10
+    const p3 = Math.round((increment * i + increment) * 10) / 10
+    const p4 = Math.round((increment * i + increment * 2) * 10) / 10
 
-    let gradient = `transparent ${p1}%, black ${p2}%`;
-    if (p3 <= 100) gradient += `, black ${p3}%`;
-    if (p4 <= 100) gradient += `, transparent ${p4}%`;
+    let gradient = `transparent ${p1}%, black ${p2}%`
+    if (p3 <= 100) gradient += `, black ${p3}%`
+    if (p4 <= 100) gradient += `, transparent ${p4}%`
 
-    const direction = `to ${Astro.props.direction}`;
+    const direction = `to ${Astro.props.direction}`
 
     divs.push({
-        style: `mask-image:linear-gradient(${direction}, ${gradient});backdrop-filter:blur(${blur.toFixed(3)}px)`,
-    });
+        style: `mask-image:linear-gradient(${direction}, ${gradient});backdrop-filter:blur(${blur.toFixed(3)}px)`
+    })
 }
 ---
 
