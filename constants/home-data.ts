@@ -1,8 +1,8 @@
 export interface FeaturedWork {
-    name: string;
-    description?: string;
-    picture?: string;
-    link: string;
+    name: string
+    description?: string
+    picture?: string
+    link: string
 }
 
 export const HomeData = {
@@ -12,22 +12,22 @@ export const HomeData = {
         'Homotopy Type Theory',
         '',
         'Interaction Nets',
-        'Linear Logic',
+        'Linear Logic'
         // 'Lattice Theory',
     ],
-    researchPrior: ['Kleene Algebra', 'Computation Complexity Theory', 'Prediction Markets', '', 'Philosophy of Science'],
+    researchPrior: [
+        'Kleene Algebra',
+        'Computation Complexity Theory',
+        'Prediction Markets',
+        '',
+        'Philosophy of Science'
+    ],
 
     // DEVELOPMENT
     developmentEntries: {
         // 'TBA Mobile App': ['iOS', 'Swift', 'Bun', '', 'Currently in Development'],
         'Book of Mathematics': ['My Magnum Opus', '', 'Currently in Development'],
-        'Book of History': [
-            'Nondeterministic Type Theory',
-            'Interaction Nets',
-            'NEO4J',
-            '',
-            'Postponed'
-        ],
+        'Book of History': ['Nondeterministic Type Theory', 'Interaction Nets', 'NEO4J', '', 'Postponed'],
         "Mahler's Hammer": ['Cryptography', '', 'Postponed']
     },
 
@@ -104,7 +104,7 @@ export const HomeData = {
             'Desmos',
             'WolframAlpha'
         ],
-        Opinionated: ['Arch Linux', 'XFCE', 'ZSH', 'VSCodium', 'Bun', 'Biome', 'Mullvad VPN', 'LibreWolf', 'Signal'],
+        Opinionated: ['Arch Linux', 'XFCE', 'ZSH', 'VSCodium', 'Bun', 'Biome', 'Mullvad VPN', 'LibreWolf', 'Signal']
     },
 
     featuredWorks: {
@@ -113,7 +113,8 @@ export const HomeData = {
                 name: 'Anatolia: 19th Century',
                 link: 'https://anatolia19.metu.edu.tr/',
                 picture: 'a19.webp',
-                description: 'An undergraduate digital humanities project aiming to compile as well as digitize intricate data on the region in this century.'
+                description:
+                    'An undergraduate digital humanities project aiming to compile as well as digitize intricate data on the region in this century.'
             },
             {
                 name: 'howion.com (v2)',
@@ -126,9 +127,9 @@ export const HomeData = {
                 link: 'https://speculo.howion.com/',
                 picture: 'speculo.webp',
                 description: 'P2P mobile to desktop device orientation mirroring.'
-            },
+            }
         ],
-        'Lectures': [
+        Lectures: [
             {
                 name: 'Gödel ve Ontolojik Kanıtı',
                 picture: 'godel.webp',
@@ -150,15 +151,16 @@ export const HomeData = {
                 link: 'https://github.com/howion/notes/blob/main/poems/05-bitscript.md'
             }
         ],
-                Notes: [
+        Notes: [
             {
                 name: 'Group Theory',
                 link: 'https://notes.howion.com/abstract-algebra/group-theory.html',
-                description: 'Comprehensive notes on Group Theory, covering fundamental concepts, theorems, and applications in abstract algebra.'
+                description:
+                    'Comprehensive notes on Group Theory, covering fundamental concepts, theorems, and applications in abstract algebra.'
             },
             {
                 name: 'Ring Theory',
-                link: 'https://notes.howion.com/abstract-algebra/ring-theory.html',
+                link: 'https://notes.howion.com/abstract-algebra/ring-theory.html'
             },
             {
                 name: 'Logic and Computation',
@@ -166,7 +168,7 @@ export const HomeData = {
             },
             {
                 name: 'Probability Theory',
-                link: 'https://notes.howion.com/probability-theory.html'
+                link: 'https://notes.howion.com/statistics/probability-theory.html'
             }
         ],
         // Drawings: [
@@ -175,23 +177,22 @@ export const HomeData = {
             {
                 name: 'lambert-w-function',
                 link: 'https://www.npmjs.com/package/lambert-w-function',
-                description: 'An open source TypeScript implementation of the Lambert W function for both Node.js and browser environments with ~500 downloads a week.'
+                description:
+                    'An open source TypeScript implementation of the Lambert W function for both Node.js and browser environments with ~500 downloads a week.'
             },
             {
                 name: 'nth-harmonic',
                 link: 'https://github.com/howion/nth-harmonic',
-                description: 'An open source TypeScript library to compute the nth harmonic number efficiently using advanced mathematical techniques.'
+                description:
+                    'An open source TypeScript library to compute the nth harmonic number efficiently using advanced mathematical techniques.'
             }
-        ],
-    } satisfies Record<string, FeaturedWork[]> as Record<string, FeaturedWork[]>,
+        ]
+    } satisfies Record<string, FeaturedWork[]> as Record<string, FeaturedWork[]>
 }
 
-export const HomeDataFeaturedWorksCategories = [
-    'All',
-    ...Object.keys(HomeData.featuredWorks)
-]
+export const HomeDataFeaturedWorksCategories = ['All', ...Object.keys(HomeData.featuredWorks)]
 
 export const HomeDatFeaturedWorkPicturesPath = Object.values(HomeData.featuredWorks)
     .flat()
     .map((w) => w.picture)
-    .filter(p => p !== undefined)
+    .filter((p) => p !== undefined)
