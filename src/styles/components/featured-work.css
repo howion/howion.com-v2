@@ -1,6 +1,6 @@
 .featuredwork {
     &-radios {
-        margin-top: 48px;
+        margin-top: calc(var(--space-m) * 6);
     }
 
     &-list {

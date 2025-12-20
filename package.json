@@ -27,7 +27,7 @@
         "zustand": "^5.0.9"
     },
     "devDependencies": {
-        "@biomejs/biome": "2.3.9",
+        "@biomejs/biome": "2.3.10",
         "@playform/compress": "0.2.0",
         "astro-critters": "^2.2.1",
         "autoprefixer": "^10.4.23",

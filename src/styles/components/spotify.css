@@ -42,7 +42,8 @@
             height: 100%;
             aspect-ratio: 1;
             object-fit: cover;
-            padding: 8px;
+            padding: var(--space-m);
+            background-color: rgba($color-spotify, 0.1);
             /*border: 1px solid rgba($color-spotify, 0.5);*/
         }
 
@@ -132,11 +133,22 @@
             flex-direction: column;
             margin-top: calc(var(--space-m) * 4);
             row-gap: calc(var(--space-m) * 4);
+            width: 100%;
+            padding-right: var(--space-m);
         }
 
         &-item {
             display: flex;
             flex-direction: column;
+
+            &-title,
+            &-subtitle {
+                overflow: hidden;
+                white-space: nowrap;
+
+                max-width: 100%;
+                text-overflow: ellipsis;
+            }
 
             &-subtitle {
                 opacity: 0.5;

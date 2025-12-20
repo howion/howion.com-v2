@@ -72,7 +72,7 @@ canvas {
 
         &::before {
             margin-bottom: -0.21em;
-            /* margin-bottom: -0.2em;* /
+            /* margin-bottom: -0.2em; */
         }
 
         &::after {
@@ -109,8 +109,8 @@ canvas {
     }
 
     &-tabular {
-        /* font-feature-settings:"tnam"; */
-        /* font-variant-numeric: tabular-nums; */
+        font-feature-settings:"tnam";
+        font-variant-numeric: tabular-nums;
     }
 }
 
@@ -135,10 +135,24 @@ canvas {
 
 .home-h1 {
     font-size: var(--dynamicvar-home-text-hero-title-size);
+
+    &.text-slick {
+        &::after {
+            margin-top: -0.09em;
+        }
+    }
 }
 
 .home-h2 {
     font-size: var(--dynamicvar-home-text-title-size);
+}
+
+.home-h2, .footer-head-title {
+    &.text-slick {
+        &::after {
+            margin-top: -0.09em;
+        }
+    }
 }
 
 .hard-break {
