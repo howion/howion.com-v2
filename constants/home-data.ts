@@ -154,21 +154,21 @@ export const HomeData = {
         Notes: [
             {
                 name: 'Group Theory',
-                link: 'https://notes.howion.com/abstract-algebra/group-theory.html',
+                link: 'https://notes.howion.com/group-theory',
                 description:
                     'Comprehensive notes on Group Theory, covering fundamental concepts, theorems, and applications in abstract algebra.'
             },
             {
                 name: 'Ring Theory',
-                link: 'https://notes.howion.com/abstract-algebra/ring-theory.html'
+                link: 'https://notes.howion.com/ring-theory'
             },
             {
                 name: 'Logic and Computation',
-                link: 'https://notes.howion.com/logic-and-computation.html'
+                link: 'https://notes.howion.com/logic-and-computation'
             },
             {
                 name: 'Probability Theory',
-                link: 'https://notes.howion.com/statistics/probability-theory.html'
+                link: 'https://notes.howion.com/probability-theory'
             }
         ],
         // Drawings: [
