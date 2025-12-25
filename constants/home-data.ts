@@ -60,7 +60,7 @@ export const HomeData = {
             'PHP',
             'CSharp',
             'Visual Basic',
-            'Markdown'
+            'Markdown X'
         ],
         'Frontend and DevTools': [
             'PostCSS',
@@ -92,7 +92,10 @@ export const HomeData = {
             'Cloudflare',
             'OpenAI APIs',
             'Sentry',
-            'Plausible'
+            'Plausible',
+            'Laravel',
+            'Laravel Forge',
+            'Hetzner Cloud'
         ],
         'Tools and Services': [
             'Figma',
@@ -101,10 +104,22 @@ export const HomeData = {
             'Github Copilot',
             'CSS Design Awards',
             'awwwards',
-            'Desmos',
-            'WolframAlpha'
+            // 'Desmos',
+            'WolframAlpha',
+            'Cursor'
         ],
-        Opinionated: ['Arch Linux', 'XFCE', 'ZSH', 'VSCodium', 'Bun', 'Biome', 'Mullvad VPN', 'LibreWolf', 'Signal']
+        Opinionated: [
+            'Arch Linux',
+            'XFCE',
+            'ZSH',
+            'VSCodium',
+            'Bun',
+            'Biome',
+            'Mullvad VPN',
+            'LibreWolf',
+            'Signal',
+            'Typst'
+        ]
     },
 
     featuredWorks: {
