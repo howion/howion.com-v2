@@ -31,13 +31,13 @@ for (const [site, url] of Object.entries(HomeData.contactSocials)) {
 // SOCIAL REDIRECTS END
 
 export default defineConfig({
-    output: 'static', // static | server
+    output: 'static', // default output mode
     server: {
         port: 3000
     },
     adapter: vercel({
         webAnalytics: {
-            enabled: true
+            enabled: false // handled within document
         },
         imageService: false
     }),
@@ -60,7 +60,7 @@ export default defineConfig({
             treeShaking: true,
             drop: ['console', 'debugger'],
             legalComments: 'none',
-            keepNames: false,
+            keepNames: false
         },
         build: {
             modulePreload: {
@@ -75,12 +75,14 @@ export default defineConfig({
                     tryCatchDeoptimization: false,
                     moduleSideEffects: 'no-external'
                 }
-            },
+            }
         }
     },
     redirects: socialRedirects,
     integrations: [
-        preact({ compat: false, devtools: false }),
+        APP.jsx.enabled && APP.jsx.preact.enabled
+            ? preact({ compat: APP.jsx.preact.compat, devtools: APP.jsx.preact.devtools })
+            : undefined,
         betterImageService(),
         APP.enableCritters ? critters() : undefined,
         compress({
@@ -98,7 +100,7 @@ export default defineConfig({
             },
             CSS: false, // postcss cssnano is used instead
             Image: false,
-            SVG: true
+            SVG: false
         }),
         sitemap(),
         robotsTxt({
@@ -106,5 +108,5 @@ export default defineConfig({
             policy: [{ allow: '/', userAgent: '*' }]
         }),
         willAnalyze ? Sonda({ server: true, gzip: true }) : undefined
-    ],
+    ]
 })

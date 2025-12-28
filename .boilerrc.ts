@@ -11,7 +11,16 @@ export const APP = {
     quickDevelopmentMode: isDev && false,
 
     // enable critters for production builds
-    enableCritters: false
+    enableCritters: false,
+
+    jsx: {
+        enabled: true,
+        preact: {
+            enabled: true,
+            compat: false,
+            devtools: false
+        }
+    },
 } as const
 
 export const SEO_DEFAULTS = {
