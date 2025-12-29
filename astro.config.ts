@@ -139,7 +139,7 @@ export default defineConfig({
                     src: '/assets/screenshots/howioncom.webp',
                     sizes: '960x540',
                     platform: 'webapp',
-                    label: 'With Software, you can select a part of your screen and take a screenshot in seconds.'
+                    label: 'howion.com screenshot'
                 }
             ]
             // display: APP.display
