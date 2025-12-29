@@ -1,5 +1,7 @@
-<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1000" height="1000" fill="#10100E"/>
-<path d="M175 175H575V325H325V575H175V175Z" fill="#FFFFE3"/>
-<path d="M575 575H825V825H575V575Z" fill="#FFFFE3"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1000" height="1000" fill="#10100E"></rect>
+<path d="M175 175H575V325H325V575H175V175Z" fill="#FFFFE3"></path>
+<path d="M575 575H825V825H575V575Z" fill="#FFFFE3"></path>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

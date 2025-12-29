@@ -1,24 +1,24 @@
 ---
-import { APP, SEO_DEFAULTS } from "##/.boilerrc";
-import FancyCursorProvider from "#/components/optional/fancy-cursor-provider.astro";
-import Loader2 from "#/components/loader2.astro";
-import SmoothBlur from "#/components/optional/smooth-blur.astro";
+import { APP, SEO_DEFAULTS } from '##/.boilerrc'
+import FancyCursorProvider from '#/components/optional/fancy-cursor-provider.astro'
+import Loader2 from '#/components/loader2.astro'
+import SmoothBlur from '#/components/optional/smooth-blur.astro'
 
-import Analytics from "@vercel/analytics/astro";
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
-    title?: string;
-    subtitle?: string;
-    description?: string;
-    keywords?: string[];
+    title?: string
+    subtitle?: string
+    description?: string
+    // keywords?: string[]
 }
 
 // const { title, subtitle, description } = Astro.props
-const title = Astro.props.title ?? SEO_DEFAULTS.title;
-const subtitle = Astro.props.subtitle;
-const description = Astro.props.description ?? SEO_DEFAULTS.description;
+const title = Astro.props.title ?? SEO_DEFAULTS.title
+const subtitle = Astro.props.subtitle
+const description = Astro.props.description ?? SEO_DEFAULTS.description
 
-const document_title = (subtitle ? `${subtitle} | ` : "") + title;
+const document_title = (subtitle ? `${subtitle} | ` : '') + title
 ---
 
 <!doctype html>
@@ -31,8 +31,32 @@ const document_title = (subtitle ? `${subtitle} | ` : "") + title;
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
         />
+
+        <!-- FAVICON START via realfavicongenerator.net -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon-96x96.png"
+            sizes="96x96"
+        />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content={APP.name} />
+        <!-- FAVICON END -->
+
+        <link
+            rel="manifest"
+            href="/manifest.webmanifest"
+            crossorigin="anonymous"
+        />
+
         <meta name="generator" content={Astro.generator} />
+
         <link
             rel="preload"
             href="/assets/fonts/overused-grotesk/variable.woff2"
@@ -43,7 +67,7 @@ const document_title = (subtitle ? `${subtitle} | ` : "") + title;
         <title>{document_title}</title>
         {description && <meta name="description" content={description} />}
     </head>
-    <body style="background-color:#000;">
+    <body style={`background-color:${APP.backgroundColor};`}>
         {!APP.quickDevelopmentMode && <Loader2 />}
         <post-effect class="noise"></post-effect>
 

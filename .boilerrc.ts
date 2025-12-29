@@ -2,8 +2,13 @@ export const isDev = process.env.NODE_ENV === 'development'
 
 export const APP = {
     name: 'howion.com',
-    description: 'Personal website of Mert "howion" Coskun, updated to v2.',
+    shortName: 'howion',
+    description: 'Personal website v2 of Mert "howion" Coskun',
+    // display: 'standalone', // "standalone" | "fullscreen" | "minimal-ui" | "browser" | undefined
     site: 'https://www.howion.com/',
+
+    themeColor: '#10100E',
+    backgroundColor: '#10100E',
 
     // Set quick development mode to true to hinder or disable some stuff. This
     // includes but not limited to: post-effects, fancy-cursor and possibly

@@ -13,6 +13,7 @@ import Sonda from 'sonda/astro'
 import compress, { Default } from '@playform/compress'
 import betterImageService from 'astro-better-image-service'
 import critters from 'astro-critters'
+import webmanifest from 'astro-webmanifest'
 
 // dynamic conf
 import { APP } from './.boilerrc.ts'
@@ -106,6 +107,42 @@ export default defineConfig({
         robotsTxt({
             sitemap: true,
             policy: [{ allow: '/', userAgent: '*' }]
+        }),
+        webmanifest({
+            name: APP.name,
+            short_name: APP.shortName,
+            description: APP.description,
+            theme_color: APP.themeColor,
+            background_color: APP.backgroundColor,
+            categories: ['social', 'utilities'], // see: https://github.com/w3c/manifest/wiki/Categories
+            lang: 'en-US',
+            dir: 'ltr',
+
+            icons: [
+                {
+                    src: '/web-app-manifest-192x192.png',
+                    sizes: '192x192',
+                    type: 'image/png',
+                    purpose: 'maskable'
+                },
+                {
+                    src: '/web-app-manifest-512x512.png',
+                    sizes: '512x512',
+                    type: 'image/png',
+                    purpose: 'maskable'
+                }
+            ],
+            start_url: '/',
+            orientation: 'any',
+            screenshots: [
+                {
+                    src: '/assets/screenshots/howioncom.webp',
+                    sizes: '960x540',
+                    platform: 'webapp',
+                    label: 'With Software, you can select a part of your screen and take a screenshot in seconds.'
+                }
+            ]
+            // display: APP.display
         }),
         willAnalyze ? Sonda({ server: true, gzip: true }) : undefined
     ]
