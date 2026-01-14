@@ -5,7 +5,7 @@ export const APP = {
     shortName: 'howion',
     description: 'Personal website v2 of Mert "howion" Coskun',
     // display: 'standalone', // "standalone" | "fullscreen" | "minimal-ui" | "browser" | undefined
-    site: 'https://www.howion.com/',
+    site: 'https://www.howion.com',
 
     themeColor: '#10100E',
     backgroundColor: '#10100E',
