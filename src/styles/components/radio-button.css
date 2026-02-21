@@ -11,7 +11,7 @@
 
     &-container {
         display: flex;
-        gap: 16px;
+        gap: 14px;
         flex-wrap: wrap;
     }
 }

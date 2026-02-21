@@ -61,7 +61,7 @@ const { id, class: classname, isRhs, title, titleExtra, sup, entries } = Astro.p
                     >
                         <div class="text-stack-slick">
                             {items.map((item) => (
-                                <p class="home-text text-slick">{item}</p>
+                                <p class="home-text text-slick">{item ? '* ' : ''}{item}</p>
                             ))}
                         </div>
                     </DetailTable>
