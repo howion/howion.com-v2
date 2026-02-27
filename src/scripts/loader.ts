@@ -20,7 +20,7 @@ import { lenis } from './lenis'
                             lenis.scrollTo('.scroll-into-view', {})
                         }, 500)
                     }
-                }, 4000)
+                }, 750)
 
                 onIdle(() => {
                     for (const uri of HomeDatFeaturedWorkPicturesPath) {

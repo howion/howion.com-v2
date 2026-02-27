@@ -53,7 +53,7 @@ export const HomeData = {
             'Bash',
             'HTML5',
             'CSS',
-            'TypeScript',
+            'TypeScript*',
             'JavaScript',
             'LaTeX',
             'Python',
@@ -63,9 +63,9 @@ export const HomeData = {
             'Markdown X'
         ],
         'Frontend and DevTools': [
-            'PostCSS',
+            'PostCSS*',
             'SASS',
-            'React',
+            'React*',
             'React Native',
             'Next',
             'Astro',
@@ -75,7 +75,7 @@ export const HomeData = {
             'PhoneGap'
         ],
         'Backend and DevOps': [
-            'AWS',
+            'AWS*',
             'Docker',
             'Git',
             'Postgres',
@@ -89,8 +89,9 @@ export const HomeData = {
             'Nginx',
             'Caddy',
             'Prisma',
+            'Drizzle',
             'Cloudflare',
-            'OpenAI APIs',
+            'OpenAI',
             'Sentry',
             'Plausible',
             'Laravel',
@@ -98,12 +99,11 @@ export const HomeData = {
             'Hetzner Cloud'
         ],
         'Tools and Services': [
-            'Figma',
+            'Figma*',
+            'Linear',
             'arxiv',
             'Adobe PS6',
             'Github Copilot',
-            'CSS Design Awards',
-            'awwwards',
             // 'Desmos',
             'WolframAlpha',
             'Cursor'
@@ -113,9 +113,9 @@ export const HomeData = {
             'XFCE',
             'ZSH',
             'VSCodium',
-            'Bun',
+            'Bun*',
             'Biome',
-            'Mullvad VPN',
+            'Mullvad',
             'LibreWolf',
             'Signal',
             'Typst'

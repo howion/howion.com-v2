@@ -33,8 +33,8 @@ const numberOfEntries = Object.values(HomeData.techStack).reduce((acc, items) =>
                     </v>
                     <v class="wauto wmin2 home-techstack">
                         {items.map((item) => (
-                            <div class="home-techstack-item">
-                                <span class="home-text text-slick">{item}</span>
+                            <div class={"home-techstack-item " + (item.endsWith('*') ? 'is-starred' : '')}>
+                                <span class="home-text text-slick">{item.replace(/\*$/, '')}</span>
                             </div>
                         ))}
                     </v>

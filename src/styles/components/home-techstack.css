@@ -25,5 +25,10 @@ $home-techstack-border-color: #303030;
         display: inline-block;
         padding: 10px 12px;
         background-color: $color-body-darker;
+
+        &.is-starred {
+            /* background-color: #c2410c !important; */
+            outline: 1px solid rgba($color-text, 0.2);
+        }
     }
 }
