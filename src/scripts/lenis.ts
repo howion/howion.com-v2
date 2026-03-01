@@ -19,16 +19,8 @@ const parallaxElements = document.querySelectorAll('[data-parallax-speed]') as N
 function raf(time: number) {
     lenis.raf(time)
 
-    // handle scroll events here
-    // const vh = document.documentElement.clientHeight
-    // const scrollY = lenis.actualScroll
-    // const vw = document.documentElement.clientWidth
-
     for (const el of parallaxElements) {
-        // const viewportTop = el.offsetTop - lenis.actualScroll
         const viewportRest = window.innerHeight - (el.offsetTop - lenis.actualScroll)
-        // if (viewportRest < 0) continue // skip elements that are not in view
-        // if (viewportRest > window.innerHeight) continue // skip elements that are too far down
 
         const speed = Number.parseFloat(el.getAttribute('data-parallax-speed')! || '1')
 
