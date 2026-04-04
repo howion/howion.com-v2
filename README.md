@@ -2,6 +2,10 @@
 
 Personal website, updated. Still kind-of under construction.
 
+<center>
+<img width="640" src="https://repository-images.githubusercontent.com/1026590725/35a47b9d-8709-46c6-a7d7-6edacb68a00a" alt="Screenshot">
+</center>
+
 ## Tech Stack
 
 * Typescript
