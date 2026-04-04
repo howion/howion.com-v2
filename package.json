@@ -5,11 +5,12 @@
     "version": "2.0.0",
     "scripts": {
         "dev": "astro dev --host",
-        "build": "astro build",
+        "build": "bun run format && astro build",
         "analyze": "ANALYZE=true astro build",
         "preview": "astro preview --host",
         "lint": "biome lint --write ./src",
-        "format": "biome format --write ./src"
+        "format": "biome format --write ./src",
+        "deploy": "bun run build && bunx vercel deploy --prebuilt --prod --yes"
     },
     "dependencies": {
         "@astrojs/preact": "^5.1.1",
