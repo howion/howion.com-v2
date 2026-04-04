@@ -47,6 +47,12 @@ canvas {
 } */
 
 .text {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+
     &-wrap {
         white-space: normal !important;
     }
@@ -109,7 +115,7 @@ canvas {
     }
 
     &-tabular {
-        font-feature-settings:"tnam";
+        font-feature-settings: "tnam";
         font-variant-numeric: tabular-nums;
     }
 }
@@ -147,7 +153,8 @@ canvas {
     font-size: var(--dynamicvar-home-text-title-size);
 }
 
-.home-h2, .footer-head-title {
+.home-h2,
+.footer-head-title {
     &.text-slick {
         &::after {
             margin-top: -0.09em;

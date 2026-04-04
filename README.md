@@ -1,12 +1,8 @@
-# :construction: howion.com-v2
+# :construction: [**howion.com**](https://www.howion.com/)
 
-Personal website, updated. Still under construction.
-
-Visit [**howion.com**](https://www.howion.com/).
+Personal website, updated. Still kind-of under construction.
 
 ## Tech Stack
-
-> I plan to use this Astro project as a boilerplate for my future Astro stuff.
 
 * Typescript
 * Astro
@@ -14,12 +10,11 @@ Visit [**howion.com**](https://www.howion.com/).
 * PostCSS
 * cssnano
 
-## To-Do's
+## Todo's
 
 ### Active
 
 * Poems, custom entry page with optional music player.
-* Type effect for hero title
 * Featured Work Section
 * Keywords Page?
 * 3D Transformations
@@ -27,12 +22,10 @@ Visit [**howion.com**](https://www.howion.com/).
 * Add Easters
 * 404 and other error pages
 * ~~Waypoints~~
-* Design and code splash component. Maybe use the previous one?
 
 ### Later
 
 * Blog
-* howion/notes integration
 * Draw and code more sections
   * NPM?
   * GitHub Summary?
@@ -44,4 +37,4 @@ For all inquiries, feel free to reach out me at **<mert.coskun@metu.edu.tr>**.
 
 ## License
 
-This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)** with additional terms requiring attribution, change documentation, and full source availability. See [**LICENSE**](https://github.com/howion/howion.com-v2/blob/main/LICENSE) and [**ADDITIONAL_TERMS.txt**](https://github.com/howion/howion.com-v2/blob/main/ADDITIONAL_TERMS.txt) for full details.
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)** with additional terms requiring attribution, change documentation, and full source availability. See [**LICENSE**](https://github.com/howion/howion.com-v2/blob/main/LICENSE) and [**ADDITIONAL_TERMS**](https://github.com/howion/howion.com-v2/blob/main/ADDITIONAL_TERMS.txt) for full details.

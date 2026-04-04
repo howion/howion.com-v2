@@ -25,8 +25,11 @@ export function SectionTicker(props: SectionTickerProps) {
         const ctx = canvasRef.current.getContext('2d')!
         if (!ctx) return
 
-        ctx.canvas.width = window.innerWidth
-        ctx.canvas.height = DEFAULT_HEIGHT
+        const width = window.innerWidth
+        const height = Math.min(DEFAULT_HEIGHT, width * 0.1)
+
+        ctx.canvas.width = width
+        ctx.canvas.height = height
 
         let bufferCanvas: HTMLCanvasElement
         let bufferCtx: CanvasRenderingContext2D

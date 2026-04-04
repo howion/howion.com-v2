@@ -32,10 +32,8 @@ export const HomeData = {
     },
 
     // CONTACT
-    contactAvailableForHire: false,
     contactAvailableFor: ['Collaboration', 'Research', 'Consulting', '', 'Just Chat \\ EN \\ TR'],
     contactMails: ['mert.coskun (a) metu.edu.tr', 'howionwastaken (a) gmail.com'],
-    contactPhone: '+90 534 634 0134',
     contactSocials: {
         GitHub: 'https://github.com/howion/',
         LinkedIn: 'https://www.linkedin.com/in/omer-mert-coskun/',
@@ -174,6 +172,12 @@ export const HomeData = {
                     'Comprehensive notes on Group Theory, covering fundamental concepts, theorems, and applications in abstract algebra.'
             },
             {
+                name: 'Groups and Geometry',
+                link: 'https://notes.howion.com/groups-and-geometry',
+                description:
+                    'Some notes exploring the deep connections between group theory and geometry, including symmetry groups and their geometric interpretations.'
+            },
+            {
                 name: 'Ring Theory',
                 link: 'https://notes.howion.com/ring-theory'
             },
@@ -196,10 +200,16 @@ export const HomeData = {
                     'An open source TypeScript implementation of the Lambert W function for both Node.js and browser environments with ~500 downloads a week.'
             },
             {
+                name: 'HUID Spec and Implementation',
+                link: 'https://github.com/howionlabs/huid-spec',
+                description:
+                    "HUID (Howion's Unique IDentifier) is a Snowflake-style custom unique identifier specification designed for modern databases."
+            },
+            {
                 name: 'nth-harmonic',
                 link: 'https://github.com/howion/nth-harmonic',
                 description:
-                    'An open source TypeScript library to compute the nth harmonic number efficiently using advanced mathematical techniques.'
+                    'An open source TypeScript library to compute the nth harmonic number efficiently using digamma function.'
             }
         ]
     } satisfies Record<string, FeaturedWork[]> as Record<string, FeaturedWork[]>

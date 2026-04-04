@@ -57,7 +57,7 @@ const { class: classname } = Astro.props
                         rel="noopener noreferrer"
                         title="Sitemap"
                     >
-                        | Sitemap.xml
+                        | Sitemap
                     </a>
                     <p class="home-text text-slick"></p>
 
@@ -74,13 +74,7 @@ const { class: classname } = Astro.props
                     <p class="home-text text-slick">
                         {HomeData.contactMails[0]}
                     </p>
-                    <p class="home-text text-slick">{HomeData.contactPhone}</p>
                     <p class="home-text text-slick"></p>
-                    <p class="home-text text-slick">
-                        {
-                            HomeData.contactAvailableForHire ? "" : "NOT "
-                        }AVAILABLE FOR HIRE
-                    </p>
                 </div>
             </DetailTable>
         </v>
