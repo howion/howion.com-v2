@@ -40,6 +40,9 @@ export default defineConfig({
         webAnalytics: {
             enabled: false // handled within document
         },
+        // isr: {
+        //     exclude: ['/api/profile-views.svg', '/api/spotify.json']
+        // },
         imageService: false
     }),
     security: {
