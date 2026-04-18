@@ -1,0 +1,35 @@
+# howion.com
+
+> Personal website of Omer Mert Coskun ("howion"), a software developer and researcher working across mathematics, software, and design.
+
+This site is a single-page personal website. It introduces the author, outlines current research and development interests, highlights selected work, and provides contact and profile links.
+
+Prefer the homepage for the main overview. Use the optional links for deeper context about notes, open-source work, and external profiles.
+
+## Primary
+
+- [Homepage](https://www.howion.com/): Main overview of Mert Coskun, including bio, research interests, development work, tech stack, featured work, and contact details.
+
+## Projects and Work
+
+- [Anatolia: 19th Century](https://anatolia19.metu.edu.tr/): Digital humanities project focused on compiling and digitizing historical regional data.
+- [notes.howion.com](https://notes.howion.com/): Personal wiki and note-taking system with technical and mathematical notes.
+- [Speculo](https://speculo.howion.com/): Peer-to-peer mobile-to-desktop device orientation mirroring project.
+- [lambert-w-function](https://www.npmjs.com/package/lambert-w-function): Open-source TypeScript implementation of the Lambert W function.
+- [HUID Spec and Implementation](https://github.com/howionlabs/huid-spec): Snowflake-style custom unique identifier specification and implementation.
+- [nth-harmonic](https://github.com/howion/nth-harmonic): TypeScript library for computing the nth harmonic number efficiently.
+
+## Official Profiles
+
+- [GitHub](https://github.com/howion/): Main code hosting profile.
+- [LinkedIn](https://www.linkedin.com/in/omer-mert-coskun/): Professional profile.
+- [ORCID](https://orcid.org/0000-0002-8324-2325): Academic identity profile.
+- [Behance](https://www.behance.net/howion): Design portfolio.
+- [Dribbble](https://dribbble.com/howion): Design work and experiments.
+- [X](https://x.com/howionwastaken): Social profile.
+- [Instagram](https://www.instagram.com/omermertcoskun/): Personal social profile.
+- [IMDb](https://www.imdb.com/user/ur106540372): Film-related profile.
+
+## Optional
+
+- [Spotify](https://open.spotify.com/user/avxit10lkjwlmlw605mxg7nbe): Personal listening profile embedded on the site.

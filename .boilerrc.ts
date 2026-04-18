@@ -29,7 +29,19 @@ export const APP = {
 } as const
 
 export const SEO_DEFAULTS = {
-    title: APP.name,
-    description: APP.description,
-    keywords: ['howion', 'howion.com']
+    title: 'Mert Coskun (howion) | Software Developer, Researcher, Builder',
+    description:
+        'Personal website of Mert "howion" Coskun featuring software development, research interests, selected work, notes, and contact details.',
+    keywords: [
+        'Mert Coskun',
+        'Omer Mert Coskun',
+        'howion',
+        'howion.com',
+        'software developer',
+        'web developer',
+        'researcher'
+    ],
+    locale: 'en_US',
+    ogImage: '/og.png',
+    ogImageAlt: 'howion.com screenshot'
 } as const

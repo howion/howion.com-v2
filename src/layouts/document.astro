@@ -1,5 +1,6 @@
 ---
 import { APP, SEO_DEFAULTS } from '##/.boilerrc'
+import { HomeData } from '##/constants/home-data'
 import FancyCursorProvider from '#/components/optional/fancy-cursor-provider.astro'
 import Loader2 from '#/components/loader2.astro'
 import SmoothBlur from '#/components/optional/smooth-blur.astro'
@@ -10,15 +11,80 @@ interface Props {
     title?: string
     subtitle?: string
     description?: string
-    // keywords?: string[]
+    keywords?: string[]
+    image?: string
+    imageAlt?: string
+
+    /**
+     * @default false
+     */
+    noindex?: boolean
+
+    /**
+     * @default 'website'
+     */
+    type?: 'website' | 'article' | 'profile'
 }
 
-// const { title, subtitle, description } = Astro.props
 const title = Astro.props.title ?? SEO_DEFAULTS.title
 const subtitle = Astro.props.subtitle
 const description = Astro.props.description ?? SEO_DEFAULTS.description
+const keywords = Astro.props.keywords ?? SEO_DEFAULTS.keywords
+const image = Astro.props.image ?? SEO_DEFAULTS.ogImage
+const imageAlt = Astro.props.imageAlt ?? SEO_DEFAULTS.ogImageAlt
+const pageType = Astro.props.type ?? 'website'
+const noindex = Astro.props.noindex ?? false
 
 const document_title = (subtitle ? `${subtitle} | ` : '') + title
+const canonical = new URL(Astro.url.pathname, APP.site).toString()
+const ogImageUrl = new URL(image, APP.site).toString()
+const robotsContent = noindex
+    ? 'noindex,nofollow,noarchive'
+    : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'
+const sameAs = Object.values(HomeData.contactSocials)
+
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'Person',
+            '@id': `${APP.site}/#person`,
+            name: 'Omer Mert Coskun',
+            alternateName: 'howion',
+            url: APP.site,
+            description,
+            sameAs
+        },
+        {
+            '@type': 'WebSite',
+            '@id': `${APP.site}/#website`,
+            url: APP.site,
+            name: APP.name,
+            description,
+            inLanguage: 'en',
+            publisher: {
+                '@id': `${APP.site}/#person`
+            }
+        },
+        {
+            '@type': 'WebPage',
+            '@id': `${canonical}#webpage`,
+            url: canonical,
+            name: document_title,
+            description,
+            isPartOf: {
+                '@id': `${APP.site}/#website`
+            },
+            about: {
+                '@id': `${APP.site}/#person`
+            },
+            primaryImageOfPage: {
+                '@type': 'ImageObject',
+                url: ogImageUrl
+            }
+        }
+    ]
+}
 ---
 
 <!doctype html>
@@ -26,13 +92,19 @@ const document_title = (subtitle ? `${subtitle} | ` : '') + title
     <!--! https://github.com/howion/howion.com-v2 -->
     <head>
         <meta charset="UTF-8" />
-        <link rel="sitemap" href="/sitemap-index.xml" />
-        <link rel="canonical" href={APP.site} />
+        <link rel="sitemap" href="/sitemap.xml" />
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLMs.txt" />
+        <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="LLMs Full" />
 
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
         />
+        <meta name="robots" content={robotsContent} />
+        <meta name="author" content="Omer Mert Coskun" />
+        <meta name="theme-color" content={APP.themeColor} />
+        <meta name="format-detection" content="telephone=no" />
 
         <!-- FAVICON START via realfavicongenerator.net -->
         <link
@@ -68,6 +140,24 @@ const document_title = (subtitle ? `${subtitle} | ` : '') + title
         />
         <title>{document_title}</title>
         {description && <meta name="description" content={description} />}
+        {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+        <meta property="og:site_name" content={APP.name} />
+        <meta property="og:locale" content={SEO_DEFAULTS.locale} />
+        <meta property="og:type" content={pageType} />
+        <meta property="og:title" content={document_title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:secure_url" content={ogImageUrl} />
+        <meta property="og:image:width" content="960" />
+        <meta property="og:image:height" content="540" />
+        <meta property="og:image:alt" content={imageAlt} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={document_title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content={imageAlt} />
+        <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     </head>
     <body style={`background-color:${APP.backgroundColor};`}>
         {!APP.quickDevelopmentMode && <Loader2 />}

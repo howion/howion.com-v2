@@ -4,7 +4,6 @@ import { defineConfig } from 'astro/config'
 
 // official addons
 import vercel from '@astrojs/vercel'
-import sitemap from '@astrojs/sitemap'
 import preact from '@astrojs/preact'
 
 // other addons
@@ -50,7 +49,7 @@ export default defineConfig({
         checkOrigin: false
     },
     site: APP.site,
-    trailingSlash: 'ignore',
+    trailingSlash: 'never',
     devToolbar: {
         enabled: false
     },
@@ -97,7 +96,7 @@ export default defineConfig({
                     removeAttributeQuotes: false,
                     removeTagWhitespace: false,
                     removeComments: true,
-                    removeOptionalTags: true,
+                    removeOptionalTags: false,
                     removeRedundantAttributes: true,
                     collapseWhitespace: true // watch out for this, it can break some components
                 }
@@ -106,9 +105,8 @@ export default defineConfig({
             Image: false,
             SVG: false
         }),
-        sitemap(),
         robotsTxt({
-            sitemap: true,
+            sitemap: `${APP.site}/sitemap.xml`,
             policy: [{ allow: '/', userAgent: '*' }]
         }),
         webmanifest({

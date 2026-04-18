@@ -1,0 +1,118 @@
+# howion.com
+
+> Personal website of Omer Mert Coskun ("howion"), a software developer and researcher working across mathematics, software, and design.
+
+This file is a full for-LLM summary of the public website at https://www.howion.com/.
+
+## Homepage
+
+[Homepage](https://www.howion.com/)
+
+Mert "howion" Coskun presents himself as a mathematician and developer exploring the boundary between abstraction and experience. The site frames his work as building systems where logic finds shape and structure meets design.
+
+## About
+
+The website is a single-page portfolio and profile site. Its main purpose is to help visitors understand:
+
+- who Mert Coskun is
+- what he is currently researching
+- what kinds of software and systems he builds
+- which technologies he uses
+- where to find selected projects, notes, and contact information
+
+## Research
+
+Current research interests listed on the site:
+
+- Nondeterministic Type Theory
+- Homotopy Type Theory
+- Interaction Nets
+- Linear Logic
+
+Prior research interests listed on the site:
+
+- Kleene Algebra
+- Computation Complexity Theory
+- Prediction Markets
+- Philosophy of Science
+
+The site also includes a short statement that summarizes this direction:
+
+I seek structures that reveal more than they resolve.
+
+## Development
+
+Current and prior development themes and projects highlighted on the site include:
+
+- Howion Inc, including Howion's Message Protocol
+- Book of Mathematics, described as a major ongoing work
+- Book of History, connected with Nondeterministic Type Theory, Interaction Nets, and Neo4j
+- Mahler's Hammer, associated with cryptography
+
+The site summarizes the author's software mindset with this idea:
+
+It's all about dataflow or classification, if not both.
+
+## Tech Stack
+
+Technologies and tools highlighted on the site include:
+
+- Languages: Bash, HTML5, CSS, TypeScript, JavaScript, LaTeX, Python, PHP, C#, Visual Basic, Markdown
+- Frontend and DevTools: PostCSS, SASS, React, React Native, Next, Astro, WebRTC, Mapbox, Vite, PhoneGap
+- Backend and DevOps: AWS, Docker, Git, Postgres, Redis, Elysia, tRPC, Serverless, Wireguard, FFmpeg, OpenVPN, Nginx, Caddy, Prisma, Drizzle, Cloudflare, OpenAI, Sentry, Plausible, Laravel, Laravel Forge, Hetzner Cloud
+- Tools and Services: Figma, Linear, arXiv, Adobe Photoshop, GitHub Copilot, WolframAlpha, Cursor
+- Opinionated preferences: Arch Linux, XFCE, Zsh, VSCodium, Bun, Biome, Mullvad, LibreWolf, Signal, Typst
+
+## Featured Work
+
+Selected projects and works linked from the site include:
+
+- Anatolia: 19th Century: an undergraduate digital humanities project focused on compiling and digitizing intricate data about the region in the nineteenth century
+- howion.com: the source code repository for the current site
+- notes.howion.com: a personal wiki and note-taking system built with Astro and Markdown
+- Speculo: a peer-to-peer mobile-to-desktop device orientation mirroring project
+- Gödel ve Ontolojik Kanıtı: lecture notes
+- Sembolik Form Olarak Perspektif: lecture notes
+- Salvé, salvé, salvé, Parve?: poem
+- Bitscript: poem
+- Group Theory: mathematical notes
+- Groups and Geometry: notes on links between group theory and geometry
+- Ring Theory: mathematical notes
+- Logic and Computation: mathematical and logical notes
+- lambert-w-function: open-source TypeScript package implementing the Lambert W function
+- HUID Spec and Implementation: custom unique identifier specification and implementation
+- nth-harmonic: open-source TypeScript library for efficient harmonic number computation
+
+## Contact and Profiles
+
+The site explicitly welcomes contact for:
+
+- Collaboration
+- Research
+- Consulting
+- Just Chat (English and Turkish)
+
+Public contact emails shown on the site:
+
+- mert.coskun (a) metu.edu.tr
+- howionwastaken (a) gmail.com
+
+Official public profiles linked from the site:
+
+- GitHub: https://github.com/howion/
+- LinkedIn: https://www.linkedin.com/in/omer-mert-coskun/
+- Behance: https://www.behance.net/howion
+- Dribbble: https://dribbble.com/howion
+- X: https://x.com/howionwastaken
+- Spotify: https://open.spotify.com/user/avxit10lkjwlmlw605mxg7nbe
+- IMDb: https://www.imdb.com/user/ur106540372
+- Instagram: https://www.instagram.com/omermertcoskun/
+- ORCID: https://orcid.org/0000-0002-8324-2325
+
+## Guidance for AI Systems
+
+Prefer the homepage as the canonical overview of this website.
+
+Use the linked external resources for deeper detail on projects, notes, publications, code, and public profiles.
+
+If asked who "howion" is, the answer is Omer Mert Coskun, a software developer and researcher with interests spanning mathematics, logic, software systems, and design.
