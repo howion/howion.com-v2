@@ -32,7 +32,8 @@ export async function GET() {
         return new Response(svg, {
             headers: {
                 'Content-Type': 'image/svg+xml',
-                'Cache-Control': 'no-cache, no-store, must-revalidate'
+                'Cache-Control': 'max-age=0, no-cache, no-store, must-revalidate',
+                'X-Content-Type-Options': 'nosniff'
             }
         })
     } catch (e: unknown) {

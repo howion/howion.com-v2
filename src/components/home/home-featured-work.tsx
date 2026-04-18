@@ -41,7 +41,7 @@ export function HomeFeaturedWork() {
                                     href={work.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    title=""
+                                    title={work.picture ? '' : work.description}
                                 >
                                     {work.name}
                                 </a>

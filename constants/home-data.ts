@@ -26,6 +26,7 @@ export const HomeData = {
     // DEVELOPMENT
     developmentEntries: {
         // 'TBA Mobile App': ['iOS', 'Swift', 'Bun', '', 'Currently in Development'],
+        'Howion Inc': ["Howion's Message Protocol"],
         'Book of Mathematics': ['My Magnum Opus', '', 'Currently in Development'],
         'Book of History': ['Nondeterministic Type Theory', 'Interaction Nets', 'NEO4J', '', 'Postponed'],
         "Mahler's Hammer": ['Cryptography', '', 'Postponed']
@@ -130,10 +131,16 @@ export const HomeData = {
                     'An undergraduate digital humanities project aiming to compile as well as digitize intricate data on the region in this century.'
             },
             {
-                name: 'howion.com (v2)',
+                name: 'howion.com',
                 link: 'https://github.com/howion/howion.com-v2',
                 picture: 'howioncom.webp',
-                description: 'This website you are currently browsing, rebuilt from scratch using Astro and Preact.'
+                description: 'This website you are currently browsing, built from scratch using Astro and Preact.'
+            },
+            {
+                name: 'notes.howion.com',
+                link: 'https://notes.howion.com/',
+                description:
+                    'My personal wiki and note-taking system built with Astro, Markdown files, featuring a growing collection of notes on various topics.'
             },
             {
                 name: 'Speculo',
@@ -184,10 +191,6 @@ export const HomeData = {
             {
                 name: 'Logic and Computation',
                 link: 'https://notes.howion.com/logic-and-computation'
-            },
-            {
-                name: 'Probability Theory',
-                link: 'https://notes.howion.com/probability-theory'
             }
         ],
         // Drawings: [

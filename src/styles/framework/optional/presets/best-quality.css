@@ -12,7 +12,15 @@ svg {
     text-rendering: geometricPrecision;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, img {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: inherit;
@@ -30,11 +38,6 @@ h1, h2, h3, h4, h5, h6, p, a, img {
 img {
     display: block;
     max-width: 100%;
-
-    /* Firefox, Safari */
-    image-rendering: crisp-edges;
-    /* Chrome */
-    image-rendering: pixelated;
 
     -webkit-touch-callout: none;
     -webkit-user-drag: none;
