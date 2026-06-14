@@ -11,6 +11,7 @@
 @import "./framework/optional/solidbox.css";
 @import "./framework/optional/post-effects/noise.css";
 @import "./framework/optional/fancy-cursor.css";
+@import "./framework/optional/ghost-cursor.css";
 @import "./framework/optional/presets/best-quality.css";
 @import "./framework/optional/liquid-glass.css";
 @import "./framework/optional/smooth-blur.css";
@@ -18,6 +19,7 @@
 /* GLOBAL CUSTOM CSS */
 @import "./app/_index.css";
 @import "./components/_index.css";
+@import "./layouts/_index.css";
 
 /* ADD MODULES */
 @import 'lenis/dist/lenis.css';

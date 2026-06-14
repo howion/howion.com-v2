@@ -1,0 +1,33 @@
+---
+import Document from "#/layouts/document.astro";
+import { GhostCursor } from "#/components/optional/ghost-cursor";
+import { APP } from "##/.boilerrc";
+---
+
+<Document
+    title={`404 Page Not Found`}
+    description={`Personal website of Mert "howion" Coskun featuring software development, research interests, selected work, and ways to get in touch.`}
+    disableLoader={true}
+    disableFancyCursor={true}
+    disableNoise={true}
+>
+    <main class="p404-main">
+        <div class="p404-cursor">
+            <GhostCursor
+                client:load
+                color={APP.themeColor}
+                brightness={2}
+                edgeIntensity={0}
+                trailLength={50}
+                inertia={0.5}
+                grainIntensity={0.05}
+                bloomStrength={0.1}
+                bloomRadius={1}
+                bloomThreshold={0.025}
+                fadeDelayMs={1000}
+                fadeDurationMs={1500}
+            />
+        </div>
+        <h1 class="home-h1 p404-title">404</h1>
+    </main>
+</Document>
