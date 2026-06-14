@@ -28,7 +28,8 @@
             border-radius: 1000px;
 
             >.liquid-wrapper {
-                background-color: rgba(#fff, 0.1);
+                background-color: rgba(#fff, 0.05);
+                border: 0.5px solid rgba(#fff, 0.05);
             }
         }
     }

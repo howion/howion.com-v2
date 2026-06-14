@@ -9,6 +9,7 @@ export const APP = {
 
     themeColor: '#10100E',
     backgroundColor: '#10100E',
+    textColor: '#FFFFE3',
 
     // Set quick development mode to true to hinder or disable some stuff. This
     // includes but not limited to: post-effects, fancy-cursor and possibly

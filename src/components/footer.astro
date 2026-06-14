@@ -1,6 +1,7 @@
 ---
 import { HomeData } from '##/constants/home-data'
 import DetailTable from './detail-table.astro'
+import { LaserFlow } from './optional/laser-flow'
 
 interface Props {
     class?: Classname
@@ -9,87 +10,100 @@ interface Props {
 const { class: classname } = Astro.props
 ---
 
-<footer class="footer" class:list={[classname]}>
-    <h class="footer-head" data-parallax-speed="0.95">
-        <v class="w5"
-            ><span class="secondary-text footer-head-title text-slick"
-                >MERT<dim>&nbsp;\\</dim></span
-            ></v
-        >
-        <v class="w1"></v>
-        <v class="w6"
-            ><span class="secondary-text footer-head-title text-slick"
-                >HOWION</span
-            ></v
-        >
-    </h>
-    <h class="footer-body" data-parallax-speed="0.85">
-        <v class="wmax5 wmax">
-            <DetailTable title="Website" titleW={1} contentW={2} slick={true}>
-                <div class="text-stack-slick">
-                    <a
-                        class="home-text text-slick home-link"
-                        href={Astro.site}
-                        title="Homepage"
-                    >
-                        | Homepage
-                    </a>
-                    <a
-                        class="home-text text-slick home-link"
-                        href="https://notes.howion.com"
-                        title="Notes"
-                    >
-                        | Notes
-                    </a>
-                    <a
-                        class="home-text text-slick home-link"
-                        href="https://github.com/howion/howion.com-v2"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="Source"
-                    >
-                        | Source
-                    </a>
-                    <a
-                        class="home-text text-slick home-link"
-                        href={`${Astro.site}sitemap.xml`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="Sitemap"
-                    >
-                        | Sitemap
-                    </a>
-                    <p class="home-text text-slick"></p>
+<div class="footer-container" class:list={[classname]}>
+    <LaserFlow client:idle color="#555553" />
 
-                    <!-- <p class="home-text text-slick">
+    <footer class="footer">
+        <h class="footer-head" data-parallax-speed="0.95">
+            <v class="w5"
+                ><span class="secondary-text footer-head-title text-slick"
+                    >MERT<dim>&nbsp;\\</dim></span
+                ></v
+            >
+            <v class="w1"></v>
+            <v class="w6"
+                ><span class="secondary-text footer-head-title text-slick"
+                    >HOWION</span
+                ></v
+            >
+        </h>
+        <h class="footer-body" data-parallax-speed="0.85">
+            <v class="wmax5 wmax">
+                <DetailTable
+                    title="Website"
+                    titleW={1}
+                    contentW={2}
+                    slick={true}
+                >
+                    <div class="text-stack-slick">
+                        <a
+                            class="home-text text-slick home-link"
+                            href={Astro.site}
+                            title="Homepage"
+                        >
+                            | Homepage
+                        </a>
+                        <a
+                            class="home-text text-slick home-link"
+                            href="https://notes.howion.com"
+                            title="Notes"
+                        >
+                            | Notes
+                        </a>
+                        <a
+                            class="home-text text-slick home-link"
+                            href="https://github.com/howion/howion.com-v2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Source"
+                        >
+                            | Source
+                        </a>
+                        <a
+                            class="home-text text-slick home-link"
+                            href={`${Astro.site}sitemap.xml`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Sitemap"
+                        >
+                            | Sitemap
+                        </a>
+                        <p class="home-text text-slick"></p>
+
+                        <!-- <p class="home-text text-slick">
                         <dim>* Konami Cheat Code</dim>
                     </p> -->
-                </div>
-            </DetailTable>
-        </v>
-        <v class="wmax1 wauto"></v>
-        <v class="wmax6 wmax">
-            <DetailTable title="Contact" titleW={1} contentW={3} slick={true}>
-                <div class="text-stack-slick">
-                    <p class="home-text text-slick">
-                        {HomeData.contactMails[0]}
-                    </p>
-                    <p class="home-text text-slick"></p>
-                </div>
-            </DetailTable>
-        </v>
-    </h>
-    <h class="footer-foot space-section-6x">
-        <v class="w5">
-            <span class="home-text text-slick"
-                >OMER MERT COSKUN © 2025</span
-            >
-        </v>
-        <v class="w1"></v>
-        <v class="w6">
-            <span class="home-text text-slick dim">
-                Licensed under the AGPLv3 with Additional Terms
-            </span>
-        </v>
-    </h>
-</footer>
+                    </div>
+                </DetailTable>
+            </v>
+            <v class="wmax1 wauto"></v>
+            <v class="wmax6 wmax">
+                <DetailTable
+                    title="Contact"
+                    titleW={1}
+                    contentW={3}
+                    slick={true}
+                >
+                    <div class="text-stack-slick">
+                        <p class="home-text text-slick">
+                            {HomeData.contactMails[0]}
+                        </p>
+                        <p class="home-text text-slick"></p>
+                    </div>
+                </DetailTable>
+            </v>
+        </h>
+        <h class="footer-foot space-section-6x">
+            <v class="w5">
+                <span class="home-text text-slick">OMER MERT COSKUN © 2025</span
+                >
+            </v>
+            <v class="w1"></v>
+            <v class="w6">
+                <span class="home-text text-slick dim">
+                    Licensed under the AGPLv3 with Additional Terms
+                </span>
+            </v>
+        </h>
+    </footer>
+</div>

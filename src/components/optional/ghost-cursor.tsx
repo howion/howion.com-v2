@@ -29,6 +29,9 @@ export type GhostCursorProps = {
     zIndex?: number
 }
 
+/**
+ * @see https://reactbits.dev/animations/ghost-cursor
+ */
 export function GhostCursor({
     className,
     style,

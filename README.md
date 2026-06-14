@@ -1,6 +1,6 @@
-# :construction: [**howion.com**](https://www.howion.com/)
+# [**howion.com**](https://www.howion.com/)
 
-Personal website, updated. Still kind-of under construction.
+Personal website, updated.
 
 <center>
 <img width="640" src="https://repository-images.githubusercontent.com/1026590725/35a47b9d-8709-46c6-a7d7-6edacb68a00a" alt="Screenshot">
@@ -37,7 +37,7 @@ Personal website, updated. Still kind-of under construction.
 
 ## Contact
 
-For all inquiries, feel free to reach out me at **<mert.coskun@metu.edu.tr>**.
+For all inquiries, feel free to reach out me at **<howion@fuck.it>**.
 
 ## License
 

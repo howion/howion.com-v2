@@ -34,7 +34,7 @@ export const HomeData = {
 
     // CONTACT
     contactAvailableFor: ['Collaboration', 'Research', 'Consulting', '', 'Just Chat \\ EN \\ TR'],
-    contactMails: ['mert.coskun (a) metu.edu.tr', 'howionwastaken (a) gmail.com'],
+    contactMails: ['howion (at) fuck.it', 'mert.coskun (a) metu.edu.tr', 'howionwastaken (a) gmail.com'],
     contactSocials: {
         GitHub: 'https://github.com/howion/',
         LinkedIn: 'https://www.linkedin.com/in/omer-mert-coskun/',

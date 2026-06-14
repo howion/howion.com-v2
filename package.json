@@ -2,7 +2,7 @@
     "name": "howion-com-v2",
     "type": "module",
     "private": false,
-    "version": "2.0.0",
+    "version": "2.1.0",
     "scripts": {
         "dev": "bun run --env-file=.env astro dev --host",
         "build": "bun run format && astro build",
